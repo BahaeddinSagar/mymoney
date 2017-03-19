@@ -14,6 +14,9 @@
 		B512359A1E7E546300DB0254 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B51235981E7E546300DB0254 /* LaunchScreen.storyboard */; };
 		B51235A51E7E546300DB0254 /* Icash2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51235A41E7E546300DB0254 /* Icash2Tests.swift */; };
 		B51235B01E7E546300DB0254 /* Icash2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51235AF1E7E546300DB0254 /* Icash2UITests.swift */; };
+		B51235BE1E7EFC8700DB0254 /* transferMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51235BD1E7EFC8700DB0254 /* transferMoneyViewController.swift */; };
+		B51235C01E7F022200DB0254 /* Pay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51235BF1E7F022200DB0254 /* Pay.swift */; };
+		B51235C21E7F09F900DB0254 /* ActivateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51235C11E7F09F900DB0254 /* ActivateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		B51235AB1E7E546300DB0254 /* Icash2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Icash2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B51235AF1E7E546300DB0254 /* Icash2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icash2UITests.swift; sourceTree = "<group>"; };
 		B51235B11E7E546300DB0254 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B51235BD1E7EFC8700DB0254 /* transferMoneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = transferMoneyViewController.swift; sourceTree = "<group>"; };
+		B51235BF1E7F022200DB0254 /* Pay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pay.swift; sourceTree = "<group>"; };
+		B51235C11E7F09F900DB0254 /* ActivateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,9 @@
 				B51235961E7E546300DB0254 /* Assets.xcassets */,
 				B51235981E7E546300DB0254 /* LaunchScreen.storyboard */,
 				B512359B1E7E546300DB0254 /* Info.plist */,
+				B51235BD1E7EFC8700DB0254 /* transferMoneyViewController.swift */,
+				B51235BF1E7F022200DB0254 /* Pay.swift */,
+				B51235C11E7F09F900DB0254 /* ActivateViewController.swift */,
 			);
 			path = Icash2;
 			sourceTree = "<group>";
@@ -259,7 +268,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B51235BE1E7EFC8700DB0254 /* transferMoneyViewController.swift in Sources */,
 				B51235921E7E546300DB0254 /* ViewController.swift in Sources */,
+				B51235C01E7F022200DB0254 /* Pay.swift in Sources */,
+				B51235C21E7F09F900DB0254 /* ActivateViewController.swift in Sources */,
 				B51235901E7E546300DB0254 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,6 +519,7 @@
 				B51235B61E7E546300DB0254 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B51235B71E7E546300DB0254 /* Build configuration list for PBXNativeTarget "Icash2Tests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +528,7 @@
 				B51235B91E7E546300DB0254 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B51235BA1E7E546300DB0254 /* Build configuration list for PBXNativeTarget "Icash2UITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +537,7 @@
 				B51235BC1E7E546300DB0254 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
