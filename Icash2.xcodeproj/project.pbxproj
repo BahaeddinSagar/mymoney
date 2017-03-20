@@ -17,6 +17,11 @@
 		B51235BE1E7EFC8700DB0254 /* transferMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51235BD1E7EFC8700DB0254 /* transferMoneyViewController.swift */; };
 		B51235C01E7F022200DB0254 /* Pay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51235BF1E7F022200DB0254 /* Pay.swift */; };
 		B51235C21E7F09F900DB0254 /* ActivateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51235C11E7F09F900DB0254 /* ActivateViewController.swift */; };
+		B51235C61E7F19AB00DB0254 /* CardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51235C51E7F19AB00DB0254 /* CardInfo.swift */; };
+		B51235C81E7F19FB00DB0254 /* SwiftSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51235C71E7F19FB00DB0254 /* SwiftSpinner.swift */; };
+		B51235CA1E7F201700DB0254 /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51235C91E7F201700DB0254 /* SweetAlert.swift */; };
+		B51235CC1E7F219D00DB0254 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51235CB1E7F219D00DB0254 /* KeychainItemAccessibility.swift */; };
+		B51235CE1E7F224200DB0254 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51235CD1E7F224200DB0254 /* KeychainWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,13 @@
 		B51235BD1E7EFC8700DB0254 /* transferMoneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = transferMoneyViewController.swift; sourceTree = "<group>"; };
 		B51235BF1E7F022200DB0254 /* Pay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pay.swift; sourceTree = "<group>"; };
 		B51235C11E7F09F900DB0254 /* ActivateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivateViewController.swift; sourceTree = "<group>"; };
+		B51235C31E7F105600DB0254 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		B51235C41E7F105600DB0254 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		B51235C51E7F19AB00DB0254 /* CardInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardInfo.swift; sourceTree = "<group>"; };
+		B51235C71E7F19FB00DB0254 /* SwiftSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftSpinner.swift; sourceTree = "<group>"; };
+		B51235C91E7F201700DB0254 /* SweetAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweetAlert.swift; sourceTree = "<group>"; };
+		B51235CB1E7F219D00DB0254 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
+		B51235CD1E7F224200DB0254 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +115,7 @@
 		B512358E1E7E546300DB0254 /* Icash2 */ = {
 			isa = PBXGroup;
 			children = (
+				B51235CF1E7F225700DB0254 /* SuplimentaryLibraries */,
 				B512358F1E7E546300DB0254 /* AppDelegate.swift */,
 				B51235911E7E546300DB0254 /* ViewController.swift */,
 				B51235931E7E546300DB0254 /* Main.storyboard */,
@@ -112,6 +125,7 @@
 				B51235BD1E7EFC8700DB0254 /* transferMoneyViewController.swift */,
 				B51235BF1E7F022200DB0254 /* Pay.swift */,
 				B51235C11E7F09F900DB0254 /* ActivateViewController.swift */,
+				B51235C51E7F19AB00DB0254 /* CardInfo.swift */,
 			);
 			path = Icash2;
 			sourceTree = "<group>";
@@ -132,6 +146,17 @@
 				B51235B11E7E546300DB0254 /* Info.plist */,
 			);
 			path = Icash2UITests;
+			sourceTree = "<group>";
+		};
+		B51235CF1E7F225700DB0254 /* SuplimentaryLibraries */ = {
+			isa = PBXGroup;
+			children = (
+				B51235C71E7F19FB00DB0254 /* SwiftSpinner.swift */,
+				B51235C91E7F201700DB0254 /* SweetAlert.swift */,
+				B51235CB1E7F219D00DB0254 /* KeychainItemAccessibility.swift */,
+				B51235CD1E7F224200DB0254 /* KeychainWrapper.swift */,
+			);
+			name = SuplimentaryLibraries;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,10 +294,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B51235BE1E7EFC8700DB0254 /* transferMoneyViewController.swift in Sources */,
+				B51235C61E7F19AB00DB0254 /* CardInfo.swift in Sources */,
 				B51235921E7E546300DB0254 /* ViewController.swift in Sources */,
+				B51235CA1E7F201700DB0254 /* SweetAlert.swift in Sources */,
+				B51235C81E7F19FB00DB0254 /* SwiftSpinner.swift in Sources */,
+				B51235CC1E7F219D00DB0254 /* KeychainItemAccessibility.swift in Sources */,
 				B51235C01E7F022200DB0254 /* Pay.swift in Sources */,
 				B51235C21E7F09F900DB0254 /* ActivateViewController.swift in Sources */,
 				B51235901E7E546300DB0254 /* AppDelegate.swift in Sources */,
+				B51235CE1E7F224200DB0254 /* KeychainWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +342,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B51235941E7E546300DB0254 /* Base */,
+				B51235C31E7F105600DB0254 /* ar */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -320,6 +351,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B51235991E7E546300DB0254 /* Base */,
+				B51235C41E7F105600DB0254 /* ar */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -331,6 +363,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -381,6 +414,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";

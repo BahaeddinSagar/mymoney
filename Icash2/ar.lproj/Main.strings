@@ -1,0 +1,75 @@
+
+/* Class = "UILabel"; text = "إستلام"; ObjectID = "7Ma-mq-6VV"; */
+"7Ma-mq-6VV.text" = "إستلام";
+
+/* Class = "UILabel"; text = "رمز التفعيل"; ObjectID = "8DH-bk-Nul"; */
+"8DH-bk-Nul.text" = "رمز التفعيل";
+
+/* Class = "UILabel"; text = "القيمة"; ObjectID = "8E5-qE-uXp"; */
+"8E5-qE-uXp.text" = "القيمة";
+
+/* Class = "UILabel"; text = "رقم البطاقة"; ObjectID = "Ah5-a7-2Ig"; */
+"Ah5-a7-2Ig.text" = "رقم البطاقة";
+
+/* Class = "UILabel"; text = "إعدادات"; ObjectID = "Chm-Du-yJP"; */
+"Chm-Du-yJP.text" = "إعدادات";
+
+/* Class = "UILabel"; text = "الرقم السري"; ObjectID = "DMH-vt-VlN"; */
+"DMH-vt-VlN.text" = "الرقم السري";
+
+/* Class = "UILabel"; text = "بطاقة مفعلة مسبقا"; ObjectID = "Enm-PO-jJj"; */
+"Enm-PO-jJj.text" = "بطاقة مفعلة مسبقا";
+
+/* Class = "UILabel"; text = "القيمة"; ObjectID = "EoB-cX-Hgp"; */
+"EoB-cX-Hgp.text" = "القيمة";
+
+/* Class = "UIButton"; normalTitle = "عرض الرمز"; ObjectID = "FQI-aJ-aID"; */
+"FQI-aJ-aID.normalTitle" = "عرض الرمز";
+
+/* Class = "UILabel"; text = "دفع"; ObjectID = "GjD-ci-8q8"; */
+"GjD-ci-8q8.text" = "دفع";
+
+/* Class = "UILabel"; text = "القيمة"; ObjectID = "Tc3-0T-W63"; */
+"Tc3-0T-W63.text" = "القيمة";
+
+/* Class = "UILabel"; text = "رقم البطاقة"; ObjectID = "VkA-7A-KxJ"; */
+"VkA-7A-KxJ.text" = "رقم البطاقة";
+
+/* Class = "UILabel"; text = "الرقم السري"; ObjectID = "WA8-eA-TA8"; */
+"WA8-eA-TA8.text" = "الرقم السري";
+
+/* Class = "UIButton"; normalTitle = "تحويل"; ObjectID = "YEp-tB-wYO"; */
+"YEp-tB-wYO.normalTitle" = "تحويل";
+
+/* Class = "UILabel"; text = "رمز التأكيد"; ObjectID = "beE-Rv-Yn1"; */
+"beE-Rv-Yn1.text" = "رمز التأكيد";
+
+/* Class = "UILabel"; text = "رقم الهاتف"; ObjectID = "ccD-iU-L2i"; */
+"ccD-iU-L2i.text" = "رقم الهاتف";
+
+/* Class = "UILabel"; text = "رقم البطاقة"; ObjectID = "fKW-dP-R6w"; */
+"fKW-dP-R6w.text" = "رقم البطاقة";
+
+/* Class = "UILabel"; text = "الرصيد"; ObjectID = "fhn-er-921"; */
+"fhn-er-921.text" = "الرصيد";
+
+/* Class = "UINavigationItem"; title = "iCash"; ObjectID = "hP6-Mf-SST"; */
+"hP6-Mf-SST.title" = "iCash";
+
+/* Class = "UILabel"; text = "تحويل"; ObjectID = "lxq-Bl-07n"; */
+"lxq-Bl-07n.text" = "تحويل";
+
+/* Class = "UILabel"; text = "كشف حساب"; ObjectID = "o7V-Py-c70"; */
+"o7V-Py-c70.text" = "كشف حساب";
+
+/* Class = "UIButton"; normalTitle = "تأكيد"; ObjectID = "pzR-Ah-McF"; */
+"pzR-Ah-McF.normalTitle" = "تأكيد";
+
+/* Class = "UIButton"; normalTitle = "إتمام العملية"; ObjectID = "qOn-pA-qwq"; */
+"qOn-pA-qwq.normalTitle" = "إتمام العملية";
+
+/* Class = "UILabel"; text = "رقم البطاقة"; ObjectID = "tCa-hy-mDJ"; */
+"tCa-hy-mDJ.text" = "رقم البطاقة";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "xua-kN-6Cp"; */
+"xua-kN-6Cp.text" = "Label";

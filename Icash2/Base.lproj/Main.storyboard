@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Activate-->
+        <!--Activate View Controller-->
         <scene sceneID="Lab-Vm-xoA">
             <objects>
-                <viewController id="8sZ-Y1-WUg" customClass="Activate" customModule="Icash2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8sZ-Y1-WUg" customClass="ActivateViewController" customModule="Icash2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nnZ-Mh-yqH"/>
                         <viewControllerLayoutGuide type="bottom" id="gqr-CJ-8J9"/>
@@ -28,7 +28,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qqw-nw-ZOa">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="2189XXXXXXXX" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qqw-nw-ZOa">
                                 <rect key="frame" x="20" y="250" width="374" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -64,6 +64,9 @@
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qto-88-023">
                                 <rect key="frame" x="143" y="101" width="51" height="31"/>
+                                <connections>
+                                    <action selector="switchClicked:" destination="8sZ-Y1-WUg" eventType="valueChanged" id="Bd5-Z2-rtP"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="بطاقة مفعلة مسبقا" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Enm-PO-jJj">
                                 <rect key="frame" x="20" y="106" width="115" height="21"/>
@@ -74,7 +77,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pOs-V3-UHt">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pOs-V3-UHt">
                                 <rect key="frame" x="204" y="101" width="190" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -109,6 +112,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="CzC-qj-JNw"/>
                     <connections>
+                        <outlet property="actiCodeTextField" destination="Lxb-NW-zex" id="Qkw-Qa-iWo"/>
+                        <outlet property="cardNumberTextField" destination="pOs-V3-UHt" id="8jg-RF-g1E"/>
+                        <outlet property="phoneTextField" destination="Qqw-nw-ZOa" id="9Tu-qO-Q7Y"/>
+                        <outlet property="swi" destination="qto-88-023" id="1Ay-YU-5rS"/>
                         <segue destination="Rhd-pf-CSD" kind="show" identifier="goToConfirm" id="d0F-nO-qik"/>
                     </connections>
                 </viewController>
@@ -467,7 +474,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ico-On-6ec" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="832" y="904"/>
+            <point key="canvasLocation" x="832" y="884"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Xac-P4-GCp">
