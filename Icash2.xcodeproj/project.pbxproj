@@ -15,13 +15,17 @@
 		B51235A51E7E546300DB0254 /* Icash2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51235A41E7E546300DB0254 /* Icash2Tests.swift */; };
 		B51235B01E7E546300DB0254 /* Icash2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51235AF1E7E546300DB0254 /* Icash2UITests.swift */; };
 		B51235BE1E7EFC8700DB0254 /* transferMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51235BD1E7EFC8700DB0254 /* transferMoneyViewController.swift */; };
-		B51235C01E7F022200DB0254 /* Pay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51235BF1E7F022200DB0254 /* Pay.swift */; };
+		B51235C01E7F022200DB0254 /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51235BF1E7F022200DB0254 /* PayViewController.swift */; };
 		B51235C21E7F09F900DB0254 /* ActivateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51235C11E7F09F900DB0254 /* ActivateViewController.swift */; };
 		B51235C61E7F19AB00DB0254 /* CardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51235C51E7F19AB00DB0254 /* CardInfo.swift */; };
 		B51235C81E7F19FB00DB0254 /* SwiftSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51235C71E7F19FB00DB0254 /* SwiftSpinner.swift */; };
 		B51235CA1E7F201700DB0254 /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51235C91E7F201700DB0254 /* SweetAlert.swift */; };
 		B51235CC1E7F219D00DB0254 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51235CB1E7F219D00DB0254 /* KeychainItemAccessibility.swift */; };
 		B51235CE1E7F224200DB0254 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51235CD1E7F224200DB0254 /* KeychainWrapper.swift */; };
+		B53988AB1E82F47C00A3E5F0 /* GenerateInvoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53988AA1E82F47C00A3E5F0 /* GenerateInvoiceViewController.swift */; };
+		B5F476131E7FB25600BBF1F3 /* CommonCrypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F476121E7FB25600BBF1F3 /* CommonCrypto.framework */; };
+		B5F4761A1E7FB4BC00BBF1F3 /* Crypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F476141E7FB25700BBF1F3 /* Crypto.framework */; };
+		B5F4761D1E7FB56700BBF1F3 /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F4761C1E7FB56700BBF1F3 /* ConfirmViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,15 +60,17 @@
 		B51235AF1E7E546300DB0254 /* Icash2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icash2UITests.swift; sourceTree = "<group>"; };
 		B51235B11E7E546300DB0254 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B51235BD1E7EFC8700DB0254 /* transferMoneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = transferMoneyViewController.swift; sourceTree = "<group>"; };
-		B51235BF1E7F022200DB0254 /* Pay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pay.swift; sourceTree = "<group>"; };
+		B51235BF1E7F022200DB0254 /* PayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
 		B51235C11E7F09F900DB0254 /* ActivateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivateViewController.swift; sourceTree = "<group>"; };
-		B51235C31E7F105600DB0254 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
-		B51235C41E7F105600DB0254 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		B51235C51E7F19AB00DB0254 /* CardInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardInfo.swift; sourceTree = "<group>"; };
 		B51235C71E7F19FB00DB0254 /* SwiftSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftSpinner.swift; sourceTree = "<group>"; };
 		B51235C91E7F201700DB0254 /* SweetAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweetAlert.swift; sourceTree = "<group>"; };
 		B51235CB1E7F219D00DB0254 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
 		B51235CD1E7F224200DB0254 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
+		B53988AA1E82F47C00A3E5F0 /* GenerateInvoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateInvoiceViewController.swift; sourceTree = "<group>"; };
+		B5F476121E7FB25600BBF1F3 /* CommonCrypto.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CommonCrypto.framework; path = Carthage/Build/iOS/CommonCrypto.framework; sourceTree = "<group>"; };
+		B5F476141E7FB25700BBF1F3 /* Crypto.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crypto.framework; path = Carthage/Build/iOS/Crypto.framework; sourceTree = "<group>"; };
+		B5F4761C1E7FB56700BBF1F3 /* ConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5F476131E7FB25600BBF1F3 /* CommonCrypto.framework in Frameworks */,
+				B5F4761A1E7FB4BC00BBF1F3 /* Crypto.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +103,7 @@
 		B51235831E7E546300DB0254 = {
 			isa = PBXGroup;
 			children = (
+				B5F476111E7FB25600BBF1F3 /* Frameworks */,
 				B512358E1E7E546300DB0254 /* Icash2 */,
 				B51235A31E7E546300DB0254 /* Icash2Tests */,
 				B51235AE1E7E546300DB0254 /* Icash2UITests */,
@@ -123,9 +132,11 @@
 				B51235981E7E546300DB0254 /* LaunchScreen.storyboard */,
 				B512359B1E7E546300DB0254 /* Info.plist */,
 				B51235BD1E7EFC8700DB0254 /* transferMoneyViewController.swift */,
-				B51235BF1E7F022200DB0254 /* Pay.swift */,
+				B51235BF1E7F022200DB0254 /* PayViewController.swift */,
 				B51235C11E7F09F900DB0254 /* ActivateViewController.swift */,
+				B5F4761C1E7FB56700BBF1F3 /* ConfirmViewController.swift */,
 				B51235C51E7F19AB00DB0254 /* CardInfo.swift */,
+				B53988AA1E82F47C00A3E5F0 /* GenerateInvoiceViewController.swift */,
 			);
 			path = Icash2;
 			sourceTree = "<group>";
@@ -159,6 +170,15 @@
 			name = SuplimentaryLibraries;
 			sourceTree = "<group>";
 		};
+		B5F476111E7FB25600BBF1F3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B5F476141E7FB25700BBF1F3 /* Crypto.framework */,
+				B5F476121E7FB25600BBF1F3 /* CommonCrypto.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -169,6 +189,7 @@
 				B51235881E7E546300DB0254 /* Sources */,
 				B51235891E7E546300DB0254 /* Frameworks */,
 				B512358A1E7E546300DB0254 /* Resources */,
+				B5F476161E7FB27500BBF1F3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -288,18 +309,38 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B5F476161E7FB27500BBF1F3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Crypto.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/CommonCrypto.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B51235881E7E546300DB0254 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5F4761D1E7FB56700BBF1F3 /* ConfirmViewController.swift in Sources */,
+				B53988AB1E82F47C00A3E5F0 /* GenerateInvoiceViewController.swift in Sources */,
 				B51235BE1E7EFC8700DB0254 /* transferMoneyViewController.swift in Sources */,
 				B51235C61E7F19AB00DB0254 /* CardInfo.swift in Sources */,
 				B51235921E7E546300DB0254 /* ViewController.swift in Sources */,
 				B51235CA1E7F201700DB0254 /* SweetAlert.swift in Sources */,
 				B51235C81E7F19FB00DB0254 /* SwiftSpinner.swift in Sources */,
 				B51235CC1E7F219D00DB0254 /* KeychainItemAccessibility.swift in Sources */,
-				B51235C01E7F022200DB0254 /* Pay.swift in Sources */,
+				B51235C01E7F022200DB0254 /* PayViewController.swift in Sources */,
 				B51235C21E7F09F900DB0254 /* ActivateViewController.swift in Sources */,
 				B51235901E7E546300DB0254 /* AppDelegate.swift in Sources */,
 				B51235CE1E7F224200DB0254 /* KeychainWrapper.swift in Sources */,
@@ -342,7 +383,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				B51235941E7E546300DB0254 /* Base */,
-				B51235C31E7F105600DB0254 /* ar */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -351,7 +391,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				B51235991E7E546300DB0254 /* Base */,
-				B51235C41E7F105600DB0254 /* ar */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -458,6 +497,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Icash2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ly.Umbrella.Icash2;
@@ -471,6 +514,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Icash2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ly.Umbrella.Icash2;

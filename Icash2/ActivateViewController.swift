@@ -53,14 +53,14 @@ class ActivateViewController : UIViewController {
     
     @IBAction func confirm(_ sender: Any) {
         CardNumber = cardNumberTextField.text!
-        if swi.isOn{
+        if !swi.isOn{
             acticode = actiCodeTextField.text!
             phone = phoneTextField.text!
             
             if (CardNumber == "" || acticode == "") {
                 _=SweetAlert().showAlert("الرجاء ادخال رقم البطاقة و رقم التفعيل ", subTitle: " " , style: AlertStyle.error)
                 
-            }else if phone.characters.count != 11 {
+            }else if phone.characters.count != 12 {
                 _=SweetAlert().showAlert("الرجاء ادخال رقم الهاتف بصيغة  ", subTitle: "2189XXXXXXXX " , style: AlertStyle.error)
             }else {
                 var code = CardNumber + phone
@@ -90,7 +90,8 @@ class ActivateViewController : UIViewController {
     
     func ActivateReq ( CardNo:  String, tel: String, ActivationCode: String, ConfirmationCode: String){
         SwiftSpinner.show(" يتم الاتصال بالخادم ...")
-        let requestedurl : URL = URL (string: "http://icashapi.azurewebsites.net/api/ActivateReq/"+"/"+CardNo+"/"+tel+"/"+ActivationCode+"/"+ConfirmationCode)!
+        let requestedurl : URL = URL (string: "https://icashapi.azurewebsites.net/api/ActivateReq/"+CardNo+"/"+tel+"/"+ActivationCode+"/"+ConfirmationCode)!
+        print(requestedurl)
         let urlRequest : URLRequest = URLRequest(url: requestedurl)
         let session = URLSession.shared
         
@@ -156,10 +157,10 @@ class ActivateViewController : UIViewController {
                         
                     case 0..<1000000 :
                         // save finalresult which is InstallationID
-                        if KeychainWrapper.defaultKeychainWrapper.set(dataString!, forKey: "installID")  {
+                        if KeychainWrapper.defaultKeychainWrapper.set(dataString!, forKey: "installID") && KeychainWrapper.defaultKeychainWrapper.set(CardNo, forKey: "CardNo") {
                             self.installid = dataString!
                             // TODO : Show an alert to user to wait for the SMS
-                            //print("All good,message will be sent to you soon")
+                            // print("All good,message will be sent to you soon")
                             // to show the result
                             OperationQueue.main.addOperation {
                                 _ = SweetAlert().showAlert("نجحت العملية",subTitle: "ستصلك رسالة برقم التأكيد قريبا ", style: AlertStyle.success)
@@ -186,7 +187,7 @@ class ActivateViewController : UIViewController {
     
     func ActivateInstallationReq(CardNo: String) {
         SwiftSpinner.show("Connecting to server...")
-        let requestURL : URL = URL(string: "http://icashapi.azurewebsites.net/api/ActivateInstallationReq/"+CardNo)!
+        let requestURL : URL = URL(string: "https://icashapi.azurewebsites.net/api/ActivateInstallationReq/"+CardNo)!
         let urlRequest : URLRequest = URLRequest(url: requestURL)
         let session = URLSession.shared
         
@@ -198,13 +199,17 @@ class ActivateViewController : UIViewController {
                 let result = Int(dataString!)
                 if (result! > 0)
                 {
-                    self.installid = dataString!
-                    if KeychainWrapper.defaultKeychainWrapper.set(self.installid, forKey: "installID"){
+                    if KeychainWrapper.defaultKeychainWrapper.set(dataString!, forKey: "installID") && KeychainWrapper.defaultKeychainWrapper.set(CardNo, forKey: "CardNo") {
+                        self.installid = dataString!
+                        // TODO : Show an alert to user to wait for the SMS
+                        //print("All good,message will be sent to you soon")
+                        // to show the result
                         OperationQueue.main.addOperation {
-                             _ = SweetAlert().showAlert("نجحت العملية",subTitle: "ستصلك رسالة برقم التأكيد قريبا ", style: AlertStyle.success)
+                            _ = SweetAlert().showAlert("نجحت العملية",subTitle: "ستصلك رسالة برقم التأكيد قريبا ", style: AlertStyle.success)
                             self.performSegue(withIdentifier: "goToConfirm", sender: self)
                         }
                     }
+
                 } else {
                     OperationQueue.main.addOperation {
                         _ = SweetAlert().showAlert("خطأ", subTitle: "نأمل المحاولة مجددا ", style: AlertStyle.error)

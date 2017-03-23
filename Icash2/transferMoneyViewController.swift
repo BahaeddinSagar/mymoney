@@ -10,6 +10,13 @@ import UIKit
 
 class transferMoney : UIViewController {
     
+    
+    @IBOutlet weak var RxCardNumberTextField: UITextField!
+    @IBOutlet weak var AmountTextDield: UITextField!
+    @IBOutlet weak var PINcode: UITextField!
+    
+    var card = Card()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
      
@@ -26,6 +33,76 @@ class transferMoney : UIViewController {
 
     
     @IBAction func transfer(_ sender: UIButton) {
+        let RcardNumber = RxCardNumberTextField.text!
+        let cardNumber = card.CardNo!
+        let amount = AmountTextDield.text!
+        let PIN = PINcode.text!
+        let vouchercounter = card.voucherCounter
+        let VC = String(describing: vouchercounter)
+        
+        
+        let HPINcode = Card.makeHash(str: cardNumber+PIN, level: 7)
+        let ConfirmationCode = Card.makeHash(str: card.installID! + HPINcode + VC + amount + RcardNumber , level: 7)
+        let SenderConfimrationCode = Card.makeHash(str: card.installHashKey! + RcardNumber + ConfirmationCode + amount, level: 7)
+        
+        sendmoney(InstallationID: card.installID!, RcardNumber: RcardNumber, Amount: amount, Vouchercounter: VC, ConfirmationCode: ConfirmationCode, SenderConfirmationCode: SenderConfimrationCode)
+        
+        
+        
     }
+    
+    
+    
+    func sendmoney( InstallationID : String, RcardNumber:String, Amount:String,Vouchercounter: String , ConfirmationCode: String, SenderConfirmationCode: String){
+        
+        SwiftSpinner.show(" يتم الاتصال بالخادم ...")
+        
+        let requestURL: URL = URL(string: "http://icashapi.azurewebsites.net/api/SendMoney/\(InstallationID)/\(RcardNumber)/\(Amount)/\(Vouchercounter)/\(ConfirmationCode)/\(SenderConfirmationCode)")!
+        print(requestURL)
+        let urlRequest: URLRequest = URLRequest(url: requestURL)
+        let session = URLSession.shared
+        
+        let task = session.dataTask(with: urlRequest) {
+            (data,response,error) in
+            SwiftSpinner.hide()
+            
+            if response != nil {
+                let httpResponse = response as! HTTPURLResponse
+                let statusCode = httpResponse.statusCode
+                if statusCode == 200 {
+                    
+                    let dataString = String(data: data!, encoding: .utf8)
+                    let result = Int (dataString!)
+                    self.card.saveVC(VC: Vouchercounter)
+                    
+                    if (result! > 0){
+                        OperationQueue.main.addOperation {
+                            
+                            _ =  SweetAlert().showAlert("تم التحويل ")
+                        }
+                    }
+                    else {
+                        OperationQueue.main.addOperation {
+                            _ = SweetAlert().showAlert("خطأ", subTitle: "الرجاء التأكد من البيانات", style: AlertStyle.error)
+                        }
+
+                    }
+                    
+                    
+                    
+                    
+                }
+            }
+            else{
+                OperationQueue.main.addOperation {
+                    _ = SweetAlert().showAlert("فشلت العملية",subTitle: "نأمل التحقق من الوصول للانترنت ", style: AlertStyle.error)
+                }
+            }
+        }
+        task.resume()
+        
+        
+    }
+    
     
 }
