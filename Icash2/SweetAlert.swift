@@ -12,7 +12,7 @@ import QuartzCore
 
 public enum AlertStyle {
     case success,error,warning,none
-    case customImag(imageFile:String)
+    case customImag(imageFile:String), customImage(image:UIImage)
 }
 
 open class SweetAlert: UIViewController {
@@ -257,6 +257,15 @@ open class SweetAlert: UIViewController {
                 
             case .warning:
                 self.animatedView = InfoAnimatedView()
+                
+                ////////////////////// Edited By myself
+                
+            case let .customImage(image):
+                self.imageView = UIImageView(image: image)
+                
+                
+                
+                //////////////////////
                 
             case let .customImag(imageFile):
                 if let image = UIImage(named: imageFile) {

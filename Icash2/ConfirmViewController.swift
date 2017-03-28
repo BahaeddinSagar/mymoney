@@ -27,6 +27,7 @@ class ConfirmViewController : UIViewController {
     }
     
     @IBAction func confirm(_ sender: UIButton) {
+        self.view.endEditing(true)
         let confCode = confCodeTextField.text!
         if (confCode != "") {
             let CardNumber = KeychainWrapper.defaultKeychainWrapper.string(forKey: "CardNo")!
@@ -42,7 +43,10 @@ class ConfirmViewController : UIViewController {
     
     func ActivateInstallation(installID: String, CardNumber: String, SenderConfirmationCode:String, installationHkey : String) {
         SwiftSpinner.show(" يتم الاتصال بالخادم ...")
-        let requestURL : URL = URL(string: "https://icashapi.azurewebsites.net/api/ActivateInstallation/"+installID+"/"+CardNumber+"/"+SenderConfirmationCode)!
+        //let requestURL : URL = URL(string: "https://icashapi.azurewebsites.net/api/ActivateInstallation/"+installID+"/"+CardNumber+"/"+SenderConfirmationCode)!
+        let requestURL : URL = URL(string: "https://icashapi.azurewebsites.net/api/ConfirmInstallation/"+installID+"/"+CardNumber+"/"+SenderConfirmationCode)!
+        
+        
         let urlRequest: URLRequest = URLRequest(url: requestURL)
         let session = URLSession.shared
         let task = session.dataTask(with: urlRequest){
@@ -53,9 +57,11 @@ class ConfirmViewController : UIViewController {
                 let statusCode = httpResponse.statusCode
                 if (statusCode == 200) {
                     let dataString = String(data: data!, encoding: .utf8)
-                    if (dataString! == "true"){
+                    let result =  Int(dataString!)!
+                    //if (dataString! == "true"){
+                    if result > 0 {
                         OperationQueue.main.addOperation {
-                            if (KeychainWrapper.defaultKeychainWrapper.set(installationHkey, forKey: "installHashKey")) && (KeychainWrapper.defaultKeychainWrapper.set(8, forKey:"voucherCounter")){
+                            if (KeychainWrapper.defaultKeychainWrapper.set(installationHkey, forKey: "installHashKey")) && (KeychainWrapper.defaultKeychainWrapper.set(result+1, forKey:"voucherCounter")){
                                 _ = SweetAlert().showAlert("نجحت العملية", subTitle: "تم التفعيل بنجاح", style: AlertStyle.success , buttonTitle: " حسنا"){ (isButton) -> Void in
 
                                     self.performSegue(withIdentifier: "showMainPage", sender: self)

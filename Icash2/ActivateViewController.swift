@@ -52,6 +52,7 @@ class ActivateViewController : UIViewController {
    
     
     @IBAction func confirm(_ sender: Any) {
+        self.view.endEditing(true)
         CardNumber = cardNumberTextField.text!
         if !swi.isOn{
             acticode = actiCodeTextField.text!
@@ -186,7 +187,7 @@ class ActivateViewController : UIViewController {
     
     
     func ActivateInstallationReq(CardNo: String) {
-        SwiftSpinner.show("Connecting to server...")
+        SwiftSpinner.show(" يتم الاتصال بالخادم ...")
         let requestURL : URL = URL(string: "https://icashapi.azurewebsites.net/api/ActivateInstallationReq/"+CardNo)!
         let urlRequest : URLRequest = URLRequest(url: requestURL)
         let session = URLSession.shared

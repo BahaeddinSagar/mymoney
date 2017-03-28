@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		B51235901E7E546300DB0254 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B512358F1E7E546300DB0254 /* AppDelegate.swift */; };
 		B51235921E7E546300DB0254 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51235911E7E546300DB0254 /* ViewController.swift */; };
-		B51235951E7E546300DB0254 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B51235931E7E546300DB0254 /* Main.storyboard */; };
 		B51235971E7E546300DB0254 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B51235961E7E546300DB0254 /* Assets.xcassets */; };
 		B512359A1E7E546300DB0254 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B51235981E7E546300DB0254 /* LaunchScreen.storyboard */; };
 		B51235A51E7E546300DB0254 /* Icash2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51235A41E7E546300DB0254 /* Icash2Tests.swift */; };
@@ -23,8 +22,16 @@
 		B51235CC1E7F219D00DB0254 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51235CB1E7F219D00DB0254 /* KeychainItemAccessibility.swift */; };
 		B51235CE1E7F224200DB0254 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51235CD1E7F224200DB0254 /* KeychainWrapper.swift */; };
 		B53988AB1E82F47C00A3E5F0 /* GenerateInvoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53988AA1E82F47C00A3E5F0 /* GenerateInvoiceViewController.swift */; };
-		B5F476131E7FB25600BBF1F3 /* CommonCrypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F476121E7FB25600BBF1F3 /* CommonCrypto.framework */; };
-		B5F4761A1E7FB4BC00BBF1F3 /* Crypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F476141E7FB25700BBF1F3 /* Crypto.framework */; };
+		B58413AB1E843B9A00169E9B /* QRCodeReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B53988AC1E83BBD200A3E5F0 /* QRCodeReader.framework */; };
+		B58413AC1E843B9A00169E9B /* QRCodeReader.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B53988AC1E83BBD200A3E5F0 /* QRCodeReader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B58413AD1E843B9A00169E9B /* Crypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F476141E7FB25700BBF1F3 /* Crypto.framework */; };
+		B58413AE1E843B9A00169E9B /* Crypto.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B5F476141E7FB25700BBF1F3 /* Crypto.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B58413AF1E843B9A00169E9B /* CommonCrypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F476121E7FB25600BBF1F3 /* CommonCrypto.framework */; };
+		B58413B01E843B9A00169E9B /* CommonCrypto.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B5F476121E7FB25600BBF1F3 /* CommonCrypto.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B58413B71E84637A00169E9B /* QRCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B58413B61E84637A00169E9B /* QRCode.framework */; };
+		B58413B81E84637A00169E9B /* QRCode.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B58413B61E84637A00169E9B /* QRCode.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B58413BB1E846E4F00169E9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B58413B91E846E4F00169E9B /* Main.storyboard */; };
+		B58413BF1E84731600169E9B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58413BE1E84731600169E9B /* SettingViewController.swift */; };
 		B5F4761D1E7FB56700BBF1F3 /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F4761C1E7FB56700BBF1F3 /* ConfirmViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,11 +52,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		B58413B11E843B9A00169E9B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B58413AC1E843B9A00169E9B /* QRCodeReader.framework in Embed Frameworks */,
+				B58413B01E843B9A00169E9B /* CommonCrypto.framework in Embed Frameworks */,
+				B58413B81E84637A00169E9B /* QRCode.framework in Embed Frameworks */,
+				B58413AE1E843B9A00169E9B /* Crypto.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		B512358C1E7E546300DB0254 /* Icash2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Icash2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B512358F1E7E546300DB0254 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B51235911E7E546300DB0254 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B51235941E7E546300DB0254 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B51235961E7E546300DB0254 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B51235991E7E546300DB0254 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B512359B1E7E546300DB0254 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -68,6 +91,10 @@
 		B51235CB1E7F219D00DB0254 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
 		B51235CD1E7F224200DB0254 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
 		B53988AA1E82F47C00A3E5F0 /* GenerateInvoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateInvoiceViewController.swift; sourceTree = "<group>"; };
+		B53988AC1E83BBD200A3E5F0 /* QRCodeReader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QRCodeReader.framework; path = Carthage/Build/iOS/QRCodeReader.framework; sourceTree = "<group>"; };
+		B58413B61E84637A00169E9B /* QRCode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QRCode.framework; path = Carthage/Build/iOS/QRCode.framework; sourceTree = "<group>"; };
+		B58413BA1E846E4F00169E9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B58413BE1E84731600169E9B /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		B5F476121E7FB25600BBF1F3 /* CommonCrypto.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CommonCrypto.framework; path = Carthage/Build/iOS/CommonCrypto.framework; sourceTree = "<group>"; };
 		B5F476141E7FB25700BBF1F3 /* Crypto.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crypto.framework; path = Carthage/Build/iOS/Crypto.framework; sourceTree = "<group>"; };
 		B5F4761C1E7FB56700BBF1F3 /* ConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
@@ -78,8 +105,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5F476131E7FB25600BBF1F3 /* CommonCrypto.framework in Frameworks */,
-				B5F4761A1E7FB4BC00BBF1F3 /* Crypto.framework in Frameworks */,
+				B58413AB1E843B9A00169E9B /* QRCodeReader.framework in Frameworks */,
+				B58413AF1E843B9A00169E9B /* CommonCrypto.framework in Frameworks */,
+				B58413B71E84637A00169E9B /* QRCode.framework in Frameworks */,
+				B58413AD1E843B9A00169E9B /* Crypto.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,7 +156,7 @@
 				B51235CF1E7F225700DB0254 /* SuplimentaryLibraries */,
 				B512358F1E7E546300DB0254 /* AppDelegate.swift */,
 				B51235911E7E546300DB0254 /* ViewController.swift */,
-				B51235931E7E546300DB0254 /* Main.storyboard */,
+				B58413B91E846E4F00169E9B /* Main.storyboard */,
 				B51235961E7E546300DB0254 /* Assets.xcassets */,
 				B51235981E7E546300DB0254 /* LaunchScreen.storyboard */,
 				B512359B1E7E546300DB0254 /* Info.plist */,
@@ -135,8 +164,8 @@
 				B51235BF1E7F022200DB0254 /* PayViewController.swift */,
 				B51235C11E7F09F900DB0254 /* ActivateViewController.swift */,
 				B5F4761C1E7FB56700BBF1F3 /* ConfirmViewController.swift */,
-				B51235C51E7F19AB00DB0254 /* CardInfo.swift */,
 				B53988AA1E82F47C00A3E5F0 /* GenerateInvoiceViewController.swift */,
+				B58413BE1E84731600169E9B /* SettingViewController.swift */,
 			);
 			path = Icash2;
 			sourceTree = "<group>";
@@ -162,6 +191,7 @@
 		B51235CF1E7F225700DB0254 /* SuplimentaryLibraries */ = {
 			isa = PBXGroup;
 			children = (
+				B51235C51E7F19AB00DB0254 /* CardInfo.swift */,
 				B51235C71E7F19FB00DB0254 /* SwiftSpinner.swift */,
 				B51235C91E7F201700DB0254 /* SweetAlert.swift */,
 				B51235CB1E7F219D00DB0254 /* KeychainItemAccessibility.swift */,
@@ -173,6 +203,8 @@
 		B5F476111E7FB25600BBF1F3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B58413B61E84637A00169E9B /* QRCode.framework */,
+				B53988AC1E83BBD200A3E5F0 /* QRCodeReader.framework */,
 				B5F476141E7FB25700BBF1F3 /* Crypto.framework */,
 				B5F476121E7FB25600BBF1F3 /* CommonCrypto.framework */,
 			);
@@ -190,6 +222,7 @@
 				B51235891E7E546300DB0254 /* Frameworks */,
 				B512358A1E7E546300DB0254 /* Resources */,
 				B5F476161E7FB27500BBF1F3 /* ShellScript */,
+				B58413B11E843B9A00169E9B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -248,6 +281,7 @@
 				TargetAttributes = {
 					B512358B1E7E546300DB0254 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = TMCX9F77V4;
 						ProvisioningStyle = Automatic;
 					};
 					B512359F1E7E546300DB0254 = {
@@ -288,8 +322,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B512359A1E7E546300DB0254 /* LaunchScreen.storyboard in Resources */,
+				B58413BB1E846E4F00169E9B /* Main.storyboard in Resources */,
 				B51235971E7E546300DB0254 /* Assets.xcassets in Resources */,
-				B51235951E7E546300DB0254 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +370,7 @@
 				B53988AB1E82F47C00A3E5F0 /* GenerateInvoiceViewController.swift in Sources */,
 				B51235BE1E7EFC8700DB0254 /* transferMoneyViewController.swift in Sources */,
 				B51235C61E7F19AB00DB0254 /* CardInfo.swift in Sources */,
+				B58413BF1E84731600169E9B /* SettingViewController.swift in Sources */,
 				B51235921E7E546300DB0254 /* ViewController.swift in Sources */,
 				B51235CA1E7F201700DB0254 /* SweetAlert.swift in Sources */,
 				B51235C81E7F19FB00DB0254 /* SwiftSpinner.swift in Sources */,
@@ -379,20 +414,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B51235931E7E546300DB0254 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B51235941E7E546300DB0254 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B51235981E7E546300DB0254 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B51235991E7E546300DB0254 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B58413B91E846E4F00169E9B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B58413BA1E846E4F00169E9B /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -486,6 +521,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -497,6 +533,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TMCX9F77V4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -514,6 +551,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TMCX9F77V4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

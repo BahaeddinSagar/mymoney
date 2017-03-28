@@ -18,12 +18,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        if KeychainWrapper.defaultKeychainWrapper.string(forKey: "installHashKey") == nil  {
-            performSegue(withIdentifier: "showActivatePage", sender: self)
-        } else {
-            cardNumberLabel.text = KeychainWrapper.defaultKeychainWrapper.string(forKey: "CardNo")
-        }
-        
+                
     }
     
     override func didReceiveMemoryWarning() {
@@ -31,9 +26,21 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if KeychainWrapper.defaultKeychainWrapper.string(forKey: "installHashKey") == nil  {
+            performSegue(withIdentifier: "showActivatePage", sender: self)
+        } else {
+            cardNumberLabel.text = KeychainWrapper.defaultKeychainWrapper.string(forKey: "CardNo")
+        }
+        
+
+    
+    }
     
     
     @IBAction func checkBalance(_ sender: UIButton) {
+        
         //1. Create the alert controller.
         let alert = UIAlertController(title: "تفقد الرصيد", message: "الرجاء ادخال رقمك السري ", preferredStyle: .alert)
         
@@ -46,6 +53,7 @@ class ViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
             let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
             /////////////////////////////////My code is here
+            self.resignFirstResponder()
             let PINcode = textField!.text
             if PINcode == nil || PINcode == ""
             {
@@ -55,8 +63,9 @@ class ViewController: UIViewController {
                
                 
                 let card = Card()
-               
-                let voucherCounterString = String(describing: card.voucherCounter)
+                
+                let voucherCounterString = String(describing: card.voucherCounter+1)
+                print(voucherCounterString)
                 let HPINcode =  Card.makeHash(str: card.CardNo!+PINcode!, level: 7)
                 let ConfirmationCode = Card.makeHash(str: card.installID! + HPINcode + voucherCounterString , level: 7)
                 let SenderConfirmationCode = Card.makeHash(str: card.installHashKey!+voucherCounterString+ConfirmationCode, level: 7)

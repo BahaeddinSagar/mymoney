@@ -33,19 +33,22 @@ class transferMoney : UIViewController {
 
     
     @IBAction func transfer(_ sender: UIButton) {
+        self.view.endEditing(true)
         let RcardNumber = RxCardNumberTextField.text!
         let cardNumber = card.CardNo!
-        let amount = AmountTextDield.text!
+        let amount = Card.changeToFloat(Float(AmountTextDield.text!)!)
+        //let amount = AmountTextDield.text!
         let PIN = PINcode.text!
-        let vouchercounter = card.voucherCounter
+        let vouchercounter = card.voucherCounter+1
         let VC = String(describing: vouchercounter)
-        
+        let installID = card.installID!
+        let installHashKey = card.installHashKey!
         
         let HPINcode = Card.makeHash(str: cardNumber+PIN, level: 7)
-        let ConfirmationCode = Card.makeHash(str: card.installID! + HPINcode + VC + amount + RcardNumber , level: 7)
-        let SenderConfimrationCode = Card.makeHash(str: card.installHashKey! + RcardNumber + ConfirmationCode + amount, level: 7)
+        let ConfirmationCode = Card.makeHash(str: installID + HPINcode + VC + amount + RcardNumber , level: 7)
+        let SenderConfimrationCode = Card.makeHash(str: installHashKey + RcardNumber + ConfirmationCode + amount, level: 7)
         
-        sendmoney(InstallationID: card.installID!, RcardNumber: RcardNumber, Amount: amount, Vouchercounter: VC, ConfirmationCode: ConfirmationCode, SenderConfirmationCode: SenderConfimrationCode)
+        sendmoney(InstallationID: installID, RcardNumber: RcardNumber, Amount: amount, Vouchercounter: VC, ConfirmationCode: ConfirmationCode, SenderConfirmationCode: SenderConfimrationCode)
         
         
         
@@ -57,7 +60,7 @@ class transferMoney : UIViewController {
         
         SwiftSpinner.show(" يتم الاتصال بالخادم ...")
         
-        let requestURL: URL = URL(string: "http://icashapi.azurewebsites.net/api/SendMoney/\(InstallationID)/\(RcardNumber)/\(Amount)/\(Vouchercounter)/\(ConfirmationCode)/\(SenderConfirmationCode)")!
+        let requestURL: URL = URL(string: "https://icashapi.azurewebsites.net/api/SendMoney/"+InstallationID+"/"+RcardNumber+"/"+Amount+"/"+Vouchercounter+"/"+ConfirmationCode+"/"+SenderConfirmationCode)!
         print(requestURL)
         let urlRequest: URLRequest = URLRequest(url: requestURL)
         let session = URLSession.shared
@@ -84,6 +87,7 @@ class transferMoney : UIViewController {
                     else {
                         OperationQueue.main.addOperation {
                             _ = SweetAlert().showAlert("خطأ", subTitle: "الرجاء التأكد من البيانات", style: AlertStyle.error)
+                            print(result!)
                         }
 
                     }

@@ -1,0 +1,28 @@
+{
+  "commitish" : "v0.5.1",
+  "iOS" : [
+    {
+      "hash" : "08fbeced97e5d2f2e2dfdee9011f56d96ce805fd01ab43145ecf6aa3e2143bd3",
+      "name" : "Crypto"
+    }
+  ],
+  "xcodeVersion" : "Xcode 8.2.1\nBuild version 8C1002",
+  "watchOS" : [
+    {
+      "hash" : "a0bcdb0e5bba68b04027a7666dc3ea78188ed383ecb88c1124d49009ba75fc0e",
+      "name" : "Crypto"
+    }
+  ],
+  "tvOS" : [
+    {
+      "hash" : "58ed3d9be9d347e5c16b7c34211303b44552616dc82ecceb582c59f9abe34e8c",
+      "name" : "Crypto"
+    }
+  ],
+  "Mac" : [
+    {
+      "hash" : "5f1051ce7fd01f3882bddd292ef7ab93f130faa92ec76b36478234103b5cc04e",
+      "name" : "Crypto"
+    }
+  ]
+}

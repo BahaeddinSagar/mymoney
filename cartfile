@@ -1,0 +1,4 @@
+github "soffes/Crypto" 
+github "yannickl/QRCodeReader.swift" >= 7.3.0
+github "aschuch/QRCode"
+
