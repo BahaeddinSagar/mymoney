@@ -109,6 +109,14 @@ class ActivateViewController : UIViewController {
                     
                     
                     switch(result!){
+                    case -14 :
+                        OperationQueue.main.addOperation {
+                            _ = SweetAlert().showAlert("خطأ", subTitle: "البطاقة مفعلة مسبقا برقم مختلف", style: AlertStyle.error)
+                        }
+                    case -16 :
+                        OperationQueue.main.addOperation {
+                            _ = SweetAlert().showAlert("خطأ", subTitle: "البطاقة مفعلة مسبقا برقم مختلف", style: AlertStyle.error)
+                        }
                     case -8 :
                         //print("issued but not distributed yet")
                         OperationQueue.main.addOperation {
@@ -156,7 +164,7 @@ class ActivateViewController : UIViewController {
                             _ = SweetAlert().showAlert("حطأ", subTitle: "illigale request", style: AlertStyle.error)
                         }
                         
-                    case 0..<1000000 :
+                    case 0..<10000000 :
                         // save finalresult which is InstallationID
                         if KeychainWrapper.defaultKeychainWrapper.set(dataString!, forKey: "installID") && KeychainWrapper.defaultKeychainWrapper.set(CardNo, forKey: "CardNo") {
                             self.installid = dataString!

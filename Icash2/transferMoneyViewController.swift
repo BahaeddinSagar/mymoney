@@ -39,7 +39,7 @@ class transferMoney : UIViewController {
         let amount = Card.changeToFloat(Float(AmountTextDield.text!)!)
         //let amount = AmountTextDield.text!
         let PIN = PINcode.text!
-        let vouchercounter = card.voucherCounter+1
+        let vouchercounter = card.voucherCounter+2
         let VC = String(describing: vouchercounter)
         let installID = card.installID!
         let installHashKey = card.installHashKey!

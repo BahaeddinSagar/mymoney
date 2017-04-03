@@ -7,12 +7,12 @@
 //
 
 import UIKit
+import QRCode
 
 class ViewController: UIViewController {
     
-    
-    
-    @IBOutlet weak var cardNumberLabel: UILabel!
+
+    @IBOutlet weak var cardNumberLabel: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,11 +31,9 @@ class ViewController: UIViewController {
         if KeychainWrapper.defaultKeychainWrapper.string(forKey: "installHashKey") == nil  {
             performSegue(withIdentifier: "showActivatePage", sender: self)
         } else {
-            cardNumberLabel.text = KeychainWrapper.defaultKeychainWrapper.string(forKey: "CardNo")
+            cardNumberLabel.setTitle(KeychainWrapper.defaultKeychainWrapper.string(forKey: "CardNo"), for: .normal)
         }
-        
 
-    
     }
     
     
@@ -47,11 +45,16 @@ class ViewController: UIViewController {
         //2. Add the text field. You can configure it however you need.
         alert.addTextField { (textField) in
             textField.text = ""
+            textField.keyboardType = UIKeyboardType.numberPad
+            textField.isSecureTextEntry = true
         }
         
         // 3. Grab the value from the text field, and print it when the user clicks OK.
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { [weak alert] (_) in
+            }))
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
             let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
+           
             /////////////////////////////////My code is here
             self.resignFirstResponder()
             let PINcode = textField!.text
@@ -64,7 +67,7 @@ class ViewController: UIViewController {
                 
                 let card = Card()
                 
-                let voucherCounterString = String(describing: card.voucherCounter+1)
+                let voucherCounterString = String(describing: card.voucherCounter+2)
                 print(voucherCounterString)
                 let HPINcode =  Card.makeHash(str: card.CardNo!+PINcode!, level: 7)
                 let ConfirmationCode = Card.makeHash(str: card.installID! + HPINcode + voucherCounterString , level: 7)
@@ -90,6 +93,7 @@ class ViewController: UIViewController {
     func checkBalanceReq(installationID : String , VoucherCounter : String , ConfirmationCode :String , SenderConfirmationCode : String) {
         SwiftSpinner.show(" يتم الاتصال بالخادم ...")
         let requestURL : URL = URL(string: "https://icashapi.azurewebsites.net/api/ChechBalance/"+installationID+"/"+VoucherCounter+"/"+ConfirmationCode+"/"+SenderConfirmationCode)!
+        print(requestURL)
         let urlRequest: URLRequest = URLRequest(url: requestURL)
         let session = URLSession.shared
         let task = session.dataTask(with: urlRequest){
@@ -123,13 +127,22 @@ class ViewController: UIViewController {
                     _ = SweetAlert().showAlert("فشلت العملية",subTitle: "نأمل التحقق من الوصول للانترنت ", style: AlertStyle.error)
                 }
             }
-            
-            
         }
         task.resume()
     }
     
     
+    @IBAction func showCardNumber(_ sender: Any) {
+        /////// create QRCODE image
+        var qrCode = QRCode(KeychainWrapper.defaultKeychainWrapper.string(forKey: "CardNo")!)!
+        //qrCode.size = self.imageViewLarge.bounds.size
+        qrCode.errorCorrection = .High
+        
+        _ = SweetAlert().showAlert(KeychainWrapper.defaultKeychainWrapper.string(forKey: "CardNo")!, subTitle: ""  , style: AlertStyle.customImage(image: qrCode.image!))
+
+        
+        
+    }
     
     
     

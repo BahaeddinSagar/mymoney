@@ -23,37 +23,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lxb-NW-zex">
-                                <rect key="frame" x="20" y="131" width="374" height="30"/>
+                                <rect key="frame" x="20" y="175" width="374" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="2189XXXXXXXX" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qqw-nw-ZOa">
-                                <rect key="frame" x="20" y="206" width="374" height="30"/>
+                                <rect key="frame" x="20" y="250" width="374" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رقم البطاقة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCa-hy-mDJ">
-                                <rect key="frame" x="330" y="28" width="64" height="21"/>
+                                <rect key="frame" x="330" y="72" width="64" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رمز التفعيل" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8DH-bk-Nul">
-                                <rect key="frame" x="329" y="102" width="65" height="21"/>
+                                <rect key="frame" x="329" y="146" width="65" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رقم الهاتف" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccD-iU-L2i">
-                                <rect key="frame" x="331" y="177" width="63" height="21"/>
+                                <rect key="frame" x="331" y="221" width="63" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pzR-Ah-McF">
-                                <rect key="frame" x="113" y="254" width="189" height="30"/>
+                                <rect key="frame" x="113" y="298" width="189" height="30"/>
                                 <color key="backgroundColor" red="0.10661477599999999" green="0.23048546910000001" blue="0.45543485880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="تأكيد">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -63,13 +63,13 @@
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qto-88-023">
-                                <rect key="frame" x="143" y="57" width="51" height="31"/>
+                                <rect key="frame" x="143" y="101" width="51" height="31"/>
                                 <connections>
                                     <action selector="switchClicked:" destination="8sZ-Y1-WUg" eventType="valueChanged" id="Bd5-Z2-rtP"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="بطاقة مفعلة مسبقا" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Enm-PO-jJj">
-                                <rect key="frame" x="20" y="62" width="115" height="21"/>
+                                <rect key="frame" x="20" y="106" width="115" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="115" id="mZs-Dd-lav"/>
                                 </constraints>
@@ -78,7 +78,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pOs-V3-UHt">
-                                <rect key="frame" x="204" y="57" width="190" height="30"/>
+                                <rect key="frame" x="204" y="101" width="190" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -123,174 +123,6 @@
             </objects>
             <point key="canvasLocation" x="-100.00000000000001" y="-607.33695652173913"/>
         </scene>
-        <!--iCash-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Icash2" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="10N-Gp-gVc">
-                                <rect key="frame" x="20" y="20" width="374" height="706"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xua-kN-6Cp">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="167"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="pdh-XR-YAM">
-                                        <rect key="frame" x="0.0" y="96" width="374" height="167"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JEM-WT-sb4">
-                                                <rect key="frame" x="0.0" y="0.0" width="187" height="167"/>
-                                                <state key="normal" image="Transfer"/>
-                                                <connections>
-                                                    <segue destination="JvN-Q1-9uX" kind="show" identifier="transfer" id="sHm-Q0-Mln"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1QW-8Q-5K1">
-                                                <rect key="frame" x="187" y="0.0" width="187" height="167"/>
-                                                <state key="normal" image="search"/>
-                                                <connections>
-                                                    <action selector="checkBalance:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rOi-yG-k0N"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1bb-mE-Xx3">
-                                        <rect key="frame" x="0.0" y="179.66666666666669" width="374" height="167.00000000000006"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تحويل" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lxq-Bl-07n">
-                                                <rect key="frame" x="0.0" y="0.0" width="187" height="167.00000000000003"/>
-                                                <accessibility key="accessibilityConfiguration">
-                                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
-                                                </accessibility>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الرصيد" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhn-er-921">
-                                                <rect key="frame" x="187" y="0.0" width="187" height="167.00000000000003"/>
-                                                <accessibility key="accessibilityConfiguration">
-                                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
-                                                </accessibility>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="o1V-9w-s4e">
-                                        <rect key="frame" x="0.0" y="275.66666666666669" width="374" height="167"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Urx-ZE-CRO">
-                                                <rect key="frame" x="0.0" y="0.0" width="187" height="167"/>
-                                                <accessibility key="accessibilityConfiguration">
-                                                    <accessibilityTraits key="traits" button="YES" notEnabled="YES"/>
-                                                </accessibility>
-                                                <state key="normal" image="download"/>
-                                                <connections>
-                                                    <segue destination="pSc-GH-PuE" kind="show" id="SXt-pc-YkX"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DwC-Qj-Xw5">
-                                                <rect key="frame" x="187" y="0.0" width="187" height="167"/>
-                                                <state key="normal" image="money"/>
-                                                <connections>
-                                                    <segue destination="KUe-44-45F" kind="show" id="kGr-B5-q7h"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="rZ5-Hr-xLA">
-                                        <rect key="frame" x="0.0" y="359.33333333333337" width="374" height="167.00000000000011"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="إستلام" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ma-mq-6VV">
-                                                <rect key="frame" x="0.0" y="0.0" width="187" height="167.00000000000006"/>
-                                                <accessibility key="accessibilityConfiguration">
-                                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
-                                                </accessibility>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="دفع" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GjD-ci-8q8">
-                                                <rect key="frame" x="187" y="0.0" width="187" height="167.00000000000006"/>
-                                                <accessibility key="accessibilityConfiguration">
-                                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
-                                                </accessibility>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dI7-Qe-TrU">
-                                        <rect key="frame" x="0.0" y="455.33333333333337" width="374" height="167.00000000000011"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oAj-zd-uzm">
-                                                <rect key="frame" x="0.0" y="0.0" width="187" height="167.00000000000006"/>
-                                                <state key="normal" image="search"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTD-sg-hYo">
-                                                <rect key="frame" x="187" y="0.0" width="187" height="167.00000000000006"/>
-                                                <state key="normal" image="settings"/>
-                                                <connections>
-                                                    <segue destination="NtQ-J7-lds" kind="show" id="XIi-m3-sYX"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="SqS-LE-biC">
-                                        <rect key="frame" x="0.0" y="539" width="374" height="167"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="كشف حساب" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7V-Py-c70">
-                                                <rect key="frame" x="0.0" y="0.0" width="187" height="167"/>
-                                                <accessibility key="accessibilityConfiguration">
-                                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
-                                                </accessibility>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="إعدادات" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Chm-Du-yJP">
-                                                <rect key="frame" x="187" y="0.0" width="187" height="167"/>
-                                                <accessibility key="accessibilityConfiguration">
-                                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
-                                                </accessibility>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.10661477595567703" green="0.2304854691028595" blue="0.45543485879898071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="10N-Gp-gVc" secondAttribute="bottom" constant="10" id="3MP-Kl-jk7"/>
-                            <constraint firstItem="10N-Gp-gVc" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Dcv-75-0MA"/>
-                            <constraint firstItem="10N-Gp-gVc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="a3Y-Y5-4Qb"/>
-                            <constraint firstItem="10N-Gp-gVc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="s7W-YS-12e"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="iCash" id="hP6-Mf-SST"/>
-                    <connections>
-                        <outlet property="cardNumberLabel" destination="xua-kN-6Cp" id="az9-I7-y49"/>
-                        <segue destination="6qZ-no-c4b" kind="show" identifier="showActivatePage" id="Ku9-Ey-WGy"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="832" y="122"/>
-        </scene>
         <!--Confirm View Controller-->
         <scene sceneID="BaH-7Q-c6g">
             <objects>
@@ -304,19 +136,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رمز التأكيد" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Scd-8c-IwK">
-                                <rect key="frame" x="331" y="28" width="63" height="21"/>
+                                <rect key="frame" x="331" y="72" width="63" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XEb-ur-WR8">
-                                <rect key="frame" x="20" y="57" width="374" height="30"/>
+                                <rect key="frame" x="20" y="101" width="374" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EbX-G7-Zdg">
-                                <rect key="frame" x="113" y="138" width="189" height="30"/>
+                                <rect key="frame" x="113" y="182" width="189" height="30"/>
                                 <color key="backgroundColor" red="0.10661477595567703" green="0.2304854691028595" blue="0.45543485879898071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="تأكيد">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -346,7 +178,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mzr-hs-SYw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="831.88405797101461" y="-611.41304347826087"/>
+            <point key="canvasLocation" x="-100" y="-1322"/>
         </scene>
         <!--Transfer Money-->
         <scene sceneID="93d-Tm-xIn">
@@ -361,37 +193,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4hx-Z2-P6Z">
-                                <rect key="frame" x="20" y="57" width="374" height="30"/>
+                                <rect key="frame" x="20" y="101" width="374" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iil-zk-3Wr">
-                                <rect key="frame" x="20" y="131" width="374" height="30"/>
+                                <rect key="frame" x="20" y="175" width="374" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S0J-Yy-fhQ">
-                                <rect key="frame" x="20" y="206" width="374" height="30"/>
+                                <rect key="frame" x="20" y="250" width="374" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="القيمة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tc3-0T-W63">
-                                <rect key="frame" x="360" y="102" width="34" height="21"/>
+                                <rect key="frame" x="360" y="146" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الرقم السري" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WA8-eA-TA8">
-                                <rect key="frame" x="322" y="177" width="72" height="21"/>
+                                <rect key="frame" x="322" y="221" width="72" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YEp-tB-wYO">
-                                <rect key="frame" x="113" y="256" width="189" height="30"/>
+                                <rect key="frame" x="113" y="300" width="189" height="30"/>
                                 <color key="backgroundColor" red="0.10661477595567703" green="0.2304854691028595" blue="0.45543485879898071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="تحويل">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -401,7 +233,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رقم البطاقة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ah5-a7-2Ig">
-                                <rect key="frame" x="330" y="28" width="64" height="21"/>
+                                <rect key="frame" x="330" y="72" width="64" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -437,7 +269,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xz8-HK-cdt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1795.6521739130437" y="-607.33695652173913"/>
+            <point key="canvasLocation" x="917" y="-607"/>
         </scene>
         <!--Pay View Controller-->
         <scene sceneID="nLV-Ai-r5e">
@@ -488,7 +320,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOn-pA-qwq">
-                                <rect key="frame" x="113" y="254" width="189" height="30"/>
+                                <rect key="frame" x="113" y="254" width="188" height="30"/>
                                 <color key="backgroundColor" red="0.10661477599999999" green="0.23048546910000001" blue="0.45543485880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="إتمام العملية">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -498,7 +330,7 @@
                                 </connections>
                             </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BOW-26-KIs">
-                                <rect key="frame" x="0.0" y="648" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="648" width="413" height="44"/>
                                 <items>
                                     <barButtonItem image="Camera" id="tVy-NM-LYI">
                                         <connections>
@@ -543,7 +375,112 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GkD-Oo-6bB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1795.6521739130437" y="142.66304347826087"/>
+            <point key="canvasLocation" x="916" y="143"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="zTK-Ry-lyc">
+            <objects>
+                <viewController id="UDP-LF-a6c" customClass="ViewController" customModule="Icash2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xwP-Xp-Vob"/>
+                        <viewControllerLayoutGuide type="bottom" id="ouc-fW-wRv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qFu-ie-sPe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QNR-zz-h3l">
+                                <rect key="frame" x="20" y="124" width="374" height="582"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dp5-Sb-Aa1">
+                                        <rect key="frame" x="0.0" y="0.0" width="182" height="582"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O62-v7-TgS">
+                                                <rect key="frame" x="0.0" y="0.0" width="182" height="187.33333333333331"/>
+                                                <state key="normal" image="trn"/>
+                                                <connections>
+                                                    <segue destination="JvN-Q1-9uX" kind="show" id="3f2-z6-gfC"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Uq-gt-8gd">
+                                                <rect key="frame" x="0.0" y="197.33333333333331" width="182" height="187.33333333333337"/>
+                                                <state key="normal" image="balance"/>
+                                                <connections>
+                                                    <action selector="checkBalance:" destination="UDP-LF-a6c" eventType="touchUpInside" id="z7N-Xi-b3v"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kez-Gk-2zK">
+                                                <rect key="frame" x="0.0" y="394.66666666666663" width="182" height="187.33333333333337"/>
+                                                <state key="normal" image="log"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillProportionally" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="aBD-1Q-YnP">
+                                        <rect key="frame" x="192" y="0.0" width="182" height="582"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2s-6l-6vT">
+                                                <rect key="frame" x="0.0" y="0.0" width="182" height="386"/>
+                                                <state key="normal" image="buy"/>
+                                                <connections>
+                                                    <segue destination="KUe-44-45F" kind="show" id="GMR-qm-VwI"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSy-6C-GTy">
+                                                <rect key="frame" x="0.0" y="397" width="182" height="185"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="185" id="8sX-VA-lB4"/>
+                                                </constraints>
+                                                <state key="normal" image="settings-1"/>
+                                                <connections>
+                                                    <segue destination="NtQ-J7-lds" kind="show" id="9cY-nu-T76"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icash" translatesAutoresizingMaskIntoConstraints="NO" id="HEs-x0-aLd">
+                                <rect key="frame" x="134" y="64" width="147" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="K31-fZ-amx"/>
+                                    <constraint firstAttribute="width" constant="147" id="mMv-lw-Zz5"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3qA-HN-yI3">
+                                <rect key="frame" x="20" y="706" width="374" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="JyQ-0x-BFF"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.14904335141181946" green="0.28048354387283325" blue="0.4475216269493103" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="showCardNumber:" destination="UDP-LF-a6c" eventType="touchUpInside" id="wRW-JP-cGo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94883686304092407" green="0.95265215635299683" blue="0.94496864080429077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="QNR-zz-h3l" firstAttribute="top" secondItem="HEs-x0-aLd" secondAttribute="bottom" constant="8" symbolic="YES" id="3lB-Pi-Tj8"/>
+                            <constraint firstItem="QNR-zz-h3l" firstAttribute="leading" secondItem="3qA-HN-yI3" secondAttribute="leading" id="Liw-We-MRc"/>
+                            <constraint firstItem="3qA-HN-yI3" firstAttribute="top" secondItem="QNR-zz-h3l" secondAttribute="bottom" id="OXY-5C-d8d"/>
+                            <constraint firstItem="HEs-x0-aLd" firstAttribute="top" secondItem="xwP-Xp-Vob" secondAttribute="bottom" id="S98-jW-koI"/>
+                            <constraint firstItem="HEs-x0-aLd" firstAttribute="centerX" secondItem="QNR-zz-h3l" secondAttribute="centerX" id="aGb-6d-gQj"/>
+                            <constraint firstItem="QNR-zz-h3l" firstAttribute="trailing" secondItem="qFu-ie-sPe" secondAttribute="trailingMargin" id="oEe-O7-eiq"/>
+                            <constraint firstItem="3qA-HN-yI3" firstAttribute="bottom" secondItem="ouc-fW-wRv" secondAttribute="top" id="oUT-wg-YTO"/>
+                            <constraint firstItem="QNR-zz-h3l" firstAttribute="leading" secondItem="qFu-ie-sPe" secondAttribute="leadingMargin" id="olV-M0-umy"/>
+                            <constraint firstItem="QNR-zz-h3l" firstAttribute="trailing" secondItem="3qA-HN-yI3" secondAttribute="trailing" id="wrn-4D-kL8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="SXk-vj-TOm"/>
+                    <connections>
+                        <outlet property="cardNumberLabel" destination="3qA-HN-yI3" id="J0W-Z7-aEC"/>
+                        <segue destination="6qZ-no-c4b" kind="show" identifier="showActivatePage" id="PQq-QX-PZI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xfE-Kr-0Xl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-100.00000000000001" y="142.66304347826087"/>
         </scene>
         <!--Setting View Controller-->
         <scene sceneID="ln6-4R-SM2">
@@ -557,31 +494,104 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVr-k0-91i">
-                                <rect key="frame" x="113" y="89" width="189" height="30"/>
-                                <color key="backgroundColor" red="0.10661477595567703" green="0.2304854691028595" blue="0.45543485879898071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="الغاء  التفعيل">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="RemoveCard:" destination="NtQ-J7-lds" eventType="touchUpInside" id="RNf-kw-p6f"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="50" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KPx-oi-QMA">
+                                <rect key="frame" x="20" y="84" width="374" height="622"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="swj-Ol-94x">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="450.33333333333337"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الرقم السري القديم" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iq9-qa-PHY">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="64.333333333333343"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gmQ-R2-dpr">
+                                                <rect key="frame" x="0.0" y="64.333333333333343" width="374" height="64.333333333333314"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="374" id="nQt-Ol-qdy"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الرقم السري الجديد" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uoa-xa-gGd">
+                                                <rect key="frame" x="0.0" y="128.66666666666663" width="374" height="64.333333333333343"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IJL-YD-xHq">
+                                                <rect key="frame" x="0.0" y="193" width="374" height="64.333333333333314"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="374" id="ppG-SE-llG"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تأكيد الرقم السري " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xeF-Vu-OOa">
+                                                <rect key="frame" x="0.0" y="257.33333333333331" width="374" height="64.333333333333371"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nMe-zG-woa">
+                                                <rect key="frame" x="0.0" y="321.66666666666674" width="374" height="64.333333333333314"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="374" id="CvW-Gn-cn2"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpA-2B-Puu">
+                                                <rect key="frame" x="0.0" y="386" width="374" height="64.333333333333371"/>
+                                                <color key="backgroundColor" red="0.10661477599999999" green="0.23048546910000001" blue="0.45543485880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="تغيير الرمز السري">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="changePIN:" destination="NtQ-J7-lds" eventType="touchUpInside" id="NYb-UY-CHb"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVr-k0-91i">
+                                        <rect key="frame" x="0.0" y="557.66666666666652" width="374" height="64.333333333333371"/>
+                                        <color key="backgroundColor" red="0.10661477595567703" green="0.2304854691028595" blue="0.45543485879898071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="الغاء  التفعيل">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="RemoveCard:" destination="NtQ-J7-lds" eventType="touchUpInside" id="RNf-kw-p6f"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="OVr-k0-91i" firstAttribute="top" secondItem="swj-Ol-94x" secondAttribute="bottom" constant="50.000000000000057" id="2zX-vu-VfL"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="OVr-k0-91i" firstAttribute="leading" secondItem="VJ7-ye-KxY" secondAttribute="leadingMargin" constant="93" id="6Mq-7n-a0U"/>
-                            <constraint firstItem="OVr-k0-91i" firstAttribute="centerX" secondItem="VJ7-ye-KxY" secondAttribute="centerX" id="rWt-I5-vY7"/>
-                            <constraint firstItem="OVr-k0-91i" firstAttribute="top" secondItem="aY3-H3-yaS" secondAttribute="bottom" constant="69" id="uxp-ej-3gu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KPx-oi-QMA" secondAttribute="trailing" id="ITd-Cg-am4"/>
+                            <constraint firstItem="KPx-oi-QMA" firstAttribute="centerX" secondItem="VJ7-ye-KxY" secondAttribute="centerX" id="ONy-xj-DjG"/>
+                            <constraint firstItem="KPx-oi-QMA" firstAttribute="top" secondItem="aY3-H3-yaS" secondAttribute="bottom" constant="20" id="ZeJ-gX-rS1"/>
+                            <constraint firstItem="9Hu-wY-DHL" firstAttribute="top" secondItem="KPx-oi-QMA" secondAttribute="bottom" constant="30" id="dZ9-mq-mch"/>
+                            <constraint firstItem="KPx-oi-QMA" firstAttribute="leading" secondItem="VJ7-ye-KxY" secondAttribute="leadingMargin" id="u5C-2v-hKS"/>
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="backToMainPage" id="eaN-WV-XH3"/>
+                        <outlet property="confimPINtextField" destination="nMe-zG-woa" id="6NR-NI-M3Y"/>
+                        <outlet property="newPINtextField" destination="IJL-YD-xHq" id="h16-u9-Sgf"/>
+                        <outlet property="oldPINtextField" destination="gmQ-R2-dpr" id="ecy-YE-sXp"/>
+                        <segue destination="eiZ-Ld-4kr" kind="show" identifier="backToMainPage" id="81b-qi-aey"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ico-On-6ec" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="831.88405797101461" y="883.69565217391312"/>
+            <point key="canvasLocation" x="-100.00000000000001" y="914.67391304347836"/>
         </scene>
         <!--Generate Invoice View Controller-->
         <scene sceneID="Xac-P4-GCp">
@@ -596,37 +606,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yAT-mi-CzI">
-                                <rect key="frame" x="20" y="57" width="374" height="30"/>
+                                <rect key="frame" x="20" y="101" width="374" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xD2-a3-hLH">
-                                <rect key="frame" x="20" y="131" width="374" height="30"/>
+                                <rect key="frame" x="20" y="175" width="374" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oTs-ep-i00">
-                                <rect key="frame" x="20" y="206" width="364.66666666666669" height="30"/>
+                                <rect key="frame" x="20" y="250" width="365" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رقم المحل" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKW-dP-R6w">
-                                <rect key="frame" x="331.66666666666669" y="28" width="53" height="21"/>
+                                <rect key="frame" x="332" y="72" width="53" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الرقم السري" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DMH-vt-VlN">
-                                <rect key="frame" x="322" y="177" width="72" height="21"/>
+                                <rect key="frame" x="322" y="221" width="72" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQI-aJ-aID">
-                                <rect key="frame" x="113" y="257" width="188" height="30"/>
+                                <rect key="frame" x="113" y="301" width="188" height="30"/>
                                 <color key="backgroundColor" red="0.10661477599999999" green="0.23048546910000001" blue="0.45543485880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="عرض الرمز">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -646,7 +656,7 @@
                                 </items>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="القيمة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8E5-qE-uXp">
-                                <rect key="frame" x="350.66666666666669" y="102" width="34" height="21"/>
+                                <rect key="frame" x="351" y="146" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -687,7 +697,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GSW-5p-Zxy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1795.6521739130437" y="883.69565217391312"/>
+            <point key="canvasLocation" x="916" y="915"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KBU-Wb-7gj">
@@ -700,12 +710,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="YaZ-dx-kuz"/>
+                        <segue destination="UDP-LF-a6c" kind="relationship" relationship="rootViewController" id="BKr-R3-7e6"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Exa-WG-J9p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-98.550724637681171" y="122.28260869565219"/>
+            <point key="canvasLocation" x="-900" y="143"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Fyh-3q-mTJ">
@@ -723,18 +733,19 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CPp-kV-Pxz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-900" y="-611"/>
+            <point key="canvasLocation" x="-900" y="-607"/>
         </scene>
     </scenes>
     <resources>
         <image name="Camera" width="33" height="33"/>
-        <image name="Transfer" width="33" height="33"/>
-        <image name="download" width="33" height="33"/>
-        <image name="money" width="33" height="33"/>
-        <image name="search" width="33" height="33"/>
-        <image name="settings" width="33" height="33"/>
+        <image name="balance" width="556" height="572"/>
+        <image name="buy" width="539" height="1152"/>
+        <image name="icash" width="140" height="37"/>
+        <image name="log" width="549" height="568"/>
+        <image name="settings-1" width="561" height="574"/>
+        <image name="trn" width="548" height="557"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eaN-WV-XH3"/>
+        <segue reference="81b-qi-aey"/>
     </inferredMetricsTieBreakers>
 </document>

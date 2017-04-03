@@ -29,8 +29,8 @@ class Card {
     var installID:String?
     var installHashKey:String?
     var voucherCounter:Int
-//    var VHPinCode:String?
-//    var VHEPinCode:String?
+    var VHPinCode:String?
+    var VHEPinCode:String?
     
     //init to get data from keychain
     init(){
@@ -53,21 +53,20 @@ class Card {
         
     }
     
-/*    //Save variables
-    func save() ->Bool{
-       let saveSuccessfulCardNo: Bool = KeychainWrapper.defaultKeychainWrapper.set(CardNo!, forKey: "CardNo")
-//        let saveSuccessfulAccNo: Bool = KeychainWrapper.defaultKeychainWrapper().setString(AccNo!, forKey: "AcccNo")
-        let saveSuccessfulInstallID: Bool = KeychainWrapper.defaultKeychainWrapper.set(installID!, forKey: "installID")
-        let saveSuccessfulInstallHash: Bool = KeychainWrapper.defaultKeychainWrapper.set(installHashKey!, forKey: "installHashKey")
-        let saveSuccessfulCounter: Bool = KeychainWrapper.defaultKeychainWrapper.set(voucherCounter, forKey: "voucherCounter")
-     let saveSuccessfulPIN: Bool = KeychainWrapper.defaultKeychainWrapper.set(VHPinCode!, forKey: "HPinCode")
-        let saveSuccessfulEPIN: Bool = KeychainWrapper.defaultKeychainWrapper.set(VHEPinCode!, forKey: "HEPinCode")
-        return(saveSuccessfulCardNo && saveSuccessfulInstallID && saveSuccessfulInstallHash && saveSuccessfulPIN && saveSuccessfulEPIN && saveSuccessfulCounter)
+   //Save variables
+    func save() {
+        _ = KeychainWrapper.defaultKeychainWrapper.set(CardNo!, forKey: "CardNo")
+//      let saveSuccessfulAccNo: Bool = KeychainWrapper.defaultKeychainWrapper().setString(AccNo!, forKey: "AcccNo")
+        _ = KeychainWrapper.defaultKeychainWrapper.set(installID!, forKey: "installID")
+        _ = KeychainWrapper.defaultKeychainWrapper.set(installHashKey!, forKey: "installHashKey")
+        _ = KeychainWrapper.defaultKeychainWrapper.set(voucherCounter, forKey: "voucherCounter")
+        _ = KeychainWrapper.defaultKeychainWrapper.set(VHPinCode!, forKey: "HPinCode")
+        _ = KeychainWrapper.defaultKeychainWrapper.set(VHEPinCode!, forKey: "HEPinCode")
         
  
     }
     
- */
+ 
     //HEXA TO DECIMAL
     static func HexToDeci(_ Hex:String) -> String{
         
