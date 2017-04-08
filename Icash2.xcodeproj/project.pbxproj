@@ -22,6 +22,9 @@
 		B51235CC1E7F219D00DB0254 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51235CB1E7F219D00DB0254 /* KeychainItemAccessibility.swift */; };
 		B51235CE1E7F224200DB0254 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51235CD1E7F224200DB0254 /* KeychainWrapper.swift */; };
 		B53988AB1E82F47C00A3E5F0 /* GenerateInvoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53988AA1E82F47C00A3E5F0 /* GenerateInvoiceViewController.swift */; };
+		B565BC071E940C4C008EE58F /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B565BC061E940C4C008EE58F /* IQKeyboardManagerSwift.framework */; };
+		B565BC081E940C4C008EE58F /* IQKeyboardManagerSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B565BC061E940C4C008EE58F /* IQKeyboardManagerSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B56F73EE1E92C07100507C71 /* ExplainFailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56F73ED1E92C07100507C71 /* ExplainFailViewController.swift */; };
 		B58413AB1E843B9A00169E9B /* QRCodeReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B53988AC1E83BBD200A3E5F0 /* QRCodeReader.framework */; };
 		B58413AC1E843B9A00169E9B /* QRCodeReader.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B53988AC1E83BBD200A3E5F0 /* QRCodeReader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B58413AD1E843B9A00169E9B /* Crypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F476141E7FB25700BBF1F3 /* Crypto.framework */; };
@@ -32,6 +35,10 @@
 		B58413B81E84637A00169E9B /* QRCode.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B58413B61E84637A00169E9B /* QRCode.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B58413BB1E846E4F00169E9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B58413B91E846E4F00169E9B /* Main.storyboard */; };
 		B58413BF1E84731600169E9B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58413BE1E84731600169E9B /* SettingViewController.swift */; };
+		B5AF1F331E993B2100CF59BD /* MSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AF1F321E993B2100CF59BD /* MSettingViewController.swift */; };
+		B5AF1F381E993E5900CF59BD /* MainSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AF1F361E993E5900CF59BD /* MainSettingViewController.swift */; };
+		B5AF1F391E993E5900CF59BD /* MainSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5AF1F371E993E5900CF59BD /* MainSettingViewController.xib */; };
+		B5AF1F3B1E993F4B00CF59BD /* RemoveCardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AF1F3A1E993F4B00CF59BD /* RemoveCardViewCell.swift */; };
 		B5F4761D1E7FB56700BBF1F3 /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F4761C1E7FB56700BBF1F3 /* ConfirmViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +67,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				B58413AC1E843B9A00169E9B /* QRCodeReader.framework in Embed Frameworks */,
+				B565BC081E940C4C008EE58F /* IQKeyboardManagerSwift.framework in Embed Frameworks */,
 				B58413B01E843B9A00169E9B /* CommonCrypto.framework in Embed Frameworks */,
 				B58413B81E84637A00169E9B /* QRCode.framework in Embed Frameworks */,
 				B58413AE1E843B9A00169E9B /* Crypto.framework in Embed Frameworks */,
@@ -92,9 +100,15 @@
 		B51235CD1E7F224200DB0254 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
 		B53988AA1E82F47C00A3E5F0 /* GenerateInvoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateInvoiceViewController.swift; sourceTree = "<group>"; };
 		B53988AC1E83BBD200A3E5F0 /* QRCodeReader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QRCodeReader.framework; path = Carthage/Build/iOS/QRCodeReader.framework; sourceTree = "<group>"; };
+		B565BC061E940C4C008EE58F /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = Carthage/Build/iOS/IQKeyboardManagerSwift.framework; sourceTree = "<group>"; };
+		B56F73ED1E92C07100507C71 /* ExplainFailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExplainFailViewController.swift; sourceTree = "<group>"; };
 		B58413B61E84637A00169E9B /* QRCode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QRCode.framework; path = Carthage/Build/iOS/QRCode.framework; sourceTree = "<group>"; };
 		B58413BA1E846E4F00169E9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B58413BE1E84731600169E9B /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		B5AF1F321E993B2100CF59BD /* MSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSettingViewController.swift; sourceTree = "<group>"; };
+		B5AF1F361E993E5900CF59BD /* MainSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainSettingViewController.swift; sourceTree = "<group>"; };
+		B5AF1F371E993E5900CF59BD /* MainSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainSettingViewController.xib; sourceTree = "<group>"; };
+		B5AF1F3A1E993F4B00CF59BD /* RemoveCardViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveCardViewCell.swift; sourceTree = "<group>"; };
 		B5F476121E7FB25600BBF1F3 /* CommonCrypto.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CommonCrypto.framework; path = Carthage/Build/iOS/CommonCrypto.framework; sourceTree = "<group>"; };
 		B5F476141E7FB25700BBF1F3 /* Crypto.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crypto.framework; path = Carthage/Build/iOS/Crypto.framework; sourceTree = "<group>"; };
 		B5F4761C1E7FB56700BBF1F3 /* ConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +120,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B58413AB1E843B9A00169E9B /* QRCodeReader.framework in Frameworks */,
+				B565BC071E940C4C008EE58F /* IQKeyboardManagerSwift.framework in Frameworks */,
 				B58413AF1E843B9A00169E9B /* CommonCrypto.framework in Frameworks */,
 				B58413B71E84637A00169E9B /* QRCode.framework in Frameworks */,
 				B58413AD1E843B9A00169E9B /* Crypto.framework in Frameworks */,
@@ -156,7 +171,11 @@
 				B51235CF1E7F225700DB0254 /* SuplimentaryLibraries */,
 				B512358F1E7E546300DB0254 /* AppDelegate.swift */,
 				B51235911E7E546300DB0254 /* ViewController.swift */,
+				B5AF1F321E993B2100CF59BD /* MSettingViewController.swift */,
 				B58413B91E846E4F00169E9B /* Main.storyboard */,
+				B5AF1F3A1E993F4B00CF59BD /* RemoveCardViewCell.swift */,
+				B5AF1F361E993E5900CF59BD /* MainSettingViewController.swift */,
+				B5AF1F371E993E5900CF59BD /* MainSettingViewController.xib */,
 				B51235961E7E546300DB0254 /* Assets.xcassets */,
 				B51235981E7E546300DB0254 /* LaunchScreen.storyboard */,
 				B512359B1E7E546300DB0254 /* Info.plist */,
@@ -165,6 +184,7 @@
 				B51235C11E7F09F900DB0254 /* ActivateViewController.swift */,
 				B5F4761C1E7FB56700BBF1F3 /* ConfirmViewController.swift */,
 				B53988AA1E82F47C00A3E5F0 /* GenerateInvoiceViewController.swift */,
+				B56F73ED1E92C07100507C71 /* ExplainFailViewController.swift */,
 				B58413BE1E84731600169E9B /* SettingViewController.swift */,
 			);
 			path = Icash2;
@@ -203,6 +223,7 @@
 		B5F476111E7FB25600BBF1F3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B565BC061E940C4C008EE58F /* IQKeyboardManagerSwift.framework */,
 				B58413B61E84637A00169E9B /* QRCode.framework */,
 				B53988AC1E83BBD200A3E5F0 /* QRCodeReader.framework */,
 				B5F476141E7FB25700BBF1F3 /* Crypto.framework */,
@@ -321,6 +342,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5AF1F391E993E5900CF59BD /* MainSettingViewController.xib in Resources */,
 				B512359A1E7E546300DB0254 /* LaunchScreen.storyboard in Resources */,
 				B58413BB1E846E4F00169E9B /* Main.storyboard in Resources */,
 				B51235971E7E546300DB0254 /* Assets.xcassets in Resources */,
@@ -352,6 +374,9 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Crypto.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/CommonCrypto.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/IQKeyboardManager.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/QRCode.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/QRCodeReader.framework",
 			);
 			outputPaths = (
 			);
@@ -369,13 +394,17 @@
 				B5F4761D1E7FB56700BBF1F3 /* ConfirmViewController.swift in Sources */,
 				B53988AB1E82F47C00A3E5F0 /* GenerateInvoiceViewController.swift in Sources */,
 				B51235BE1E7EFC8700DB0254 /* transferMoneyViewController.swift in Sources */,
+				B56F73EE1E92C07100507C71 /* ExplainFailViewController.swift in Sources */,
 				B51235C61E7F19AB00DB0254 /* CardInfo.swift in Sources */,
 				B58413BF1E84731600169E9B /* SettingViewController.swift in Sources */,
 				B51235921E7E546300DB0254 /* ViewController.swift in Sources */,
 				B51235CA1E7F201700DB0254 /* SweetAlert.swift in Sources */,
+				B5AF1F3B1E993F4B00CF59BD /* RemoveCardViewCell.swift in Sources */,
 				B51235C81E7F19FB00DB0254 /* SwiftSpinner.swift in Sources */,
 				B51235CC1E7F219D00DB0254 /* KeychainItemAccessibility.swift in Sources */,
+				B5AF1F331E993B2100CF59BD /* MSettingViewController.swift in Sources */,
 				B51235C01E7F022200DB0254 /* PayViewController.swift in Sources */,
+				B5AF1F381E993E5900CF59BD /* MainSettingViewController.swift in Sources */,
 				B51235C21E7F09F900DB0254 /* ActivateViewController.swift in Sources */,
 				B51235901E7E546300DB0254 /* AppDelegate.swift in Sources */,
 				B51235CE1E7F224200DB0254 /* KeychainWrapper.swift in Sources */,

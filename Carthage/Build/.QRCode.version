@@ -2,7 +2,7 @@
   "commitish" : "2.0",
   "iOS" : [
     {
-      "hash" : "8e1773f873cc3c432060abd434b3ed403a53ce3a9fb3a5c342e366bc8375c347",
+      "hash" : "ff6efa7035e8992a72b0c9008063fe992499e2fb6ccb6d55babc488820f3d068",
       "name" : "QRCode"
     }
   ],

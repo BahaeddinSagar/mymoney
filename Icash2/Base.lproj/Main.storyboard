@@ -22,6 +22,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pOs-V3-UHt">
+                                <rect key="frame" x="204" y="101" width="190" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lxb-NW-zex">
                                 <rect key="frame" x="20" y="175" width="374" height="30"/>
                                 <nil key="textColor"/>
@@ -77,12 +83,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pOs-V3-UHt">
-                                <rect key="frame" x="204" y="101" width="190" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -192,6 +192,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YEp-tB-wYO">
+                                <rect key="frame" x="113" y="300" width="184" height="30"/>
+                                <color key="backgroundColor" red="0.10661477595567703" green="0.2304854691028595" blue="0.45543485879898071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="تحويل">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="transfer:" destination="JvN-Q1-9uX" eventType="touchUpInside" id="weN-zm-olc"/>
+                                </connections>
+                            </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y4f-YP-3gA">
+                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
+                                <items>
+                                    <barButtonItem image="Camera" id="vAQ-Je-KJ5">
+                                        <connections>
+                                            <action selector="scanAction:" destination="JvN-Q1-9uX" id="C2I-cq-8p3"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4hx-Z2-P6Z">
                                 <rect key="frame" x="20" y="101" width="374" height="30"/>
                                 <nil key="textColor"/>
@@ -202,7 +222,7 @@
                                 <rect key="frame" x="20" y="175" width="374" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S0J-Yy-fhQ">
                                 <rect key="frame" x="20" y="250" width="374" height="30"/>
@@ -222,16 +242,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YEp-tB-wYO">
-                                <rect key="frame" x="113" y="300" width="189" height="30"/>
-                                <color key="backgroundColor" red="0.10661477595567703" green="0.2304854691028595" blue="0.45543485879898071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="تحويل">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="transfer:" destination="JvN-Q1-9uX" eventType="touchUpInside" id="weN-zm-olc"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رقم البطاقة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ah5-a7-2Ig">
                                 <rect key="frame" x="330" y="72" width="64" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -241,24 +251,28 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Ah5-a7-2Ig" firstAttribute="trailing" secondItem="cuP-WB-UVp" secondAttribute="trailingMargin" id="61V-VI-POh"/>
-                            <constraint firstItem="4hx-Z2-P6Z" firstAttribute="leading" secondItem="cuP-WB-UVp" secondAttribute="leadingMargin" id="89Y-4f-XJs"/>
-                            <constraint firstItem="4hx-Z2-P6Z" firstAttribute="trailing" secondItem="Tc3-0T-W63" secondAttribute="trailing" id="ATM-nS-Jz0"/>
-                            <constraint firstItem="YEp-tB-wYO" firstAttribute="leading" secondItem="cuP-WB-UVp" secondAttribute="leadingMargin" constant="93" id="J41-hs-0FI"/>
-                            <constraint firstItem="4hx-Z2-P6Z" firstAttribute="top" secondItem="Ah5-a7-2Ig" secondAttribute="bottom" constant="8" symbolic="YES" id="QI9-rK-Q2H"/>
-                            <constraint firstItem="YEp-tB-wYO" firstAttribute="top" secondItem="S0J-Yy-fhQ" secondAttribute="bottom" constant="20" id="R5d-QQ-v6l"/>
-                            <constraint firstItem="WA8-eA-TA8" firstAttribute="top" secondItem="Iil-zk-3Wr" secondAttribute="bottom" constant="16" id="S10-iG-EyV"/>
-                            <constraint firstItem="Ah5-a7-2Ig" firstAttribute="top" secondItem="8G5-Aq-8q4" secondAttribute="bottom" constant="8" symbolic="YES" id="U0z-at-YsR"/>
-                            <constraint firstItem="Ah5-a7-2Ig" firstAttribute="trailing" secondItem="4hx-Z2-P6Z" secondAttribute="trailing" id="U7z-Dy-xF3"/>
-                            <constraint firstItem="Tc3-0T-W63" firstAttribute="top" secondItem="4hx-Z2-P6Z" secondAttribute="bottom" constant="15" id="Xwy-s0-rpb"/>
-                            <constraint firstItem="Tc3-0T-W63" firstAttribute="trailing" secondItem="Iil-zk-3Wr" secondAttribute="trailing" id="Zrt-fz-vgF"/>
-                            <constraint firstItem="Iil-zk-3Wr" firstAttribute="leading" secondItem="S0J-Yy-fhQ" secondAttribute="leading" id="bge-EI-kax"/>
-                            <constraint firstItem="WA8-eA-TA8" firstAttribute="trailing" secondItem="S0J-Yy-fhQ" secondAttribute="trailing" id="cfW-B3-Yeo"/>
-                            <constraint firstItem="Iil-zk-3Wr" firstAttribute="top" secondItem="Tc3-0T-W63" secondAttribute="bottom" constant="8" symbolic="YES" id="d1L-DZ-jWI"/>
-                            <constraint firstItem="4hx-Z2-P6Z" firstAttribute="leading" secondItem="Iil-zk-3Wr" secondAttribute="leading" id="eVD-3U-0DE"/>
-                            <constraint firstItem="S0J-Yy-fhQ" firstAttribute="centerX" secondItem="YEp-tB-wYO" secondAttribute="centerX" id="gu7-Qg-XCA"/>
-                            <constraint firstItem="Iil-zk-3Wr" firstAttribute="trailing" secondItem="WA8-eA-TA8" secondAttribute="trailing" id="jyI-ne-ZtG"/>
-                            <constraint firstItem="S0J-Yy-fhQ" firstAttribute="top" secondItem="WA8-eA-TA8" secondAttribute="bottom" constant="8" symbolic="YES" id="mIM-Ru-Tjd"/>
+                            <constraint firstItem="4hx-Z2-P6Z" firstAttribute="centerX" secondItem="Y4f-YP-3gA" secondAttribute="centerX" id="0Rb-Mp-0Qh"/>
+                            <constraint firstItem="Iil-zk-3Wr" firstAttribute="top" secondItem="Tc3-0T-W63" secondAttribute="bottom" constant="8" symbolic="YES" id="61s-I0-Kr5"/>
+                            <constraint firstItem="ll2-Rc-niJ" firstAttribute="top" secondItem="Y4f-YP-3gA" secondAttribute="bottom" id="6fL-6q-Gmg"/>
+                            <constraint firstItem="Ah5-a7-2Ig" firstAttribute="top" secondItem="8G5-Aq-8q4" secondAttribute="bottom" constant="8" symbolic="YES" id="F84-1Z-vQg"/>
+                            <constraint firstItem="Y4f-YP-3gA" firstAttribute="leading" secondItem="cuP-WB-UVp" secondAttribute="leading" id="FUo-ZM-z0R"/>
+                            <constraint firstItem="4hx-Z2-P6Z" firstAttribute="leading" secondItem="cuP-WB-UVp" secondAttribute="leadingMargin" id="Krb-4B-DnR"/>
+                            <constraint firstAttribute="trailing" secondItem="Y4f-YP-3gA" secondAttribute="trailing" id="Kru-hw-gVD"/>
+                            <constraint firstItem="WA8-eA-TA8" firstAttribute="top" secondItem="Iil-zk-3Wr" secondAttribute="bottom" constant="16" id="M1S-sk-Rvc"/>
+                            <constraint firstItem="YEp-tB-wYO" firstAttribute="leading" secondItem="cuP-WB-UVp" secondAttribute="leadingMargin" constant="93" id="Oiw-rK-KZZ"/>
+                            <constraint firstItem="YEp-tB-wYO" firstAttribute="top" secondItem="S0J-Yy-fhQ" secondAttribute="bottom" constant="20" id="XA2-dw-EFT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YEp-tB-wYO" secondAttribute="trailing" constant="97" id="bE2-gL-BKh"/>
+                            <constraint firstItem="4hx-Z2-P6Z" firstAttribute="leading" secondItem="Iil-zk-3Wr" secondAttribute="leading" id="bf6-x3-yrW"/>
+                            <constraint firstItem="Iil-zk-3Wr" firstAttribute="centerX" secondItem="Y4f-YP-3gA" secondAttribute="centerX" id="g1n-zH-zIB"/>
+                            <constraint firstItem="Iil-zk-3Wr" firstAttribute="leading" secondItem="S0J-Yy-fhQ" secondAttribute="leading" id="hMe-B4-kxv"/>
+                            <constraint firstItem="Tc3-0T-W63" firstAttribute="top" secondItem="4hx-Z2-P6Z" secondAttribute="bottom" constant="15" id="jMW-Nb-x1c"/>
+                            <constraint firstItem="4hx-Z2-P6Z" firstAttribute="top" secondItem="Ah5-a7-2Ig" secondAttribute="bottom" constant="8" symbolic="YES" id="mEk-A4-WgY"/>
+                            <constraint firstItem="S0J-Yy-fhQ" firstAttribute="centerX" secondItem="Y4f-YP-3gA" secondAttribute="centerX" id="obR-D7-UU1"/>
+                            <constraint firstItem="S0J-Yy-fhQ" firstAttribute="top" secondItem="WA8-eA-TA8" secondAttribute="bottom" constant="8" symbolic="YES" id="ojz-XW-LN2"/>
+                            <constraint firstItem="Ah5-a7-2Ig" firstAttribute="trailing" secondItem="cuP-WB-UVp" secondAttribute="trailingMargin" id="phL-Ak-kVm"/>
+                            <constraint firstItem="Ah5-a7-2Ig" firstAttribute="trailing" secondItem="4hx-Z2-P6Z" secondAttribute="trailing" id="pmV-pY-uLL"/>
+                            <constraint firstItem="WA8-eA-TA8" firstAttribute="trailing" secondItem="S0J-Yy-fhQ" secondAttribute="trailing" id="viS-bF-ylW"/>
+                            <constraint firstItem="Tc3-0T-W63" firstAttribute="trailing" secondItem="Iil-zk-3Wr" secondAttribute="trailing" id="x9r-gb-TRg"/>
                         </constraints>
                     </view>
                     <connections>
@@ -269,9 +283,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xz8-HK-cdt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="917" y="-607"/>
+            <point key="canvasLocation" x="915.94202898550736" y="-607.33695652173913"/>
         </scene>
-        <!--Pay View Controller-->
+        <!--Title-->
         <scene sceneID="nLV-Ai-r5e">
             <objects>
                 <viewController id="pSc-GH-PuE" customClass="PayViewController" customModule="Icash2" customModuleProvider="target" sceneMemberID="viewController">
@@ -283,52 +297,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hxd-8x-rnJ">
-                                <rect key="frame" x="20" y="57" width="370" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aBN-9v-3Pt">
-                                <rect key="frame" x="20" y="131" width="370" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qyA-iK-sGU">
-                                <rect key="frame" x="20" y="206" width="370" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رقم البطاقة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VkA-7A-KxJ">
-                                <rect key="frame" x="326" y="28" width="64" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="القيمة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EoB-cX-Hgp">
-                                <rect key="frame" x="348" y="102" width="34" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رمز التأكيد" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beE-Rv-Yn1">
-                                <rect key="frame" x="331" y="177" width="63" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOn-pA-qwq">
-                                <rect key="frame" x="113" y="254" width="188" height="30"/>
-                                <color key="backgroundColor" red="0.10661477599999999" green="0.23048546910000001" blue="0.45543485880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="إتمام العملية">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="Send:" destination="pSc-GH-PuE" eventType="touchUpInside" id="gag-IG-xc6"/>
-                                </connections>
-                            </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BOW-26-KIs">
                                 <rect key="frame" x="0.0" y="648" width="413" height="44"/>
                                 <items>
@@ -339,6 +307,52 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hxd-8x-rnJ">
+                                <rect key="frame" x="20" y="111" width="370" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aBN-9v-3Pt">
+                                <rect key="frame" x="20" y="185" width="370" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qyA-iK-sGU">
+                                <rect key="frame" x="20" y="260" width="370" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رقم البطاقة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VkA-7A-KxJ">
+                                <rect key="frame" x="326" y="82" width="64" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="القيمة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EoB-cX-Hgp">
+                                <rect key="frame" x="348" y="156" width="34" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رمز التأكيد" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beE-Rv-Yn1">
+                                <rect key="frame" x="331" y="231" width="63" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOn-pA-qwq">
+                                <rect key="frame" x="113" y="308" width="188" height="30"/>
+                                <color key="backgroundColor" red="0.10661477599999999" green="0.23048546910000001" blue="0.45543485880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="إتمام العملية">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Send:" destination="pSc-GH-PuE" eventType="touchUpInside" id="gag-IG-xc6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -351,7 +365,7 @@
                             <constraint firstItem="aBN-9v-3Pt" firstAttribute="trailing" secondItem="qyA-iK-sGU" secondAttribute="trailing" id="CGR-i0-sc5"/>
                             <constraint firstItem="aBN-9v-3Pt" firstAttribute="top" secondItem="EoB-cX-Hgp" secondAttribute="bottom" constant="8" symbolic="YES" id="ETa-LR-KLT"/>
                             <constraint firstItem="Hxd-8x-rnJ" firstAttribute="leading" secondItem="aBN-9v-3Pt" secondAttribute="leading" id="Fgm-nc-MIp"/>
-                            <constraint firstItem="VkA-7A-KxJ" firstAttribute="top" secondItem="Ef8-GZ-i9q" secondAttribute="bottom" constant="8" symbolic="YES" id="JeQ-Ii-oyE"/>
+                            <constraint firstItem="VkA-7A-KxJ" firstAttribute="top" secondItem="Ef8-GZ-i9q" secondAttribute="bottom" constant="62" id="JeQ-Ii-oyE"/>
                             <constraint firstItem="beE-Rv-Yn1" firstAttribute="trailing" secondItem="wBt-6d-iVa" secondAttribute="trailingMargin" id="KeT-D6-J6B"/>
                             <constraint firstAttribute="trailingMargin" secondItem="EoB-cX-Hgp" secondAttribute="trailing" constant="12" id="a8y-sM-cKv"/>
                             <constraint firstItem="EoB-cX-Hgp" firstAttribute="top" secondItem="Hxd-8x-rnJ" secondAttribute="bottom" constant="15" id="bUy-QL-Nt6"/>
@@ -366,6 +380,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="S4U-aa-rsM"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="AmountTextField" destination="aBN-9v-3Pt" id="Lex-ID-tP1"/>
@@ -422,7 +437,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="182" height="386"/>
                                                 <state key="normal" image="buy"/>
                                                 <connections>
-                                                    <segue destination="KUe-44-45F" kind="show" id="GMR-qm-VwI"/>
+                                                    <segue destination="Mb8-tT-O4w" kind="show" id="GMR-qm-VwI"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSy-6C-GTy">
@@ -432,7 +447,7 @@
                                                 </constraints>
                                                 <state key="normal" image="settings-1"/>
                                                 <connections>
-                                                    <segue destination="NtQ-J7-lds" kind="show" id="9cY-nu-T76"/>
+                                                    <segue destination="Kup-VF-ldO" kind="show" id="bEG-fd-s8W"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -494,92 +509,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="50" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KPx-oi-QMA">
-                                <rect key="frame" x="20" y="84" width="374" height="622"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="swj-Ol-94x">
+                                <rect key="frame" x="20" y="72" width="374" height="270"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="swj-Ol-94x">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="450.33333333333337"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الرقم السري القديم" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iq9-qa-PHY">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="64.333333333333343"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gmQ-R2-dpr">
-                                                <rect key="frame" x="0.0" y="64.333333333333343" width="374" height="64.333333333333314"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="374" id="nQt-Ol-qdy"/>
-                                                </constraints>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                            </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الرقم السري الجديد" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uoa-xa-gGd">
-                                                <rect key="frame" x="0.0" y="128.66666666666663" width="374" height="64.333333333333343"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IJL-YD-xHq">
-                                                <rect key="frame" x="0.0" y="193" width="374" height="64.333333333333314"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="374" id="ppG-SE-llG"/>
-                                                </constraints>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
-                                            </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تأكيد الرقم السري " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xeF-Vu-OOa">
-                                                <rect key="frame" x="0.0" y="257.33333333333331" width="374" height="64.333333333333371"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nMe-zG-woa">
-                                                <rect key="frame" x="0.0" y="321.66666666666674" width="374" height="64.333333333333314"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="374" id="CvW-Gn-cn2"/>
-                                                </constraints>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
-                                            </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpA-2B-Puu">
-                                                <rect key="frame" x="0.0" y="386" width="374" height="64.333333333333371"/>
-                                                <color key="backgroundColor" red="0.10661477599999999" green="0.23048546910000001" blue="0.45543485880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="تغيير الرمز السري">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="changePIN:" destination="NtQ-J7-lds" eventType="touchUpInside" id="NYb-UY-CHb"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVr-k0-91i">
-                                        <rect key="frame" x="0.0" y="557.66666666666652" width="374" height="64.333333333333371"/>
-                                        <color key="backgroundColor" red="0.10661477595567703" green="0.2304854691028595" blue="0.45543485879898071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="الغاء  التفعيل">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الرقم السري القديم" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iq9-qa-PHY">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gmQ-R2-dpr">
+                                        <rect key="frame" x="0.0" y="40" width="374" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <connections>
+                                            <action selector="endEdit1:" destination="NtQ-J7-lds" eventType="touchUpOutside" id="xCe-kC-fel"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الرقم السري الجديد" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uoa-xa-gGd">
+                                        <rect key="frame" x="0.0" y="80" width="374" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IJL-YD-xHq">
+                                        <rect key="frame" x="0.0" y="120" width="374" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تأكيد الرقم السري " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xeF-Vu-OOa">
+                                        <rect key="frame" x="0.0" y="160" width="374" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nMe-zG-woa">
+                                        <rect key="frame" x="0.0" y="200" width="374" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpA-2B-Puu">
+                                        <rect key="frame" x="0.0" y="240" width="374" height="30"/>
+                                        <color key="backgroundColor" red="0.10661477599999999" green="0.23048546910000001" blue="0.45543485880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="تغيير الرمز السري">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="RemoveCard:" destination="NtQ-J7-lds" eventType="touchUpInside" id="RNf-kw-p6f"/>
+                                            <action selector="changePIN:" destination="NtQ-J7-lds" eventType="touchUpInside" id="NYb-UY-CHb"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="OVr-k0-91i" firstAttribute="top" secondItem="swj-Ol-94x" secondAttribute="bottom" constant="50.000000000000057" id="2zX-vu-VfL"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="KPx-oi-QMA" secondAttribute="trailing" id="ITd-Cg-am4"/>
-                            <constraint firstItem="KPx-oi-QMA" firstAttribute="centerX" secondItem="VJ7-ye-KxY" secondAttribute="centerX" id="ONy-xj-DjG"/>
-                            <constraint firstItem="KPx-oi-QMA" firstAttribute="top" secondItem="aY3-H3-yaS" secondAttribute="bottom" constant="20" id="ZeJ-gX-rS1"/>
-                            <constraint firstItem="9Hu-wY-DHL" firstAttribute="top" secondItem="KPx-oi-QMA" secondAttribute="bottom" constant="30" id="dZ9-mq-mch"/>
-                            <constraint firstItem="KPx-oi-QMA" firstAttribute="leading" secondItem="VJ7-ye-KxY" secondAttribute="leadingMargin" id="u5C-2v-hKS"/>
+                            <constraint firstItem="swj-Ol-94x" firstAttribute="leading" secondItem="VJ7-ye-KxY" secondAttribute="leadingMargin" id="8UR-07-BEW"/>
+                            <constraint firstItem="swj-Ol-94x" firstAttribute="top" secondItem="aY3-H3-yaS" secondAttribute="bottom" constant="8" symbolic="YES" id="Mbp-lq-jWb"/>
+                            <constraint firstItem="swj-Ol-94x" firstAttribute="trailing" secondItem="VJ7-ye-KxY" secondAttribute="trailingMargin" id="oeK-Mo-aXl"/>
                         </constraints>
                     </view>
                     <connections>
@@ -591,9 +580,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ico-On-6ec" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-100.00000000000001" y="914.67391304347836"/>
+            <point key="canvasLocation" x="-900" y="915"/>
         </scene>
-        <!--Generate Invoice View Controller-->
+        <!--شراء-->
         <scene sceneID="Xac-P4-GCp">
             <objects>
                 <viewController id="KUe-44-45F" customClass="GenerateInvoiceViewController" customModule="Icash2" customModuleProvider="target" sceneMemberID="viewController">
@@ -615,16 +604,16 @@
                                 <rect key="frame" x="20" y="175" width="374" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oTs-ep-i00">
-                                <rect key="frame" x="20" y="250" width="365" height="30"/>
+                                <rect key="frame" x="20" y="250" width="366.66666666666669" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رقم المحل" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKW-dP-R6w">
-                                <rect key="frame" x="332" y="72" width="53" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رقم المتجر" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKW-dP-R6w">
+                                <rect key="frame" x="329.66666666666669" y="72" width="57" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -656,7 +645,7 @@
                                 </items>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="القيمة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8E5-qE-uXp">
-                                <rect key="frame" x="351" y="146" width="34" height="21"/>
+                                <rect key="frame" x="352.66666666666669" y="146" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -687,7 +676,9 @@
                             <constraint firstItem="FQI-aJ-aID" firstAttribute="leading" secondItem="sKX-Cj-5W4" secondAttribute="leadingMargin" constant="93" id="vmO-bI-Mm4"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="انشاء رمز الدفع" image="IQButtonBarArrowDown.png" id="mcb-1r-zxZ"/>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" title="شراء" id="VnK-EF-d6g"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="AmountTextField" destination="xD2-a3-hLH" id="aOf-zV-GUa"/>
@@ -697,7 +688,123 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GSW-5p-Zxy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="916" y="915"/>
+            <point key="canvasLocation" x="1788" y="143"/>
+        </scene>
+        <!--تفسير فشل العملية-->
+        <scene sceneID="mKL-oX-kRY">
+            <objects>
+                <viewController id="xbR-s7-bDZ" customClass="ExplainFailViewController" customModule="Icash2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="E6t-ru-vIr"/>
+                        <viewControllerLayoutGuide type="bottom" id="koa-73-GzT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CUS-GY-RPD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رقم المتجر" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGv-xF-o2i">
+                                <rect key="frame" x="337" y="100" width="57" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k5q-JZ-0yq">
+                                <rect key="frame" x="20" y="129" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="القيمة" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJ6-50-AqM">
+                                <rect key="frame" x="360" y="167" width="34" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B6u-HQ-Ztc">
+                                <rect key="frame" x="20" y="196" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رمز التأكيد" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7z-Ym-XQW">
+                                <rect key="frame" x="331" y="234" width="63" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JZb-dm-Xpo">
+                                <rect key="frame" x="20" y="263" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رمز الخطأ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l0C-8f-AMa">
+                                <rect key="frame" x="335" y="301" width="59" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J2P-Vq-Z4Y">
+                                <rect key="frame" x="20" y="330" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEc-Ji-QC0">
+                                <rect key="frame" x="126" y="415" width="163" height="30"/>
+                                <color key="backgroundColor" red="0.10661477595567703" green="0.2304854691028595" blue="0.45543485879898071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="163" id="eIX-aQ-Zja"/>
+                                </constraints>
+                                <state key="normal" title="تفسير فشل العملية">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="explain:" destination="xbR-s7-bDZ" eventType="touchUpInside" id="zhr-zz-QHT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="k5q-JZ-0yq" firstAttribute="leading" secondItem="CUS-GY-RPD" secondAttribute="leadingMargin" id="0b5-o9-W9F"/>
+                            <constraint firstItem="h7z-Ym-XQW" firstAttribute="trailing" secondItem="JZb-dm-Xpo" secondAttribute="trailing" id="2TW-29-zaf"/>
+                            <constraint firstItem="B6u-HQ-Ztc" firstAttribute="leading" secondItem="JZb-dm-Xpo" secondAttribute="leading" id="BtA-wO-ldg"/>
+                            <constraint firstItem="J2P-Vq-Z4Y" firstAttribute="centerX" secondItem="QEc-Ji-QC0" secondAttribute="centerX" id="CWz-PJ-zmq"/>
+                            <constraint firstItem="k5q-JZ-0yq" firstAttribute="leading" secondItem="B6u-HQ-Ztc" secondAttribute="leading" id="GPn-iU-l1I"/>
+                            <constraint firstItem="JZb-dm-Xpo" firstAttribute="top" secondItem="h7z-Ym-XQW" secondAttribute="bottom" constant="8" symbolic="YES" id="JVX-uX-NPp"/>
+                            <constraint firstItem="dGv-xF-o2i" firstAttribute="trailing" secondItem="CUS-GY-RPD" secondAttribute="trailingMargin" id="K61-hq-IyQ"/>
+                            <constraint firstItem="BJ6-50-AqM" firstAttribute="trailing" secondItem="B6u-HQ-Ztc" secondAttribute="trailing" id="Mkr-tj-Ozx"/>
+                            <constraint firstItem="BJ6-50-AqM" firstAttribute="top" secondItem="k5q-JZ-0yq" secondAttribute="bottom" constant="8" symbolic="YES" id="PBw-xF-z7D"/>
+                            <constraint firstItem="l0C-8f-AMa" firstAttribute="trailing" secondItem="J2P-Vq-Z4Y" secondAttribute="trailing" id="QCM-hf-bZd"/>
+                            <constraint firstItem="h7z-Ym-XQW" firstAttribute="top" secondItem="B6u-HQ-Ztc" secondAttribute="bottom" constant="8" symbolic="YES" id="RA2-Lk-txq"/>
+                            <constraint firstItem="dGv-xF-o2i" firstAttribute="top" secondItem="E6t-ru-vIr" secondAttribute="bottom" constant="36" id="RBO-sY-Vw1"/>
+                            <constraint firstItem="QEc-Ji-QC0" firstAttribute="top" secondItem="J2P-Vq-Z4Y" secondAttribute="bottom" constant="55" id="Unl-41-FgE"/>
+                            <constraint firstItem="J2P-Vq-Z4Y" firstAttribute="top" secondItem="l0C-8f-AMa" secondAttribute="bottom" constant="8" symbolic="YES" id="UzY-OD-VbT"/>
+                            <constraint firstItem="k5q-JZ-0yq" firstAttribute="trailing" secondItem="BJ6-50-AqM" secondAttribute="trailing" id="YOa-jb-n67"/>
+                            <constraint firstItem="k5q-JZ-0yq" firstAttribute="top" secondItem="dGv-xF-o2i" secondAttribute="bottom" constant="8" symbolic="YES" id="eLT-tm-BvD"/>
+                            <constraint firstItem="B6u-HQ-Ztc" firstAttribute="trailing" secondItem="h7z-Ym-XQW" secondAttribute="trailing" id="giv-sK-nfW"/>
+                            <constraint firstItem="B6u-HQ-Ztc" firstAttribute="top" secondItem="BJ6-50-AqM" secondAttribute="bottom" constant="8" symbolic="YES" id="oQb-2T-Enw"/>
+                            <constraint firstItem="JZb-dm-Xpo" firstAttribute="leading" secondItem="J2P-Vq-Z4Y" secondAttribute="leading" id="p7l-Zp-vbj"/>
+                            <constraint firstItem="JZb-dm-Xpo" firstAttribute="trailing" secondItem="l0C-8f-AMa" secondAttribute="trailing" id="sr5-xk-Dn0"/>
+                            <constraint firstItem="l0C-8f-AMa" firstAttribute="top" secondItem="JZb-dm-Xpo" secondAttribute="bottom" constant="8" symbolic="YES" id="tw4-BN-Hjk"/>
+                            <constraint firstItem="dGv-xF-o2i" firstAttribute="trailing" secondItem="k5q-JZ-0yq" secondAttribute="trailing" id="yaq-Xh-WxD"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="تفسير فشل العملية" image="IQButtonBarArrowDown.png" id="0Yn-eC-8VW"/>
+                    <navigationItem key="navigationItem" title="تفسير فشل العملية" id="Y5c-fm-laZ">
+                        <barButtonItem key="backBarButtonItem" title="back" id="FoM-QO-Phz"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="K9h-Hx-SuJ"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="ConfirmationCodeTextField" destination="JZb-dm-Xpo" id="jB0-tV-u8c"/>
+                        <outlet property="amountTextFiled" destination="B6u-HQ-Ztc" id="WDn-RH-rO7"/>
+                        <outlet property="errorTextField" destination="J2P-Vq-Z4Y" id="8Vh-pk-lYf"/>
+                        <outlet property="shopIDTextField" destination="k5q-JZ-0yq" id="LVa-Tp-mvx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b0a-gd-ob1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1786.9565217391305" y="914.67391304347836"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KBU-Wb-7gj">
@@ -735,9 +842,93 @@
             </objects>
             <point key="canvasLocation" x="-900" y="-607"/>
         </scene>
+        <!--Main Setting View Controller-->
+        <scene sceneID="Lmu-ci-BVy">
+            <objects>
+                <tableViewController id="Kup-VF-ldO" customClass="MainSettingViewController" customModule="Icash2" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="pdr-P1-Qzl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="الاعدادات" id="eqN-dx-zWU" userLabel="الاعدادات">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="5Lp-zC-o7v" style="IBUITableViewCellStyleDefault" id="cpD-iQ-Bql">
+                                        <rect key="frame" x="0.0" y="56" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cpD-iQ-Bql" id="zLn-4C-8c5">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="تغيير الرقم السري" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5Lp-zC-o7v">
+                                                    <rect key="frame" x="15" y="0.0" width="384" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="NtQ-J7-lds" kind="show" id="C3j-4M-pGB"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Lai-As-2Fw" style="IBUITableViewCellStyleDefault" id="iGs-mV-bh4">
+                                        <rect key="frame" x="0.0" y="100" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iGs-mV-bh4" id="rSx-4j-htg">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="الغاء تفعيل البطاقة من الهاتف" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Lai-As-2Fw">
+                                                    <rect key="frame" x="15" y="0.0" width="384" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="Kup-VF-ldO" id="089-6C-6RV"/>
+                            <outlet property="delegate" destination="Kup-VF-ldO" id="7mZ-h8-OdZ"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="eiZ-Ld-4kr" kind="show" identifier="backToMainPage" id="oVT-GQ-mN2"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B96-1Y-f5x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-100" y="915"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Ifz-85-cyB">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Mb8-tT-O4w" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="OS0-wu-1Fe">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="KUe-44-45F" kind="relationship" relationship="viewControllers" id="JlL-Ph-2Nq"/>
+                        <segue destination="xbR-s7-bDZ" kind="relationship" relationship="viewControllers" id="Uqd-fD-feF"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N1D-bb-1ww" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="915.94202898550736" y="914.67391304347836"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Camera" width="33" height="33"/>
+        <image name="IQButtonBarArrowDown.png" width="21" height="12"/>
         <image name="balance" width="556" height="572"/>
         <image name="buy" width="539" height="1152"/>
         <image name="icash" width="140" height="37"/>
@@ -746,6 +937,6 @@
         <image name="trn" width="548" height="557"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="81b-qi-aey"/>
+        <segue reference="s6f-KA-PHc"/>
     </inferredMetricsTieBreakers>
 </document>

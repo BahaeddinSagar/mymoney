@@ -7,8 +7,104 @@
 //
 
 import UIKit
+import QRCodeReader
+import AVFoundation
+import QRCode
 
-class transferMoney : UIViewController {
+class transferMoney : UIViewController , QRCodeReaderViewControllerDelegate {
+    
+    ////////////////////////
+    lazy var reader = QRCodeReaderViewController(builder: QRCodeReaderViewControllerBuilder {
+        $0.reader          = QRCodeReader(metadataObjectTypes: [AVMetadataObjectTypeQRCode])
+        $0.showTorchButton = true
+    })
+    @IBAction func scanAction(_ sender: AnyObject) {
+        do {
+            if try QRCodeReader.supportsMetadataObjectTypes() {
+                reader.modalPresentationStyle = .formSheet
+                reader.delegate               = self
+                
+                reader.completionBlock = { (result: QRCodeReaderResult?) in
+                    if let result = result {
+                        print("Completion with result: \(result.value) of type \(result.metadataType)")
+                        self.RxCardNumberTextField.text = result.value
+                    }
+                }
+                
+                present(reader, animated: true, completion: nil)
+            }
+        } catch let error as NSError {
+            switch error.code {
+            case -11852:
+                let alert = UIAlertController(title: "Error", message: "This app is not authorized to use Back Camera.", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "Setting", style: .default, handler: { (_) in
+                    DispatchQueue.main.async {
+                        if let settingsURL = URL(string: UIApplicationOpenSettingsURLString) {
+                            UIApplication.shared.openURL(settingsURL)
+                        }
+                    }
+                }))
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                present(alert, animated: true, completion: nil)
+                
+                
+                
+            case -11814:
+                let alert = UIAlertController(title: "Error", message: "Reader not supported by the current device", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                
+                present(alert, animated: true, completion: nil)
+            default:()
+            }
+        }
+        
+    }
+    
+    // MARK: - QRCodeReader Delegate Methods
+    
+    func reader(_ reader: QRCodeReaderViewController, didScanResult result: QRCodeReaderResult) {
+        reader.stopScanning()
+        
+        dismiss(animated: true) { [weak self] in
+            let alert = UIAlertController(
+                title: "QRCodeReader",
+                message: String (format:"%@ (of type %@)", result.value, result.metadataType),
+                preferredStyle: .alert
+            )
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            
+            self?.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func reader(_ reader: QRCodeReaderViewController, didSwitchCamera newCaptureDevice: AVCaptureDeviceInput) {
+        if let cameraName = newCaptureDevice.device.localizedName {
+            print("Switching capturing to: \(cameraName)")
+        }
+    }
+    
+    func readerDidCancel(_ reader: QRCodeReaderViewController) {
+        reader.stopScanning()
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
+    
+    ///////////////////////
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
     
     
     @IBOutlet weak var RxCardNumberTextField: UITextField!
@@ -34,10 +130,43 @@ class transferMoney : UIViewController {
     
     @IBAction func transfer(_ sender: UIButton) {
         self.view.endEditing(true)
+        
+        
+        
+        
         let RcardNumber = RxCardNumberTextField.text!
         let cardNumber = card.CardNo!
+        
+        
+        if AmountTextDield.text! != "" && RcardNumber != "" && PINcode.text! != "" && RcardNumber.characters.count == 9 {
         let amount = Card.changeToFloat(Float(AmountTextDield.text!)!)
-        //let amount = AmountTextDield.text!
+        let message1 =  " سوف يتم تحويل مبلغ "
+        let message2 = "الى البطاقة رقم "
+        let message =  message1 + amount + message2 + RcardNumber
+        _ = SweetAlert().showAlert("تحويل رصيد", subTitle: message, style: AlertStyle.warning, buttonTitle:"الغاء العملية", buttonColor:UIColor.colorFromRGB(0xD0D0D0) , otherButtonTitle:  "اتمام العملية", otherButtonColor: UIColor.colorFromRGB(0xDD6B55)) { (isOtherButton) -> Void in
+            if isOtherButton == true {
+                // cancel - DO NOTING
+                
+            }
+            else {
+                
+                let PIN = self.PINcode.text!
+                let vouchercounter = self.card.voucherCounter+2
+                let VC = String(describing: vouchercounter)
+                let installID = self.card.installID!
+                let installHashKey = self.card.installHashKey!
+                
+                let HPINcode = Card.makeHash(str: cardNumber+PIN, level: 7)
+                let ConfirmationCode = Card.makeHash(str: installID + HPINcode + VC + amount + RcardNumber , level: 7)
+                let SenderConfimrationCode = Card.makeHash(str: installHashKey + RcardNumber + ConfirmationCode + amount, level: 7)
+                
+                self.sendmoney(InstallationID: installID, RcardNumber: RcardNumber, Amount: amount, Vouchercounter: VC, ConfirmationCode: ConfirmationCode, SenderConfirmationCode: SenderConfimrationCode)
+                
+                
+            }
+            }
+        }
+        /*
         let PIN = PINcode.text!
         let vouchercounter = card.voucherCounter+2
         let VC = String(describing: vouchercounter)
@@ -49,7 +178,7 @@ class transferMoney : UIViewController {
         let SenderConfimrationCode = Card.makeHash(str: installHashKey + RcardNumber + ConfirmationCode + amount, level: 7)
         
         sendmoney(InstallationID: installID, RcardNumber: RcardNumber, Amount: amount, Vouchercounter: VC, ConfirmationCode: ConfirmationCode, SenderConfirmationCode: SenderConfimrationCode)
-        
+        */
         
         
     }
@@ -95,7 +224,12 @@ class transferMoney : UIViewController {
                     
                     
                     
+                }else{
+                    OperationQueue.main.addOperation {
+                        _ = SweetAlert().showAlert("فشلت العملية",subTitle: "نأمل التحقق من الوصول للانترنت ", style: AlertStyle.error)
+                    }
                 }
+
             }
             else{
                 OperationQueue.main.addOperation {

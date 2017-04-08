@@ -1,4 +1,4 @@
 github "aschuch/QRCode" "2.0"
-github "soffes/CommonCrypto" "v1.1.0"
-github "soffes/Crypto" "v0.5.1"
-github "yannickl/QRCodeReader.swift" "7.3.0"
+github "hackiftekhar/IQKeyboardManager" "v4.0.9"
+github "jpotts18/SwiftValidator" "4.0.1"
+github "yannickl/QRCodeReader.swift" "7.4.0"

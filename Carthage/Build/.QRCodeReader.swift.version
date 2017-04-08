@@ -1,8 +1,8 @@
 {
-  "commitish" : "7.3.0",
+  "commitish" : "7.4.0",
   "iOS" : [
     {
-      "hash" : "347b4aebf9165c2ae760ba198c5f34275aeb96fbc0fc8bade5ec9ccda5626507",
+      "hash" : "a7a47becde99a5da5d894b61b3e9fec87c69db8008e2c99ac02b6af73eb673d8",
       "name" : "QRCodeReader"
     }
   ],

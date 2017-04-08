@@ -29,28 +29,7 @@ class SettingViewController : UIViewController {
     }
     
     
-    @IBAction func RemoveCard(_ sender: UIButton) {
-        // show alert box to confirm
-        _ = SweetAlert().showAlert("Are you sure?", subTitle: "You card will be permanently deleted!", style: AlertStyle.warning, buttonTitle:"Cancel", buttonColor:UIColor.colorFromRGB(0xD0D0D0) , otherButtonTitle:  "Yes, delete it!", otherButtonColor: UIColor.colorFromRGB(0xDD6B55)) { (isOtherButton) -> Void in
-            if isOtherButton == true {
-                // cancel - DO NOTING
-                
-            }
-            else {
-                // remove refrence from keychain and go back to main page
-                KeychainWrapper.defaultKeychainWrapper.remove(key: "installID")
-                KeychainWrapper.defaultKeychainWrapper.remove(key: "CardNo")
-                KeychainWrapper.defaultKeychainWrapper.remove(key: "installHashKey")
-                KeychainWrapper.defaultKeychainWrapper.remove(key: "voucherCounter")
-                OperationQueue.main.addOperation {
-                    
-                    self.performSegue(withIdentifier: "backToMainPage", sender: self)
-                }
-            }
-        }
-        
-    }
-    
+       
     @IBAction func changePIN(_ sender: UIButton) {
         self.resignFirstResponder()
         //  read newPIN and oldPIN and create the HashKyes
@@ -58,8 +37,8 @@ class SettingViewController : UIViewController {
         let newPIN = newPINtextField.text!
         let confirmPIN = confimPINtextField.text!
         // Minimum PINcode characters
-        if newPIN.characters.count < 5 {
-            _ = SweetAlert().showAlert(" الرقم السري يجب أن يكون خمسة أرقام علي الأقل  ")
+        if newPIN.characters.count < 4 {
+            _ = SweetAlert().showAlert(" الرقم السري يجب أن يكون أربعة أرقام علي الأقل  ")
             // confirming that codes match
         } else if newPIN != confirmPIN {
             _ = SweetAlert().showAlert(" الرقم السري الجديد و تأكيد الرقم السري غير متطابقان ")
@@ -96,7 +75,7 @@ class SettingViewController : UIViewController {
     }
     
     func ChangePIN(installID : String, NHPC : String, RNHPC : String, voucherCounter : String, confirmationCode : String, SenderConfirmationCode : String , HPCS : String) {
-        SwiftSpinner.show("Connecting to server...")
+        SwiftSpinner.show(" يتم الاتصال بالخادم ...")
         // make request
         let requestURL: URL = URL(string: "https://icashapi.azurewebsites.net/api/ChangeBinReq/"+installID+"/"+NHPC+"/"+RNHPC+"/"+voucherCounter+"/"+confirmationCode+"/"+SenderConfirmationCode)!
         print(requestURL)
@@ -232,6 +211,12 @@ class SettingViewController : UIViewController {
         task.resume()
         
     }
+    
+    @IBAction func endEdit1(_ sender: Any) {
+        resignFirstResponder()
+    }
+    
+    
     
     
     

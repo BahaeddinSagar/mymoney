@@ -1,0 +1,19 @@
+{
+  "commitish" : "4.0.1",
+  "iOS" : [
+    {
+      "hash" : "334a9cc9852f921721842ff7eef0e41bed4dfc5420f2c7f59b7e00f836eb2331",
+      "name" : "SwiftValidator"
+    }
+  ],
+  "xcodeVersion" : "Xcode 8.2.1\nBuild version 8C1002",
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "Mac" : [
+
+  ]
+}

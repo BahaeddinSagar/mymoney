@@ -121,12 +121,19 @@ class PayViewController : UIViewController , QRCodeReaderViewControllerDelegate{
         self.view.endEditing(true)
         let CoustemerID = cardNumberTextField.text!
         let installID = card.installID!
-        let amount = Card.changeToFloat(Float(AmountTextField.text!)!)
-        let ConfirmationCode = CCcodeTextField.text!
+        //AmountTextField.
+        if AmountTextField.text! != "" && CoustemerID != "" && CCcodeTextField.text! != "" {
+            let amount = Card.changeToFloat(Float(AmountTextField.text!)!)
+            let ConfirmationCode = CCcodeTextField.text!
+            
+            let SenderConfirmationCode = Card.makeHash(str: card.installHashKey! + CoustemerID + ConfirmationCode + amount, level: 7)
+            
+            sendInvoice(installID: installID, CoustemerID: CoustemerID, amount: amount, ConfirmationCode: ConfirmationCode, SenderConfirmationCode: SenderConfirmationCode)
+        }else {
+            _ = SweetAlert().showAlert("خطأ", subTitle: "الرجاء التأكد من البيانات", style: AlertStyle.error)
+        }
         
-        let SenderConfirmationCode = Card.makeHash(str: card.installHashKey! + CoustemerID + ConfirmationCode + amount, level: 7)
-        
-        sendInvoice(installID: installID, CoustemerID: CoustemerID, amount: amount, ConfirmationCode: ConfirmationCode, SenderConfirmationCode: SenderConfirmationCode)
+       
         
         
     }

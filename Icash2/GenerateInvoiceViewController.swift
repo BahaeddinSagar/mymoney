@@ -28,7 +28,9 @@ class GenerateInvoiceViewController : UIViewController, QRCodeReaderViewControll
                 reader.completionBlock = { (result: QRCodeReaderResult?) in
                     if let result = result {
                         print("Completion with result: \(result.value) of type \(result.metadataType)")
-                        self.shopIDTextField.text = result.value
+                        let seperatedResult = result.value.components(separatedBy: ",")
+                        self.shopIDTextField.text = seperatedResult[0]
+                        self.AmountTextField.text = seperatedResult[1]
                     }
                 }
                 
@@ -102,7 +104,7 @@ class GenerateInvoiceViewController : UIViewController, QRCodeReaderViewControll
     
     
     
-        @IBOutlet weak var shopIDTextField: UITextField!
+    @IBOutlet weak var shopIDTextField: UITextField!
     @IBOutlet weak var AmountTextField: UITextField!
     @IBOutlet weak var PINcodeTextField: UITextField!
     var card = Card()
@@ -126,8 +128,12 @@ class GenerateInvoiceViewController : UIViewController, QRCodeReaderViewControll
     @IBAction func GenerateCode(_ sender: UIButton) {
         self.view.endEditing(true)
         let McardNumber = shopIDTextField.text!
-        let amount = Card.changeToFloat(Float(AmountTextField.text!)!)
+        
         let PINcode = PINcodeTextField.text!
+        
+        if AmountTextField.text! != "" && McardNumber != "" && PINcode != "" {
+        let amount = Card.changeToFloat(Float(AmountTextField.text!)!)
+        
         
         let cardNumber = card.CardNo!
         let VC = String(card.voucherCounter)
@@ -145,7 +151,9 @@ class GenerateInvoiceViewController : UIViewController, QRCodeReaderViewControll
         
         
         
-
+        } else {
+            
+        }
     
     
     }
