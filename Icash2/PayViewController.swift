@@ -10,6 +10,7 @@ import UIKit
 import QRCodeReader
 import AVFoundation
 
+
 class PayViewController : UIViewController , QRCodeReaderViewControllerDelegate{
 ////////////////////////
     lazy var reader = QRCodeReaderViewController(builder: QRCodeReaderViewControllerBuilder {
@@ -34,23 +35,23 @@ class PayViewController : UIViewController , QRCodeReaderViewControllerDelegate{
         } catch let error as NSError {
             switch error.code {
             case -11852:
-                let alert = UIAlertController(title: "Error", message: "This app is not authorized to use Back Camera.", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Error".localized(), message: "This app is not authorized to use Back Camera.".localized(), preferredStyle: .alert)
                 
-                alert.addAction(UIAlertAction(title: "Setting", style: .default, handler: { (_) in
+                alert.addAction(UIAlertAction(title: "Setting".localized(), style: .default, handler: { (_) in
                     DispatchQueue.main.async {
                         if let settingsURL = URL(string: UIApplicationOpenSettingsURLString) {
                             UIApplication.shared.openURL(settingsURL)
                         }
                     }
                 }))
-                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                alert.addAction(UIAlertAction(title: "Cancel".localized(), style: .cancel, handler: nil))
                 present(alert, animated: true, completion: nil)
                 
                 
                 
             case -11814:
-                let alert = UIAlertController(title: "Error", message: "Reader not supported by the current device", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                let alert = UIAlertController(title: "Error".localized(), message: "Reader not supported by the current device".localized(), preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK".localized(), style: .cancel, handler: nil))
                 
                 present(alert, animated: true, completion: nil)
             default:()
@@ -70,9 +71,9 @@ class PayViewController : UIViewController , QRCodeReaderViewControllerDelegate{
                 message: String (format:"%@ (of type %@)", result.value, result.metadataType),
                 preferredStyle: .alert
             )
-            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            
-            self?.present(alert, animated: true, completion: nil)
+            alert.addAction(UIAlertAction(title: "OK".localized(), style: .cancel, handler: nil))
+            // no need to show the result
+            //self?.present(alert, animated: true, completion: nil)
         }
     }
     
@@ -130,7 +131,7 @@ class PayViewController : UIViewController , QRCodeReaderViewControllerDelegate{
             
             sendInvoice(installID: installID, CoustemerID: CoustemerID, amount: amount, ConfirmationCode: ConfirmationCode, SenderConfirmationCode: SenderConfirmationCode)
         }else {
-            _ = SweetAlert().showAlert("خطأ", subTitle: "الرجاء التأكد من البيانات", style: AlertStyle.error)
+            _ = SweetAlert().showAlert("Error".localized(),subTitle: " Please Try Again ".localized(), style: AlertStyle.error)
         }
         
        
@@ -139,7 +140,7 @@ class PayViewController : UIViewController , QRCodeReaderViewControllerDelegate{
     }
     
     func sendInvoice(installID : String , CoustemerID : String, amount :String, ConfirmationCode : String, SenderConfirmationCode :String){
-        SwiftSpinner.show(" يتم الاتصال بالخادم ...")
+        SwiftSpinner.show(" Connecting to server ...".localized())
         
         let requestURL: URL = URL(string: "https://icashapi.azurewebsites.net/api/PayInvoice/" + installID + "/" + CoustemerID + "/" + amount + "/" + ConfirmationCode+"/"+SenderConfirmationCode)!
         print(requestURL)
@@ -164,7 +165,7 @@ class PayViewController : UIViewController , QRCodeReaderViewControllerDelegate{
             }
             else {
                 OperationQueue.main.addOperation {
-                    _ = SweetAlert().showAlert("فشلت العملية",subTitle: "نأمل التحقق من الوصول للانترنت ", style: AlertStyle.error)
+                    _ = SweetAlert().showAlert("Error".localized(),subTitle: "Check Internet Connectivity and try again ".localized(), style: AlertStyle.error)
                 }
             }
         }

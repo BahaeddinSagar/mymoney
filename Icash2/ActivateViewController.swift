@@ -11,6 +11,8 @@ import UIKit
 
 class ActivateViewController : UIViewController {
     
+    
+    
     @IBOutlet weak var cardNumberTextField: UITextField!
     @IBOutlet weak var actiCodeTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
@@ -20,12 +22,21 @@ class ActivateViewController : UIViewController {
     var phone : String!
     var CardNumber : String!
     
-    
+       
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //let next = UIBarButtonItem(title: "next", style: .plain, target: self, action: #selector(confirm))
+        //self.navigationItem.rightBarButtonItem = next
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
+        /*
+        validator.registerField(cardNumberTextField, errorLabel:cardErrorLabel , rules: [RequiredRule(),ExactLengthRule(length: 9, message : "Must be 9 digits" )])
+        validator.registerField(actiCodeTextField, errorLabel: actiErrorLabel, rules: [RequiredRule(), FloatRule(message: " Must be float ")])
+        validator.registerField(phoneTextField, errorLabel: PhoneErrorLabel, rules: [RequiredRule(),ExactLengthRule(length: 12, message : "use the form 218XXX" )])
+ */
         
         
         
@@ -40,11 +51,11 @@ class ActivateViewController : UIViewController {
         if swi.isOn {
             actiCodeTextField.text=""
             phoneTextField.text=""
-            actiCodeTextField.isEnabled = false
-            phoneTextField.isEnabled = false
+            actiCodeTextField.isHidden = true
+            phoneTextField.isHidden = true
         } else {
-            actiCodeTextField.isEnabled = true
-            phoneTextField.isEnabled = true
+            actiCodeTextField.isHidden = false
+            phoneTextField.isHidden = false
         }
         
     }
@@ -53,16 +64,27 @@ class ActivateViewController : UIViewController {
     
     @IBAction func confirm(_ sender: Any) {
         self.view.endEditing(true)
+        
+        
+        validationSuccessful()
+    }
+    
+    
+   
+    
+    func validationSuccessful(){
+    
+        
         CardNumber = cardNumberTextField.text!
         if !swi.isOn{
             acticode = actiCodeTextField.text!
             phone = phoneTextField.text!
             
             if (CardNumber == "" || acticode == "") {
-                _=SweetAlert().showAlert("الرجاء ادخال رقم البطاقة و رقم التفعيل ", subTitle: " " , style: AlertStyle.error)
+                _=SweetAlert().showAlert("Error ".localized(), subTitle: " Card Number and Activation code are required ".localized() , style: AlertStyle.error)
                 
             }else if phone.characters.count != 12 {
-                _=SweetAlert().showAlert("الرجاء ادخال رقم الهاتف بصيغة  ", subTitle: "2189XXXXXXXX " , style: AlertStyle.error)
+                _=SweetAlert().showAlert("Phone number ".localized(), subTitle: "must be in the form : "+"2189XXXXXXXX " , style: AlertStyle.error)
             }else {
                 var code = CardNumber + phone
                 code = code + acticode
@@ -74,7 +96,7 @@ class ActivateViewController : UIViewController {
             if CardNumber != "" {
                 ActivateInstallationReq(CardNo: CardNumber)
             }else{
-                _=SweetAlert().showAlert("الرجاء ادخال رقم البطاقة  ", subTitle: " " , style: AlertStyle.error)
+                _=SweetAlert().showAlert(" ", subTitle: "Card Number is required ".localized() , style: AlertStyle.error)
                 
             }
         }
@@ -90,7 +112,7 @@ class ActivateViewController : UIViewController {
     
     
     func ActivateReq ( CardNo:  String, tel: String, ActivationCode: String, ConfirmationCode: String){
-        SwiftSpinner.show(" يتم الاتصال بالخادم ...")
+        SwiftSpinner.show("Connecting to server ...".localized())
         let requestedurl : URL = URL (string: "https://icashapi.azurewebsites.net/api/ActivateReq/"+CardNo+"/"+tel+"/"+ActivationCode+"/"+ConfirmationCode)!
         print(requestedurl)
         let urlRequest : URLRequest = URLRequest(url: requestedurl)
@@ -111,22 +133,22 @@ class ActivateViewController : UIViewController {
                     switch(result!){
                     case -14 :
                         OperationQueue.main.addOperation {
-                            _ = SweetAlert().showAlert("خطأ", subTitle: "البطاقة مفعلة مسبقا برقم مختلف", style: AlertStyle.error)
+                            _ = SweetAlert().showAlert("Error".localized(), subTitle:" Card already activated with different Phone Number ".localized(), style: AlertStyle.error)
                         }
                     case -16 :
                         OperationQueue.main.addOperation {
-                            _ = SweetAlert().showAlert("خطأ", subTitle: "البطاقة مفعلة مسبقا برقم مختلف", style: AlertStyle.error)
+                            _ = SweetAlert().showAlert("Error".localized(), subTitle:" Card already activated with different Phone Number ".localized(), style: AlertStyle.error)
                         }
                     case -8 :
                         //print("issued but not distributed yet")
                         OperationQueue.main.addOperation {
-                            _ = SweetAlert().showAlert("خطأ", subTitle: "issued but not distributed yet", style: AlertStyle.error)
+                            _ = SweetAlert().showAlert("Error".localized(), subTitle: " Please Try Again ".localized(), style: AlertStyle.error)
                         }
                         
                     case -7 :
                         //print("internal error")
                         OperationQueue.main.addOperation {
-                            _ = SweetAlert().showAlert("خطأ", subTitle: "internal error", style: AlertStyle.error)
+                            _ = SweetAlert().showAlert("Error".localized(), subTitle: " Please Try Again ".localized(), style: AlertStyle.error)
                         }
                         
                     case -6 :
@@ -137,7 +159,7 @@ class ActivateViewController : UIViewController {
                     case -5 :
                         //print("card doesn't exist")
                         OperationQueue.main.addOperation {
-                            _ = SweetAlert().showAlert("خطأ", subTitle: "card doesn't exist", style: AlertStyle.error)
+                            _ = SweetAlert().showAlert("Error".localized(), subTitle: " Please Try Again ".localized(), style: AlertStyle.error)
                         }
                         
                     case -4 :
@@ -149,19 +171,19 @@ class ActivateViewController : UIViewController {
                     case -3 :
                         //print("issued but not distributed yet")
                         OperationQueue.main.addOperation {
-                            _ = SweetAlert().showAlert("خطأ", subTitle: "issued but not distributed yet", style: AlertStyle.error)
+                            _ = SweetAlert().showAlert("Error".localized(), subTitle: " Please Try Again ".localized(), style: AlertStyle.error)
                         }
                         
                     case -2 :
                         //print("issued but not distributed yet")
                         OperationQueue.main.addOperation {
-                            _ = SweetAlert().showAlert("خطأ", subTitle: "issued but not distributed yet", style: AlertStyle.error)
+                            _ = SweetAlert().showAlert("Error".localized(), subTitle: " Please Try Again ".localized(), style: AlertStyle.error)
                         }
                         
                     case -1 :
                         print("illigale request")
                         OperationQueue.main.addOperation {
-                            _ = SweetAlert().showAlert("حطأ", subTitle: "illigale request", style: AlertStyle.error)
+                            _ = SweetAlert().showAlert("Error".localized(), subTitle: " Please Try Again ".localized(), style: AlertStyle.error)
                         }
                         
                     case 0..<10000000 :
@@ -172,20 +194,20 @@ class ActivateViewController : UIViewController {
                             // print("All good,message will be sent to you soon")
                             // to show the result
                             OperationQueue.main.addOperation {
-                                _ = SweetAlert().showAlert("نجحت العملية",subTitle: "ستصلك رسالة برقم التأكيد قريبا ", style: AlertStyle.success)
+                                _ = SweetAlert().showAlert("Succuss".localized(),subTitle: " you will recieve an SMS with confirmation Code shortly", style: AlertStyle.success)
                                 self.performSegue(withIdentifier: "goToConfirm", sender: self)
                             }
                         }
                     default :
                         OperationQueue.main.addOperation {
-                            _ = SweetAlert().showAlert("فشلت العملية",subTitle: "نأمل المحاولة مجددا ", style: AlertStyle.error)
+                            _ = SweetAlert().showAlert("Error".localized(),subTitle: " Please Try Again ".localized(), style: AlertStyle.error)
                         }
                         break
                     }
                 }
             } else {
                 OperationQueue.main.addOperation {
-                    _ = SweetAlert().showAlert("فشلت العملية",subTitle: "نأمل التحقق من الوصول للانترنت ", style: AlertStyle.error)
+                    _ = SweetAlert().showAlert("Error".localized(),subTitle: "Check Internet Connectivity and try again ".localized(), style: AlertStyle.error)
                 }
             }
         }
@@ -195,7 +217,7 @@ class ActivateViewController : UIViewController {
     
     
     func ActivateInstallationReq(CardNo: String) {
-        SwiftSpinner.show(" يتم الاتصال بالخادم ...")
+        SwiftSpinner.show(" Connecting to server ...".localized())
         let requestURL : URL = URL(string: "https://icashapi.azurewebsites.net/api/ActivateInstallationReq/"+CardNo)!
         let urlRequest : URLRequest = URLRequest(url: requestURL)
         let session = URLSession.shared
@@ -214,20 +236,20 @@ class ActivateViewController : UIViewController {
                         //print("All good,message will be sent to you soon")
                         // to show the result
                         OperationQueue.main.addOperation {
-                            _ = SweetAlert().showAlert("نجحت العملية",subTitle: "ستصلك رسالة برقم التأكيد قريبا ", style: AlertStyle.success)
+                            _ = SweetAlert().showAlert("Succuss".localized(),subTitle: " you will recieve an SMS with confirmation Code shortly".localized(), style: AlertStyle.success)
                             self.performSegue(withIdentifier: "goToConfirm", sender: self)
                         }
                     }
 
                 } else {
                     OperationQueue.main.addOperation {
-                        _ = SweetAlert().showAlert("خطأ", subTitle: "نأمل المحاولة مجددا ", style: AlertStyle.error)
+                        _ = SweetAlert().showAlert("Error".localized(),subTitle: " Please Try Again ".localized(), style: AlertStyle.error)
                         print("operation failed")
                     }
                 }
             } else {
                 OperationQueue.main.addOperation {
-                    _ = SweetAlert().showAlert("فشلت العملية",subTitle: "نأمل التحقق من الوصول للانترنت ", style: AlertStyle.error)
+                    _ = SweetAlert().showAlert("Error".localized(),subTitle: "Check Internet Connectivity and try again ".localized(), style: AlertStyle.error)
                 }
             }
         }

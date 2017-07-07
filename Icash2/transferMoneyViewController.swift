@@ -11,14 +11,38 @@ import QRCodeReader
 import AVFoundation
 import QRCode
 
-class transferMoney : UIViewController , QRCodeReaderViewControllerDelegate {
+
+
+extension Double {
+    /// Rounds the double to decimal places value
+    func roundTo(places:Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return (self * divisor).rounded() / divisor
+    }
+}
+
+
+class transferMoney : UIViewController , QRCodeReaderViewControllerDelegate , UITextFieldDelegate {
+    
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        
+        let regEX = "^(?:|[0-9]{0,7})(?:\\.\\d{0,3})?$"
+        let newstring = AmountTextDield.text! + string
+        if newstring.range(of: regEX, options:.regularExpression) != nil {
+            return true
+        } else {
+            return false
+        }
+    }
     
     ////////////////////////
     lazy var reader = QRCodeReaderViewController(builder: QRCodeReaderViewControllerBuilder {
         $0.reader          = QRCodeReader(metadataObjectTypes: [AVMetadataObjectTypeQRCode])
         $0.showTorchButton = true
     })
-    @IBAction func scanAction(_ sender: AnyObject) {
+    func scanAction() {
         do {
             if try QRCodeReader.supportsMetadataObjectTypes() {
                 reader.modalPresentationStyle = .formSheet
@@ -36,23 +60,23 @@ class transferMoney : UIViewController , QRCodeReaderViewControllerDelegate {
         } catch let error as NSError {
             switch error.code {
             case -11852:
-                let alert = UIAlertController(title: "Error", message: "This app is not authorized to use Back Camera.", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Error".localized(), message: "This app is not authorized to use Back Camera.".localized(), preferredStyle: .alert)
                 
-                alert.addAction(UIAlertAction(title: "Setting", style: .default, handler: { (_) in
+                alert.addAction(UIAlertAction(title: "Setting".localized(), style: .default, handler: { (_) in
                     DispatchQueue.main.async {
                         if let settingsURL = URL(string: UIApplicationOpenSettingsURLString) {
                             UIApplication.shared.openURL(settingsURL)
                         }
                     }
                 }))
-                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                alert.addAction(UIAlertAction(title: "Cancel".localized(), style: .cancel, handler: nil))
                 present(alert, animated: true, completion: nil)
                 
                 
                 
             case -11814:
-                let alert = UIAlertController(title: "Error", message: "Reader not supported by the current device", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                let alert = UIAlertController(title: "Error".localized(), message: "Reader not supported by the current device".localized(), preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Okay".localized(), style: .cancel, handler: nil))
                 
                 present(alert, animated: true, completion: nil)
             default:()
@@ -72,9 +96,9 @@ class transferMoney : UIViewController , QRCodeReaderViewControllerDelegate {
                 message: String (format:"%@ (of type %@)", result.value, result.metadataType),
                 preferredStyle: .alert
             )
-            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            
-            self?.present(alert, animated: true, completion: nil)
+            alert.addAction(UIAlertAction(title: "Okay".localized(), style: .cancel, handler: nil))
+            // no need to show the result
+            //self?.present(alert, animated: true, completion: nil)
         }
     }
     
@@ -97,7 +121,7 @@ class transferMoney : UIViewController , QRCodeReaderViewControllerDelegate {
     
     
     
-
+    
     
     
     
@@ -111,83 +135,106 @@ class transferMoney : UIViewController , QRCodeReaderViewControllerDelegate {
     @IBOutlet weak var AmountTextDield: UITextField!
     @IBOutlet weak var PINcode: UITextField!
     
+    
     var card = Card()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-     
+        
         // Do any additional setup after loading the view, typically from a nib.
+        let camera = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(transferMoney.scanAction))
+        self.navigationItem.rightBarButtonItem = camera
+
         
         
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //self.navigationItem.title = " Transfer "
+    }
+    
+    
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     
     @IBAction func transfer(_ sender: UIButton) {
         self.view.endEditing(true)
         
+        validationSuccessful()
         
+        
+    }
+    
+    func validationSuccessful(){
         
         
         let RcardNumber = RxCardNumberTextField.text!
         let cardNumber = card.CardNo!
         
         
-        if AmountTextDield.text! != "" && RcardNumber != "" && PINcode.text! != "" && RcardNumber.characters.count == 9 {
-        let amount = Card.changeToFloat(Float(AmountTextDield.text!)!)
-        let message1 =  " سوف يتم تحويل مبلغ "
-        let message2 = "الى البطاقة رقم "
-        let message =  message1 + amount + message2 + RcardNumber
-        _ = SweetAlert().showAlert("تحويل رصيد", subTitle: message, style: AlertStyle.warning, buttonTitle:"الغاء العملية", buttonColor:UIColor.colorFromRGB(0xD0D0D0) , otherButtonTitle:  "اتمام العملية", otherButtonColor: UIColor.colorFromRGB(0xDD6B55)) { (isOtherButton) -> Void in
-            if isOtherButton == true {
-                // cancel - DO NOTING
-                
+        // if AmountTextDield.text! != "" && RcardNumber != "" && PINcode.text! != "" && RcardNumber.characters.count == 9 {
+            let amountt = Float(AmountTextDield.text!) 
+            let amount = Card.changeToFloat(amountt!)
+            let message1 =  "You will transfer ".localized()
+            let message2 = "to the account with card number  ".localized()
+            let message =  message1 + amount + message2 + RcardNumber
+            _ = SweetAlert().showAlert("Transfer money".localized(), subTitle: message, style: AlertStyle.warning, buttonTitle:"Cancel".localized(), buttonColor:UIColor.colorFromRGB(0xFF0000) , otherButtonTitle:  "Done".localized(), otherButtonColor: UIColor.colorFromRGB(0xD0D0D0)) { (isOtherButton) -> Void in
+                if isOtherButton == true {
+                    // cancel - DO NOTING
+                    
+                }
+                else {
+                    
+                    let PIN = self.PINcode.text!
+                    let vouchercounter = self.card.voucherCounter+2
+                    let VC = String(describing: vouchercounter)
+                    let installID = self.card.installID!
+                    let installHashKey = self.card.installHashKey!
+                    
+                    let HPINcode = Card.makeHash(str: cardNumber+PIN, level: 7)
+                    let ConfirmationCode = Card.makeHash(str: installID + HPINcode + VC + amount + RcardNumber , level: 7)
+                    let SenderConfimrationCode = Card.makeHash(str: installHashKey + RcardNumber + ConfirmationCode + amount, level: 7)
+                    
+                    self.sendmoney(InstallationID: installID, RcardNumber: RcardNumber, Amount: amount, Vouchercounter: VC, ConfirmationCode: ConfirmationCode, SenderConfirmationCode: SenderConfimrationCode)
+                    
+                    
+                }
             }
-            else {
-                
-                let PIN = self.PINcode.text!
-                let vouchercounter = self.card.voucherCounter+2
-                let VC = String(describing: vouchercounter)
-                let installID = self.card.installID!
-                let installHashKey = self.card.installHashKey!
-                
-                let HPINcode = Card.makeHash(str: cardNumber+PIN, level: 7)
-                let ConfirmationCode = Card.makeHash(str: installID + HPINcode + VC + amount + RcardNumber , level: 7)
-                let SenderConfimrationCode = Card.makeHash(str: installHashKey + RcardNumber + ConfirmationCode + amount, level: 7)
-                
-                self.sendmoney(InstallationID: installID, RcardNumber: RcardNumber, Amount: amount, Vouchercounter: VC, ConfirmationCode: ConfirmationCode, SenderConfirmationCode: SenderConfimrationCode)
-                
-                
-            }
-            }
-        }
-        /*
-        let PIN = PINcode.text!
-        let vouchercounter = card.voucherCounter+2
-        let VC = String(describing: vouchercounter)
-        let installID = card.installID!
-        let installHashKey = card.installHashKey!
+                    /*
+         let PIN = PINcode.text!
+         let vouchercounter = card.voucherCounter+2
+         let VC = String(describing: vouchercounter)
+         let installID = card.installID!
+         let installHashKey = card.installHashKey!
+         
+         let HPINcode = Card.makeHash(str: cardNumber+PIN, level: 7)
+         let ConfirmationCode = Card.makeHash(str: installID + HPINcode + VC + amount + RcardNumber , level: 7)
+         let SenderConfimrationCode = Card.makeHash(str: installHashKey + RcardNumber + ConfirmationCode + amount, level: 7)
+         
+         sendmoney(InstallationID: installID, RcardNumber: RcardNumber, Amount: amount, Vouchercounter: VC, ConfirmationCode: ConfirmationCode, SenderConfirmationCode: SenderConfimrationCode)
+         */
         
-        let HPINcode = Card.makeHash(str: cardNumber+PIN, level: 7)
-        let ConfirmationCode = Card.makeHash(str: installID + HPINcode + VC + amount + RcardNumber , level: 7)
-        let SenderConfimrationCode = Card.makeHash(str: installHashKey + RcardNumber + ConfirmationCode + amount, level: 7)
-        
-        sendmoney(InstallationID: installID, RcardNumber: RcardNumber, Amount: amount, Vouchercounter: VC, ConfirmationCode: ConfirmationCode, SenderConfirmationCode: SenderConfimrationCode)
-        */
         
         
     }
+    
+   
+    
+    
+   
     
     
     
     func sendmoney( InstallationID : String, RcardNumber:String, Amount:String,Vouchercounter: String , ConfirmationCode: String, SenderConfirmationCode: String){
         
-        SwiftSpinner.show(" يتم الاتصال بالخادم ...")
+        SwiftSpinner.show(" Connecting to server ...".localized())
         
         let requestURL: URL = URL(string: "https://icashapi.azurewebsites.net/api/SendMoney/"+InstallationID+"/"+RcardNumber+"/"+Amount+"/"+Vouchercounter+"/"+ConfirmationCode+"/"+SenderConfirmationCode)!
         print(requestURL)
@@ -210,15 +257,15 @@ class transferMoney : UIViewController , QRCodeReaderViewControllerDelegate {
                     if (result! > 0){
                         OperationQueue.main.addOperation {
                             
-                            _ =  SweetAlert().showAlert("تم التحويل ")
+                            _ =  SweetAlert().showAlert("Transfer Completed ".localized())
                         }
                     }
                     else {
                         OperationQueue.main.addOperation {
-                            _ = SweetAlert().showAlert("خطأ", subTitle: "الرجاء التأكد من البيانات", style: AlertStyle.error)
+                            _ = SweetAlert().showAlert("Error".localized(), subTitle: "Check the data and try again".localized(), style: AlertStyle.error)
                             print(result!)
                         }
-
+                        
                     }
                     
                     
@@ -226,14 +273,18 @@ class transferMoney : UIViewController , QRCodeReaderViewControllerDelegate {
                     
                 }else{
                     OperationQueue.main.addOperation {
-                        _ = SweetAlert().showAlert("فشلت العملية",subTitle: "نأمل التحقق من الوصول للانترنت ", style: AlertStyle.error)
+                        _ = SweetAlert().showAlert("Error".localized(),subTitle: "Check Internet Connectivity and try again ".localized(), style: AlertStyle.error)
+                        
+
                     }
                 }
-
+                
             }
             else{
                 OperationQueue.main.addOperation {
-                    _ = SweetAlert().showAlert("فشلت العملية",subTitle: "نأمل التحقق من الوصول للانترنت ", style: AlertStyle.error)
+                    _ = SweetAlert().showAlert("Error".localized(),subTitle: "Check Internet Connectivity and try again ".localized(), style: AlertStyle.error)
+                    
+
                 }
             }
         }

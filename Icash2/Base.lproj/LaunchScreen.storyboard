@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,22 +20,29 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="center" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iTunesArtwork@1x" translatesAutoresizingMaskIntoConstraints="NO" id="kQu-rf-3Yh">
-                                <rect key="frame" x="0.0" y="146" width="375" height="375"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logomain" translatesAutoresizingMaskIntoConstraints="NO" id="Eyo-VZ-qMS">
+                                <rect key="frame" x="71" y="79.999999999999986" width="272" height="106.66666666666664"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="kQu-rf-3Yh" secondAttribute="height" multiplier="1:1" id="ky2-ca-kUj"/>
+                                    <constraint firstAttribute="width" secondItem="Eyo-VZ-qMS" secondAttribute="height" multiplier="186:73" id="thZ-FT-cKg"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 0.9" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFp-0i-0dA">
+                                <rect key="frame" x="164" y="695" width="86" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.10284458845853806" green="0.22254487872123718" blue="0.44365888833999634" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.2196078431372549" green="0.32156862745098036" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="kQu-rf-3Yh" secondAttribute="trailing" id="6f9-n2-PXa"/>
-                            <constraint firstItem="kQu-rf-3Yh" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Zpk-Zp-uTi"/>
-                            <constraint firstItem="kQu-rf-3Yh" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="bHB-sk-H4Z"/>
-                            <constraint firstItem="kQu-rf-3Yh" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="hFV-KK-vVw"/>
+                            <constraint firstAttribute="bottom" secondItem="vFp-0i-0dA" secondAttribute="bottom" constant="20" symbolic="YES" id="3LN-Au-au8"/>
+                            <constraint firstItem="Eyo-VZ-qMS" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="51" id="6qM-md-bI0"/>
+                            <constraint firstItem="Eyo-VZ-qMS" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="NC4-TL-G12"/>
+                            <constraint firstItem="Eyo-VZ-qMS" firstAttribute="centerX" secondItem="vFp-0i-0dA" secondAttribute="centerX" id="TjB-TT-W4N"/>
+                            <constraint firstItem="Eyo-VZ-qMS" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="60" id="xIv-oA-2Cb"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -44,6 +52,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="iTunesArtwork@1x" width="512" height="512"/>
+        <image name="logomain" width="133" height="37"/>
     </resources>
 </document>

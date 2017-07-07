@@ -7,18 +7,19 @@
 //
 
 import UIKit
-import QRCode
+import Localize_Swift
+
 
 class ViewController: UIViewController {
     
-
+    
     @IBOutlet weak var cardNumberLabel: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        NotificationCenter.default.addObserver(self, selector: #selector(viewDidLoad), name: NSNotification.Name(LCLLanguageChangeNotification), object: nil)
         
-                
     }
     
     override func didReceiveMemoryWarning() {
@@ -26,21 +27,52 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func unwindToMenu(segue: UIStoryboardSegue) {}
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         if KeychainWrapper.defaultKeychainWrapper.string(forKey: "installHashKey") == nil  {
             performSegue(withIdentifier: "showActivatePage", sender: self)
         } else {
             cardNumberLabel.setTitle(KeychainWrapper.defaultKeychainWrapper.string(forKey: "CardNo"), for: .normal)
+            cardNumberLabel.titleLabel?.font = UIFont(name : "OCRAExtended" , size: 20)
+            
         }
-
+        /*
+        print (Localize.availableLanguages())
+        print (Localize.currentLanguage())
+        print(NSLocalizedString("OK", comment: " " ))
+        print("OK".localized(using: "ar-LY"))
+        print("OK".localized())
+        */
+        // 1
+        let nav = self.navigationController?.navigationBar
+        // 2
+        //nav?.barStyle = UIBarStyle.init(rawValue: <#T##Int#>)!
+        nav?.tintColor = UIColor.white
+        nav?.barTintColor = UIColor(red:0.22, green:0.32, blue:0.47, alpha:1.0)
+        nav?.titleTextAttributes=[NSForegroundColorAttributeName : UIColor.white]
+        self.navigationItem.title = ""
+        
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        
+        imageView.contentMode = .scaleAspectFit
+        // 4
+        let image = UIImage(named: "logomain")
+        imageView.image = image
+        // 5
+        navigationItem.titleView = imageView
+        
+        
+        
     }
     
-    
+        
     @IBAction func checkBalance(_ sender: UIButton) {
         
         //1. Create the alert controller.
-        let alert = UIAlertController(title: "تفقد الرصيد", message: "الرجاء ادخال رقمك السري ", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Check Balance".localized(), message: "Please Enter your PIN ".localized(), preferredStyle: .alert)
         
         //2. Add the text field. You can configure it however you need.
         alert.addTextField { (textField) in
@@ -50,9 +82,9 @@ class ViewController: UIViewController {
         }
         
         // 3. Grab the value from the text field, and print it when the user clicks OK.
-        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { [weak alert] (_) in
+        alert.addAction(UIAlertAction(title: "Cancel".localized(), style: .default, handler: { [weak alert] (_) in
             }))
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+        alert.addAction(UIAlertAction(title: "OK".localized(), style: .default, handler: { [weak alert] (_) in
             let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
            
             /////////////////////////////////My code is here
@@ -60,14 +92,16 @@ class ViewController: UIViewController {
             let PINcode = textField!.text
             if PINcode == nil || PINcode == ""
             {
-                _ = SweetAlert().showAlert("الرجاء ادخال الرقم السري ")
+                _ = SweetAlert().showAlert(" PIN code cannot be Empty ".localized())
                 
             } else {
                
                 
                 let card = Card()
                 
-                let voucherCounterString = String(describing: card.voucherCounter+2)
+                
+                let voucherCounterString = String(describing: card.voucherCounter+1)
+                _ = card.saveVC(VC: voucherCounterString)
                 print(voucherCounterString)
                 let HPINcode =  Card.makeHash(str: card.CardNo!+PINcode!, level: 7)
                 let ConfirmationCode = Card.makeHash(str: card.installID! + HPINcode + voucherCounterString , level: 7)
@@ -91,7 +125,7 @@ class ViewController: UIViewController {
     }
     
     func checkBalanceReq(installationID : String , VoucherCounter : String , ConfirmationCode :String , SenderConfirmationCode : String) {
-        SwiftSpinner.show(" يتم الاتصال بالخادم ...")
+        SwiftSpinner.show(" Connecting to Server ...".localized())
         let requestURL : URL = URL(string: "https://icashapi.azurewebsites.net/api/ChechBalance/"+installationID+"/"+VoucherCounter+"/"+ConfirmationCode+"/"+SenderConfirmationCode)!
         print(requestURL)
         let urlRequest: URLRequest = URLRequest(url: requestURL)
@@ -112,19 +146,19 @@ class ViewController: UIViewController {
                         
                         
                         OperationQueue.main.addOperation {
-                            _ =  SweetAlert().showAlert("رصيدك هو",subTitle: dataString!, style: AlertStyle.none)
+                            _ =  SweetAlert().showAlert("Your Blanace is:".localized(),subTitle: dataString!, style: AlertStyle.none)
                         }
                         
                     }else {
                         OperationQueue.main.addOperation {
-                            _ = SweetAlert().showAlert("فشلت العملية",subTitle: "نأمل التأكد من الرقم السري ", style: AlertStyle.error)
+                            _ = SweetAlert().showAlert("Error".localized() ,subTitle: " Please Try Again ".localized(), style: AlertStyle.error)
                         }
                     }
                     
                 }
             } else {
                 OperationQueue.main.addOperation {
-                    _ = SweetAlert().showAlert("فشلت العملية",subTitle: "نأمل التحقق من الوصول للانترنت ", style: AlertStyle.error)
+                    _ = SweetAlert().showAlert("Error".localized(),subTitle: "Check Internet Connectivity and try again ".localized(), style: AlertStyle.error)
                 }
             }
         }
@@ -132,18 +166,7 @@ class ViewController: UIViewController {
     }
     
     
-    @IBAction func showCardNumber(_ sender: Any) {
-        /////// create QRCODE image
-        var qrCode = QRCode(KeychainWrapper.defaultKeychainWrapper.string(forKey: "CardNo")!)!
-        //qrCode.size = self.imageViewLarge.bounds.size
-        qrCode.errorCorrection = .High
         
-        _ = SweetAlert().showAlert(KeychainWrapper.defaultKeychainWrapper.string(forKey: "CardNo")!, subTitle: ""  , style: AlertStyle.customImage(image: qrCode.image!))
-
-        
-        
-    }
-    
     
     
     

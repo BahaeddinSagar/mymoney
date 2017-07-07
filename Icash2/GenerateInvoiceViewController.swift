@@ -19,7 +19,7 @@ class GenerateInvoiceViewController : UIViewController, QRCodeReaderViewControll
         $0.reader          = QRCodeReader(metadataObjectTypes: [AVMetadataObjectTypeQRCode])
         $0.showTorchButton = true
     })
-    @IBAction func scanAction(_ sender: AnyObject) {
+   func scanAction() {
         do {
             if try QRCodeReader.supportsMetadataObjectTypes() {
                 reader.modalPresentationStyle = .formSheet
@@ -28,9 +28,16 @@ class GenerateInvoiceViewController : UIViewController, QRCodeReaderViewControll
                 reader.completionBlock = { (result: QRCodeReaderResult?) in
                     if let result = result {
                         print("Completion with result: \(result.value) of type \(result.metadataType)")
+                        // to read the first part as the shopID, second part as amount
+                       
                         let seperatedResult = result.value.components(separatedBy: ",")
+                        if seperatedResult[0] != "" && seperatedResult[1] != "" {
                         self.shopIDTextField.text = seperatedResult[0]
                         self.AmountTextField.text = seperatedResult[1]
+                        }
+                        else {
+                            _ = SweetAlert.showAlert("Error".localized(), subTitle: " Wrong QRcode ".localized(), style: AlertStyle.warning)
+                        }
                     }
                 }
                 
@@ -39,23 +46,23 @@ class GenerateInvoiceViewController : UIViewController, QRCodeReaderViewControll
         } catch let error as NSError {
             switch error.code {
             case -11852:
-                let alert = UIAlertController(title: "Error", message: "This app is not authorized to use Back Camera.", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Error".localized(), message: "This app is not authorized to use Back Camera.".localized(), preferredStyle: .alert)
                 
-                alert.addAction(UIAlertAction(title: "Setting", style: .default, handler: { (_) in
+                alert.addAction(UIAlertAction(title: "Setting".localized(), style: .default, handler: { (_) in
                     DispatchQueue.main.async {
                         if let settingsURL = URL(string: UIApplicationOpenSettingsURLString) {
                             UIApplication.shared.openURL(settingsURL)
                         }
                     }
                 }))
-                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                alert.addAction(UIAlertAction(title: "Cancel".localized(), style: .cancel, handler: nil))
                 present(alert, animated: true, completion: nil)
                 
                 
                 
             case -11814:
-                let alert = UIAlertController(title: "Error", message: "Reader not supported by the current device", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                let alert = UIAlertController(title: "Error".localized(), message: "Reader not supported by the current device".localized(), preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Done".localized(), style: .cancel, handler: nil))
                 
                 present(alert, animated: true, completion: nil)
             default:()
@@ -75,9 +82,10 @@ class GenerateInvoiceViewController : UIViewController, QRCodeReaderViewControll
                 message: String (format:"%@ (of type %@)", result.value, result.metadataType),
                 preferredStyle: .alert
             )
-            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            
-            self?.present(alert, animated: true, completion: nil)
+            alert.addAction(UIAlertAction(title: "Done".localized(), style: .cancel, handler: nil))
+            // no need to show the result
+            //self?.present(alert, animated: true, completion: nil)
+
         }
     }
     
@@ -103,6 +111,7 @@ class GenerateInvoiceViewController : UIViewController, QRCodeReaderViewControll
     
     
     
+    @IBOutlet weak var segment: UISegmentedControl!
     
     @IBOutlet weak var shopIDTextField: UITextField!
     @IBOutlet weak var AmountTextField: UITextField!
@@ -111,7 +120,9 @@ class GenerateInvoiceViewController : UIViewController, QRCodeReaderViewControll
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let camera = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: Selector(("btnOpenCamera")))
+        self.navigationItem.rightBarButtonItem = camera
+
         // Do any additional setup after loading the view, typically from a nib.
         
         
@@ -123,22 +134,34 @@ class GenerateInvoiceViewController : UIViewController, QRCodeReaderViewControll
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+        
+    }
 
    
     @IBAction func GenerateCode(_ sender: UIButton) {
         self.view.endEditing(true)
+        // McardNumber is the number of the shop, not the cardID
         let McardNumber = shopIDTextField.text!
         
         let PINcode = PINcodeTextField.text!
         
-        if AmountTextField.text! != "" && McardNumber != "" && PINcode != "" {
-        let amount = Card.changeToFloat(Float(AmountTextField.text!)!)
+        //if AmountTextField.text! != "" && McardNumber != "" && PINcode != "" {
         
+        // if amount can be made to float, continue, otherwise show error
+        if let amountt = Float(AmountTextField.text!), McardNumber != "", PINcode != "" {
+        let amount = Card.changeToFloat(amountt)
         
         let cardNumber = card.CardNo!
         let VC = String(card.voucherCounter)
+            // makd the Hash PIN COde
         let HPINcode = Card.makeHash(str: cardNumber + PINcode, level: 7)
+            // makeing the Confirmation code
         let ConfirmationCode = Card.makeHash(str: card.installID! + HPINcode + amount + McardNumber + VC, level: 4)
+            // the code is given by this operation
         var finalCC : Int = Int(ConfirmationCode)!
         finalCC = finalCC*10 + card.voucherCounter % 10
         card.saveVC(VC: VC)
@@ -147,18 +170,21 @@ class GenerateInvoiceViewController : UIViewController, QRCodeReaderViewControll
         //qrCode.size = self.imageViewLarge.bounds.size
         qrCode.errorCorrection = .High
         
-        _ = SweetAlert().showAlert("رمز الشراء هو ", subTitle: String(describing: finalCC) , style: AlertStyle.customImage(image: qrCode.image!))
+        _ = SweetAlert().showAlert("Purchase code is :", subTitle: String(describing: finalCC) , style: AlertStyle.customImage(image: qrCode.image!))
         
         
         
         } else {
-            
+            _ = SweetAlert().showAlert("Error", subTitle: " الرجاء التحقق من صحة البيانات ", style: AlertStyle.warning)
         }
     
     
     }
     
 
+       
+    
+    
 
 
 }

@@ -1,0 +1,8 @@
+github "soffes/Crypto" == 0.5.0
+github "yannickl/QRCodeReader.swift" >= 7.3.0
+github "aschuch/QRCode"
+github "hackiftekhar/IQKeyboardManager"
+github "jpotts18/SwiftValidator"
+github "uacaps/PageMenu"
+github "Skyscanner/SkyFloatingLabelTextField"
+github "malcommac/SwiftDate" ~> 4.0

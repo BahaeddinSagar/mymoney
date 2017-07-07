@@ -15,6 +15,9 @@ class MainSettingViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let nav = self.navigationController?.navigationBar
+        nav?.backItem?.title = ""
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -37,23 +40,28 @@ class MainSettingViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return 2
     }
 
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 2 {
+        if indexPath.row == 1 {
             RemoveCard()
             
             
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.title = "Setting".localized()
+        
+    }
     
     
     func RemoveCard (){
         // show alert box to confirm
-        _ = SweetAlert().showAlert("Are you sure?", subTitle: "You card will be permanently deleted!", style: AlertStyle.warning, buttonTitle:"Cancel", buttonColor:UIColor.colorFromRGB(0xD0D0D0) , otherButtonTitle:  "Yes, delete it!", otherButtonColor: UIColor.colorFromRGB(0xDD6B55)) { (isOtherButton) -> Void in
+        _ = SweetAlert().showAlert("Deactivate".localized(), subTitle: "Are you sure you want to deactivate your card? this cannot be undone".localized(), style: AlertStyle.warning, buttonTitle:"No".localized(), buttonColor:UIColor.colorFromRGB(0xD0D0D0) , otherButtonTitle:  "Yes, Deactivate".localized(), otherButtonColor: UIColor.colorFromRGB(0xFF0000)) { (isOtherButton) -> Void in
             if isOtherButton == true {
                 // cancel - DO NOTING
                 

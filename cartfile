@@ -1,5 +1,7 @@
-
-github "yannickl/QRCodeReader.swift" >= 7.3.0
+github "soffes/Crypto" 
+github "yannickl/QRCodeReader.swift" 
 github "aschuch/QRCode"
 github "hackiftekhar/IQKeyboardManager"
-github "jpotts18/SwiftValidator"
+github "malcommac/SwiftDate"
+github "marmelroy/Localize-Swift"
+github "SwiftyJSON/SwiftyJSON"

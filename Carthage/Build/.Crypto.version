@@ -1,27 +1,26 @@
 {
-  "commitish" : "v0.5.1",
   "iOS" : [
     {
-      "hash" : "08fbeced97e5d2f2e2dfdee9011f56d96ce805fd01ab43145ecf6aa3e2143bd3",
+      "hash" : "a3a4a41ab89b599bd8ef130aed4db72e3c75472a5b4d692d26e3554ec1e9602d",
       "name" : "Crypto"
     }
   ],
-  "xcodeVersion" : "Xcode 8.2.1\nBuild version 8C1002",
+  "commitish" : "v0.5.3",
   "watchOS" : [
     {
-      "hash" : "a0bcdb0e5bba68b04027a7666dc3ea78188ed383ecb88c1124d49009ba75fc0e",
+      "hash" : "2c68c6951849cda6843b15a3a70d694bb0660109880b9396ad1df69ddf314e0b",
       "name" : "Crypto"
     }
   ],
   "tvOS" : [
     {
-      "hash" : "58ed3d9be9d347e5c16b7c34211303b44552616dc82ecceb582c59f9abe34e8c",
+      "hash" : "4e7c2a19652b26dd6da9752237a90e6c19cc09d2c6d67423ee87c4833d2bf5e4",
       "name" : "Crypto"
     }
   ],
   "Mac" : [
     {
-      "hash" : "5f1051ce7fd01f3882bddd292ef7ab93f130faa92ec76b36478234103b5cc04e",
+      "hash" : "6e735913d954ed4df3aaf5aceecf022a37b10aaf1d26e214cb806df327ddcec6",
       "name" : "Crypto"
     }
   ]

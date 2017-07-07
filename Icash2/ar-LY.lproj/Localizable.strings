@@ -1,0 +1,61 @@
+/*
+ localizable.strings
+ Icash2
+ 
+ Created by Bahaeddin Sagar on 6/1/17.
+ Copyright © 2017 Umbrella. All rights reserved.
+ */
+
+" Connecting to Server ..." = "الرجاء الانتظار ,,,";
+" PIN code cannot be Empty " = "الرجاء ادخال الرمز السري";
+" Please Try Again " = "الرجاء المحاولة مجددا";
+"Cancel" = "رجوع";
+"Check Balance" = "تفقد الرصيد";
+"Check Internet Connectivity and try again " = "الرجاء التحقق من امكانية الوصول للانترنت و المحاولة مجددا";
+"Error" = "خطأ";
+"OK" = "عرض الرصيد";
+"Please Enter your PIN " = "الرجاء ادخال الرمز السري";
+"Yes, delete it!" = "نعم";
+"You card will be permanently deleted!" = "هل تريد الغاء تفعيل البطاقة";
+"Your Blanace is:" = "رصيدك هو: ";
+"Are you sure?" = "هل أنت متأكد ؟";
+"No" = "لا";
+"This app is not authorized to use Back Camera." = "الرجاء السماح للتطبيق باستعمال الكاميرا";
+"Setting" = "الاعدادات";
+"Reader not supported by the current device" = "القارئ لا يدعم جهازك الحالي";
+"Okay" = "حسنا";
+"You will transfer " = " ستقوم بتحويل";
+"to the account with card number  " = " الى صاحب البطاقة رقم";
+"Transfer money" = "تحويل";
+"Done" = "Done";
+"Transfer Completed " = "تمت عملية التحويل بنجاح ";
+"Check the data and try again" = " الرجاء التأكد من البيانات و اعادة المحاولة";
+" Card Number and Activation code are required " = "الرجاء ادخال رقم البطاقة و رمز التفعيل";
+"must be in the form : " ="يجب أن يكون بالصيغة : ";
+"Card Number is required " ="الرجاء ادخال رقم البطاقة ";
+" Card already activated with different Phone Number " = "البطاقة مفعلة مسبقا برقم هاتف أخر";
+"Succuss" = "نجحت العملية ";
+" you will recieve an SMS with confirmation Code shortly" = "ستصلك رسالة نصية برمز التأكيد قريبا";
+"Please Enter Confirmation Code" = " الرجاء ادخال رمز التأكيد ";
+"Card in Activated" = " تم تفعيل البطاقة ";
+"Please Check Confirmation Code" = " الرجاء التحقق من رمز التأكيد";
+" Confirmation Code Error " = " خطأ في رمز التأكيد ";
+" Not Enough Balance " = " رصيدك غير كافي ";
+" Error while making purchase " = " خطأ أثناء اجراء العملية ";
+"PIN code should have minimum 4 numbers" = " الرمز السري يجب أن يكون أكثر من 4 أرقام";
+"Codes don't match" = "الرموز غير متطابقة";
+"SMS code" = "رمز التأكيد برسالة";
+"an SMS code is sent to you, enter it here" = "تم ارسال رمز اليك في رسالة نصية, أدخله هنا";
+"Enter" = "أدخل";
+"PIN code changed successfully " = "تم تغيير الرمز السري بنجاح ";
+"Please Check SMS Code" = "الرجاء ادخال الرمز المرسل اليك في رسالة نصية";
+" Wrong QRcode " = " Wrong QRcode ";
+"Purchase code is :" = "رمز الشراء هو : ";
+"Explain faliure" = "تفسير فشل العملية";
+"Buy" = "شراء";
+"min PIN code is 4 characters" = "الرمز السري على الأقل 4 أرقام";
+"Invalid email" = "ايميل غير صحيح";
+"Your Blanace is: \n" = "رصيدك هو : ";
+"Deactivate"="إلغاء التفعيل";
+"Are you sure you want to deactivate your card? this cannot be undone"="هل تريد إلغاء تفعيل البطاقة ؟";
+"Yes, Deactivate"="نعم, إلغ التفعيل";

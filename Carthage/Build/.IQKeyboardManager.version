@@ -1,23 +1,13 @@
 {
-  "commitish" : "v4.0.9",
+  "commitish" : "v4.0.10",
   "iOS" : [
     {
-      "hash" : "cde849f7b53b6f0b0c27c420d67b6227c9b34f1f6b480536981bcb7cb81710c7",
+      "hash" : "00f70934fb9ba96b00d11d5187128d02d5803e6894b60d35daff7212ab13707b",
       "name" : "IQKeyboardManager"
     },
     {
-      "hash" : "f1dcba39eb6cb7c2a8003d83e5a8725e9a0132d54c45041c46ee593f85de51a9",
+      "hash" : "6d64cb03005ee5c5ac6d314a10dae09c199589d58c29866eeb25fe1b0c554cfb",
       "name" : "IQKeyboardManagerSwift"
     }
-  ],
-  "xcodeVersion" : "Xcode 8.2.1\nBuild version 8C1002",
-  "watchOS" : [
-
-  ],
-  "tvOS" : [
-
-  ],
-  "Mac" : [
-
   ]
 }

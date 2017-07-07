@@ -1,0 +1,132 @@
+
+/* Class = "UITabBarItem"; title = "تفسير فشل العملية"; ObjectID = "0Yn-eC-8VW"; */
+"0Yn-eC-8VW.title" = "تفسير فشل العملية";
+
+/* Class = "UITextField"; placeholder = "from"; ObjectID = "17D-lv-AvJ"; */
+"17D-lv-AvJ.placeholder" = "from";
+
+/* Class = "UILabel"; text = "Settings"; ObjectID = "1bN-W1-8XY"; */
+"1bN-W1-8XY.text" = "Settings";
+
+/* Class = "UILabel"; text = "Transfer"; ObjectID = "1wL-rR-BAT"; */
+"1wL-rR-BAT.text" = "Transfer";
+
+/* Class = "UILabel"; text = "Buy"; ObjectID = "6Ux-uY-HWy"; */
+"6Ux-uY-HWy.text" = "Buy";
+
+/* Class = "UILabel"; text = "Card Number"; ObjectID = "Ah5-a7-2Ig"; */
+"Ah5-a7-2Ig.text" = "Card Number";
+
+/* Class = "UILabel"; text = "Amount"; ObjectID = "BJ6-50-AqM"; */
+"BJ6-50-AqM.text" = "Amount";
+
+/* Class = "UITextField"; placeholder = "To"; ObjectID = "BZ7-kR-iz6"; */
+"BZ7-kR-iz6.placeholder" = "To";
+
+/* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "EbX-G7-Zdg"; */
+"EbX-G7-Zdg.normalTitle" = "Confirm";
+
+/* Class = "UILabel"; text = "Card already Activated"; ObjectID = "Enm-PO-jJj"; */
+"Enm-PO-jJj.text" = "Card already Activated";
+
+/* Class = "UILabel"; text = "Amount"; ObjectID = "EoB-cX-Hgp"; */
+"EoB-cX-Hgp.text" = "Amount";
+
+/* Class = "UILabel"; text = "PIN Code"; ObjectID = "Iq9-qa-PHY"; */
+"Iq9-qa-PHY.text" = "PIN Code";
+
+/* Class = "UIButton"; normalTitle = "Show Code"; ObjectID = "Iy0-0t-XY3"; */
+"Iy0-0t-XY3.normalTitle" = "Show Code";
+
+/* Class = "UILabel"; text = "Account Record"; ObjectID = "Kdw-x2-fSW"; */
+"Kdw-x2-fSW.text" = "Account Record";
+
+/* Class = "UILabel"; text = "Store Number"; ObjectID = "KoO-Ze-t2e"; */
+"KoO-Ze-t2e.text" = "Store Number";
+
+/* Class = "UILabel"; text = "Deactivate Card"; ObjectID = "Lai-As-2Fw"; */
+"Lai-As-2Fw.text" = "Deactivate Card";
+
+/* Class = "UIButton"; normalTitle = "Failure Reason"; ObjectID = "QEc-Ji-QC0"; */
+"QEc-Ji-QC0.normalTitle" = "Failure Reason";
+
+/* Class = "UITextField"; placeholder = "2189XXXXXXXX"; ObjectID = "Qqw-nw-ZOa"; */
+"Qqw-nw-ZOa.placeholder" = "2189XXXXXXXX";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "S4U-aa-rsM"; */
+"S4U-aa-rsM.title" = "Change PIN code";
+
+/* Class = "UITextField"; placeholder = "Number of transactions"; ObjectID = "TC8-J5-N1R"; */
+"TC8-J5-N1R.placeholder" = "Number of transactions";
+
+/* Class = "UILabel"; text = "Amount"; ObjectID = "Tc3-0T-W63"; */
+"Tc3-0T-W63.text" = "Amount";
+
+/* Class = "UILabel"; text = "New PIN Code"; ObjectID = "Uoa-xa-gGd"; */
+"Uoa-xa-gGd.text" = "New PIN Code";
+
+/* Class = "UILabel"; text = "Card Number"; ObjectID = "VkA-7A-KxJ"; */
+"VkA-7A-KxJ.text" = "Card Number";
+
+/* Class = "UILabel"; text = "PIN Code"; ObjectID = "WA8-eA-TA8"; */
+"WA8-eA-TA8.text" = "PIN Code";
+
+/* Class = "UIButton"; normalTitle = "Transfer"; ObjectID = "YEp-tB-wYO"; */
+"YEp-tB-wYO.normalTitle" = "Transfer";
+
+/* Class = "UITextField"; placeholder = "Email (optional)"; ObjectID = "YI8-8K-OcJ"; */
+"YI8-8K-OcJ.placeholder" = "Email (optional)";
+
+/* Class = "UILabel"; text = "PIN code"; ObjectID = "beE-Rv-Yn1"; */
+"beE-Rv-Yn1.text" = "PIN code";
+
+/* Class = "UILabel"; text = "Store Number"; ObjectID = "dGv-xF-o2i"; */
+"dGv-xF-o2i.text" = "Store Number";
+
+/* Class = "UILabel"; text = "Balance"; ObjectID = "dIc-31-MNC"; */
+"dIc-31-MNC.text" = "Balance";
+
+/* Class = "UISegmentedControl"; eUR-Eh-A7D.segmentTitles[0] = "Buy"; ObjectID = "eUR-Eh-A7D"; */
+"eUR-Eh-A7D.segmentTitles[0]" = "Buy";
+
+/* Class = "UISegmentedControl"; eUR-Eh-A7D.segmentTitles[1] = "Explain Failed Operation"; ObjectID = "eUR-Eh-A7D"; */
+"eUR-Eh-A7D.segmentTitles[1]" = "Explain Failed Operation";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "eiA-He-vE0"; */
+"eiA-He-vE0.text" = "change PIN code";
+
+/* Class = "UITableViewSection"; headerTitle = "Settings"; ObjectID = "eqN-dx-zWU"; */
+"eqN-dx-zWU.headerTitle" = "Settings";
+
+/* Class = "UILabel"; text = "Confirmation Code"; ObjectID = "h7z-Ym-XQW"; */
+"h7z-Ym-XQW.text" = "Confirmation Code";
+
+/* Class = "UILabel"; text = "Error Code"; ObjectID = "l0C-8f-AMa"; */
+"l0C-8f-AMa.text" = "Error Code";
+
+/* Class = "UITextField"; placeholder = "PIN code"; ObjectID = "mIA-Fy-uIH"; */
+"mIA-Fy-uIH.placeholder" = "PIN code";
+
+/* Class = "UILabel"; text = "Amount"; ObjectID = "ohc-cK-6Ga"; */
+"ohc-cK-6Ga.text" = "Amount";
+
+/* Class = "UILabel"; text = "PIN code"; ObjectID = "ptc-tz-4tK"; */
+"ptc-tz-4tK.text" = "PIN code";
+
+/* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "pzR-Ah-McF"; */
+"pzR-Ah-McF.normalTitle" = "Confirm";
+
+/* Class = "UIButton"; normalTitle = "إتمام العملية"; ObjectID = "qOn-pA-qwq"; */
+"qOn-pA-qwq.normalTitle" = "إتمام العملية";
+
+/* Class = "UILabel"; text = "Advanced options"; ObjectID = "s6m-Pa-zIV"; */
+"s6m-Pa-zIV.text" = "Advanced options";
+
+/* Class = "UIButton"; normalTitle = "000000000"; ObjectID = "veg-cf-cbw"; */
+"veg-cf-cbw.normalTitle" = "000000000";
+
+/* Class = "UIButton"; normalTitle = "Change PIN Code"; ObjectID = "wpA-2B-Puu"; */
+"wpA-2B-Puu.normalTitle" = "Change PIN Code";
+
+/* Class = "UILabel"; text = "Confirm New PIN Code"; ObjectID = "xeF-Vu-OOa"; */
+"xeF-Vu-OOa.text" = "Confirm New PIN Code";

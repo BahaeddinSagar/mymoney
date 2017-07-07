@@ -1,0 +1,61 @@
+/* 
+  localizable.strings
+  Icash2
+
+  Created by Bahaeddin Sagar on 6/1/17.
+  Copyright © 2017 Umbrella. All rights reserved.
+*/
+
+" Connecting to Server ..." = " Connecting to Server ...";
+" PIN code cannot be Empty " = " PIN code cannot be Empty ";
+" Please Try Again " = " Please Try Again ";
+"Cancel" = "Cancel";
+"Check Balance" = "Check Balance";
+"Check Internet Connectivity and try again " = "Check Internet Connectivity and try again ";
+"Error" = "Error";
+"OK" = "OK";
+"Please Enter your PIN " = "Please Enter your PIN ";
+"Yes, delete it!" = "Yes, delete it!";
+"You card will be permanently deleted!" = "You card will be permanently deleted!";
+"Your Blanace is:" = "Your Blanace is:";
+"Are you sure?" ="Are you sure?";
+"No" = "No";
+"This app is not authorized to use Back Camera." = "This app is not authorized to use Back Camera.";
+"Setting" = "Settings";
+"Reader not supported by the current device" = "Reader not supported by the current device";
+"Okay" = "Okay";
+"You will transfer " = "You will transfer ";
+"to the account with card number  " = "to the account with card number  ";
+"Transfer money" = "Transfer money";
+"Done" = "Done";
+"Transfer Completed " = "Transfer Completed ";
+"Check the data and try again" = "Check the data and try again";
+" Card Number and Activation code are required " = " Card Number and Activation code are required ";
+"must be in the form : " =" must be in the form : ";
+"Card Number is required " =" Card Number is required ";
+" Card already activated with different Phone Number " = " Card already activated with different Phone Number ";
+"Succuss" = "Succuss";
+" you will recieve an SMS with confirmation Code shortly" = " you will revieve an SMS with Activation Code shortly";
+"Please Enter Confirmation Code" = "Please Enter Confirmation Code";
+"Card in Activated" = "Card in Activated";
+"Please Check Confirmation Code" = "Please Check Confirmation Code";
+" Confirmation Code Error " = " Confirmation Code Error ";
+" Not Enough Balance " = " Not Enough Balance ";
+" Error while making purchase " = " Error while making purchase ";
+"PIN code should have minimum 4 numbers" = "PIN code should have minimum 4 numbers";
+"Codes don't match" = "Codes don't match";
+"SMS code" = "SMS code";
+"an SMS code is sent to you, enter it here" = "an SMS code is sent to you, enter it here";
+"Enter" = "Enter";
+"PIN code changed successfully " = "PIN code changed successfully ";
+"Please Check SMS Code" = "Please Check SMS Code";
+" Wrong QRcode " = " Wrong QRcode ";
+"Purchase code is :" = "Purchase code is :";
+"Explain faliure" = "Explain faliure";
+"Buy" = "Buy";
+"min PIN code is 4 characters" = "min PIN code is 4 characters";
+"Invalid email" = "Invalid email";
+"Your Blanace is: \n" = "Your Blanace is: \n";
+"Deactivate"="Deactivate";
+"Are you sure you want to deactivate your card? this cannot be undone"="Are you sure you want to deactivate your card? this cannot be undone";
+"Yes, Deactivate"="Yes, Deactivate";

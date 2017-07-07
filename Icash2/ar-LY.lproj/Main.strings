@@ -1,0 +1,180 @@
+/* Class = "UILabel"; text = "Settings"; ObjectID = "1bN-W1-8XY"; */
+"1bN-W1-8XY.text" = "الاعدادات";
+
+/* Class = "UILabel"; text = "Transfer"; ObjectID = "1wL-rR-BAT"; */
+"1wL-rR-BAT.text" = "تحويل";
+
+/* Class = "UITextField"; placeholder = "Card Number"; ObjectID = "4hx-Z2-P6Z"; */
+"4hx-Z2-P6Z.placeholder" = "رقم البطاقة";
+
+/* Class = "UILabel"; text = "Buy"; ObjectID = "6Ux-uY-HWy"; */
+"6Ux-uY-HWy.text" = "شراء";
+
+/* Class = "UIViewController"; title = "Activating iCash Card"; ObjectID = "8sZ-Y1-WUg"; */
+"8sZ-Y1-WUg.title" = "تفعيل بطاقة iCash";
+
+/* Class = "UITextField"; placeholder = "from"; ObjectID = "17D-lv-AvJ"; */
+"17D-lv-AvJ.placeholder" = "من";
+
+/* (No Commment) */
+"Ah5-a7-2Ig.text" = "رقم البطاقة";
+
+/* (No Commment) */
+"BJ6-50-AqM.text" = "القيمة";
+
+/* Class = "UITextField"; placeholder = "To"; ObjectID = "BZ7-kR-iz6"; */
+"BZ7-kR-iz6.placeholder" = "الى";
+
+/* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "EbX-G7-Zdg"; */
+"EbX-G7-Zdg.normalTitle" = "تأكيد";
+
+/* Class = "UILabel"; text = "Card already Activated"; ObjectID = "Enm-PO-jJj"; */
+"Enm-PO-jJj.text" = "بطاقة مفعلة مسبقا";
+
+/* Class = "UILabel"; text = "Amount"; ObjectID = "EoB-cX-Hgp"; */
+"EoB-cX-Hgp.text" = "القيمة";
+
+/* Class = "UIButton"; normalTitle = "Get Record"; ObjectID = "GkZ-Bg-F2M"; */
+"GkZ-Bg-F2M.normalTitle" = "طلب";
+
+/* Class = "UITextField"; placeholder = "New PIN Code"; ObjectID = "IJL-YD-xHq"; */
+"IJL-YD-xHq.placeholder" = "الرمز السري الجديد";
+
+/* Class = "UITextField"; placeholder = "Amount"; ObjectID = "Iil-zk-3Wr"; */
+"Iil-zk-3Wr.placeholder" = "القيمة";
+
+/* (No Commment) */
+"Iq9-qa-PHY.text" = "الرمز السري";
+
+/* Class = "UIButton"; normalTitle = "Show Code"; ObjectID = "Iy0-0t-XY3"; */
+"Iy0-0t-XY3.normalTitle" = "اظهار الرمز";
+
+/* Class = "UITextField"; placeholder = "Error Code"; ObjectID = "J2P-Vq-Z4Y"; */
+"J2P-Vq-Z4Y.placeholder" = "رمز الخطأ";
+
+/* Class = "UITextField"; placeholder = "Confirmation Code"; ObjectID = "JZb-dm-Xpo"; */
+"JZb-dm-Xpo.placeholder" = "رمز التأكيد";
+
+/* Class = "UIViewController"; title = "Transfer"; ObjectID = "JvN-Q1-9uX"; */
+"JvN-Q1-9uX.title" = "تحويل";
+
+/* Class = "UILabel"; text = "Account Record"; ObjectID = "Kdw-x2-fSW"; */
+"Kdw-x2-fSW.text" = "كشف حساب";
+
+/* (No Commment) */
+"KoO-Ze-t2e.text" = "رقم المتجر";
+
+/* Class = "UILabel"; text = "Deactivate Card"; ObjectID = "Lai-As-2Fw"; */
+"Lai-As-2Fw.text" = "الغاء تفعيل البطاقة من الهاتف";
+
+/* Class = "UIButton"; normalTitle = "Resend Activation Code"; ObjectID = "P3l-pq-8q7"; */
+"P3l-pq-8q7.normalTitle" = "اعادة ارسال رمز التفعيل";
+
+/* Class = "UIButton"; normalTitle = "Failure Reason"; ObjectID = "QEc-Ji-QC0"; */
+"QEc-Ji-QC0.normalTitle" = "سبب الفشل ";
+
+/* Class = "UITextField"; placeholder = "2189XXXXXXXX"; ObjectID = "Qqw-nw-ZOa"; */
+"Qqw-nw-ZOa.placeholder" = "2189XXXXXXXX";
+
+/* Class = "UIViewController"; title = "Activating iCash Card"; ObjectID = "Rhd-pf-CSD"; */
+"Rhd-pf-CSD.title" = "تفعيل بطاقة iCash";
+
+/* Class = "UITextField"; placeholder = "PIN Code"; ObjectID = "S0J-Yy-fhQ"; */
+"S0J-Yy-fhQ.placeholder" = "الرمز السري";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "S4U-aa-rsM"; */
+"S4U-aa-rsM.title" = "عنوان";
+
+/* Class = "UITextField"; placeholder = "Number of transactions"; ObjectID = "TC8-J5-N1R"; */
+"TC8-J5-N1R.placeholder" = "عدد الحركات";
+
+/* (No Commment) */
+"Tc3-0T-W63.text" = "القيمة";
+
+/* (No Commment) */
+"Uoa-xa-gGd.text" = "الرمز السري الجديد";
+
+/* Class = "UILabel"; text = "Card Number"; ObjectID = "VkA-7A-KxJ"; */
+"VkA-7A-KxJ.text" = "رقم البطاقة";
+
+/* (No Commment) */
+"WA8-eA-TA8.text" = "الرمز السري";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "XCe-Yo-7U3"; */
+"XCe-Yo-7U3.text" = "label";
+
+/* Class = "UIViewController"; title = "Card Info"; ObjectID = "XF8-zf-Lza"; */
+"XF8-zf-Lza.title" = "معلومات الحساب";
+
+/* Class = "UIButton"; normalTitle = "Transfer"; ObjectID = "YEp-tB-wYO"; */
+"YEp-tB-wYO.normalTitle" = "تحويل";
+
+/* Class = "UITextField"; placeholder = "Email (optional)"; ObjectID = "YI8-8K-OcJ"; */
+"YI8-8K-OcJ.placeholder" = "البريد الالكتروني (اختياري)";
+
+/* Class = "UILabel"; text = "ConfirmationCode\\"; ObjectID = "beE-Rv-Yn1"; */
+"beE-Rv-Yn1.text" = "الرمز السري";
+
+/* (No Commment) */
+"dGv-xF-o2i.text" = "رقم المتجر";
+
+/* Class = "UILabel"; text = "Balance"; ObjectID = "dIc-31-MNC"; */
+"dIc-31-MNC.text" = "رصـيد";
+
+/* Class = "UISegmentedControl"; eUR-Eh-A7D.segmentTitles[0] = "Buy"; ObjectID = "eUR-Eh-A7D"; */
+"eUR-Eh-A7D.segmentTitles[0]" = "شراء";
+
+/* Class = "UISegmentedControl"; eUR-Eh-A7D.segmentTitles[1] = "Explain Failed"; ObjectID = "eUR-Eh-A7D"; */
+"eUR-Eh-A7D.segmentTitles[1]" = "تفسير فشل العملية";
+
+/* Class = "UILabel"; text = "change PIN code"; ObjectID = "eiA-He-vE0"; */
+"eiA-He-vE0.text" = "تغيير  الرمز السري";
+
+/* Class = "UITableViewSection"; headerTitle = "Settings"; ObjectID = "eqN-dx-zWU"; */
+"eqN-dx-zWU.headerTitle" = "الاعدادات";
+
+/* Class = "UITextField"; placeholder = "PIN Code"; ObjectID = "gmQ-R2-dpr"; */
+"gmQ-R2-dpr.placeholder" = "الرمز السري";
+
+/* (No Commment) */
+"h7z-Ym-XQW.text" = "رمز التأكيد";
+
+/* Class = "UILabel"; text = "Card Number"; ObjectID = "krx-Qv-FuE"; */
+"krx-Qv-FuE.text" = "رقم البطاقة";
+
+/* (No Commment) */
+"l0C-8f-AMa.text" = "رمز الخطأ";
+
+/* Class = "UITextField"; placeholder = "PIN code"; ObjectID = "mIA-Fy-uIH"; */
+"mIA-Fy-uIH.placeholder" = "الرمز السري";
+
+/* Class = "UITextField"; placeholder = "Confirm New PIN Code"; ObjectID = "nMe-zG-woa"; */
+"nMe-zG-woa.placeholder" = "تأكيد الرمز السري الجديد";
+
+/* (No Commment) */
+"ohc-cK-6Ga.text" = "القيمة";
+
+/* (No Commment) */
+"ptc-tz-4tK.text" = "الرمز السري";
+
+/* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "pzR-Ah-McF"; */
+"pzR-Ah-McF.normalTitle" = "تأكيد";
+
+/* Class = "UIButton"; normalTitle = "إتمام العملية"; ObjectID = "qOn-pA-qwq"; */
+"qOn-pA-qwq.normalTitle" = "اتمام العملية";
+
+/* Class = "UILabel"; text = "Advanced options"; ObjectID = "s6m-Pa-zIV"; */
+"s6m-Pa-zIV.text" = "خيارات متقدمة";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "tCm-Yr-BNP"; */
+"tCm-Yr-BNP.normalTitle" = "رجوع";
+
+/* Class = "UIButton"; normalTitle = "000000000"; ObjectID = "veg-cf-cbw"; */
+"veg-cf-cbw.normalTitle" = "000000000";
+
+/* Class = "UIButton"; normalTitle = "Change PIN Code"; ObjectID = "wpA-2B-Puu"; */
+"wpA-2B-Puu.normalTitle" = "تغيير الرمز السري";
+
+/* (No Commment) */
+"xeF-Vu-OOa.text" = "اعادة ادخال الرمز السري الجديد";
+

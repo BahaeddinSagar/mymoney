@@ -16,8 +16,11 @@ class SettingViewController : UIViewController {
     @IBOutlet weak var confimPINtextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+                // Do any additional setup after loading the view, typically from a nib.
+        let nav = self.navigationController?.navigationBar
+        nav?.backItem?.title = ""
         
-        // Do any additional setup after loading the view, typically from a nib.
+        
         
         
         
@@ -28,6 +31,11 @@ class SettingViewController : UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationItem.title=" Change PIN Code "
+    }
     
        
     @IBAction func changePIN(_ sender: UIButton) {
@@ -37,11 +45,11 @@ class SettingViewController : UIViewController {
         let newPIN = newPINtextField.text!
         let confirmPIN = confimPINtextField.text!
         // Minimum PINcode characters
-        if newPIN.characters.count < 4 {
-            _ = SweetAlert().showAlert(" الرقم السري يجب أن يكون أربعة أرقام علي الأقل  ")
+        if newPIN.characters.count != 4 {
+            _ = SweetAlert().showAlert( "Error".localized()  ,subTitle: "PIN code should have minimum 4 numbers".localized(), style: AlertStyle.warning)
             // confirming that codes match
         } else if newPIN != confirmPIN {
-            _ = SweetAlert().showAlert(" الرقم السري الجديد و تأكيد الرقم السري غير متطابقان ")
+            _ = SweetAlert().showAlert("Error".localized()  ,subTitle: "Codes don't match".localized(), style: AlertStyle.warning)
         }else {
             // TO make hash and Emergency hash PIN code for new and old codes
             let HPCS = Card.makeHash(str: card.CardNo!+oldPIN,level: 7)
@@ -75,7 +83,7 @@ class SettingViewController : UIViewController {
     }
     
     func ChangePIN(installID : String, NHPC : String, RNHPC : String, voucherCounter : String, confirmationCode : String, SenderConfirmationCode : String , HPCS : String) {
-        SwiftSpinner.show(" يتم الاتصال بالخادم ...")
+        SwiftSpinner.show(" Connecting to server...".localized())
         // make request
         let requestURL: URL = URL(string: "https://icashapi.azurewebsites.net/api/ChangeBinReq/"+installID+"/"+NHPC+"/"+RNHPC+"/"+voucherCounter+"/"+confirmationCode+"/"+SenderConfirmationCode)!
         print(requestURL)
@@ -96,7 +104,7 @@ class SettingViewController : UIViewController {
                         // SMS should be sent to the client and the client should enter the code
                         OperationQueue.main.addOperation {
                             //1. Create the alert controller.
-                            let alert = UIAlertController(title: "تأكيد العملية", message: "الرجاء ادخال رمز التأكيد  ", preferredStyle: .alert)
+                            let alert = UIAlertController(title: "SMS code".localized(), message: "an SMS code is sent to you, enter it here".localized(), preferredStyle: .alert)
                             
                             //2. Add the text field. You can configure it however you need.
                             alert.addTextField { (textField) in
@@ -106,10 +114,10 @@ class SettingViewController : UIViewController {
                             
                             // 3. Grab the value from the text field, and print it when the user clicks OK.
                             // if cancel pressed, do nothing
-                            alert.addAction(UIAlertAction(title: "الغاء", style: .default, handler: { [weak alert] (_) in
+                            alert.addAction(UIAlertAction(title: "Cancel".localized(), style: .default, handler: { [weak alert] (_) in
                             }))
                             // if OK is pressed, continue
-                            alert.addAction(UIAlertAction(title: " ادخال ", style: .default, handler: { [weak alert] (_) in
+                            alert.addAction(UIAlertAction(title: "Enter".localized(), style: .default, handler: { [weak alert] (_) in
                                 let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
                                 /////////////////////////////////My code is here
                                 self.resignFirstResponder()
@@ -132,20 +140,20 @@ class SettingViewController : UIViewController {
                     } else {
                         // if reult < 0 then error
                         OperationQueue.main.addOperation {
-                            _ = SweetAlert().showAlert("فشلت العملية",subTitle: "نأمل التحقق من الرقم السري  ", style: AlertStyle.error)
+                            _ = SweetAlert().showAlert("Error".localized(),subTitle: " Please Try Again ".localized(), style: AlertStyle.error)
                         }
                     }
                 } else {
                     // if status code != 200 then error
                     OperationQueue.main.addOperation {
-                        _ = SweetAlert().showAlert("فشلت العملية",subTitle: "نأمل التحقق من الوصول للانترنت ", style: AlertStyle.error)
+                        _ = SweetAlert().showAlert("Error".localized(),subTitle: "Check Internet Connectivity and try again ".localized(), style: AlertStyle.error)
                     }
                 }
                 
             }else {
                 // if result is nil then error
                 OperationQueue.main.addOperation {
-                    _ = SweetAlert().showAlert("فشلت العملية",subTitle: "نأمل التحقق من الوصول للانترنت ", style: AlertStyle.error)
+                    _ = SweetAlert().showAlert("Error".localized(),subTitle: "Check Internet Connectivity and try again ".localized(), style: AlertStyle.error)
                 }
             }
         }
@@ -155,7 +163,7 @@ class SettingViewController : UIViewController {
     
     
     func confirmPIN(installID : String, RequestID : String, HashedSMS : String, SenderConfirmationCode : String , voucherCounter: String ) {
-        SwiftSpinner.show("Connecting to server...")
+        SwiftSpinner.show("Connecting to server...".localized())
         
         let requestURL: URL = URL(string: "https://icashapi.azurewebsites.net/api/ConfirmedNewPin/"+installID+"/"+RequestID+"/" + HashedSMS+"/"+SenderConfirmationCode)!
         print(requestURL)
@@ -185,25 +193,25 @@ class SettingViewController : UIViewController {
                         self.card.saveVC(VC: voucherCounter)
                         OperationQueue.main.addOperation {
                             // show that everything is good
-                            _ = SweetAlert().showAlert("نجحت العملية",subTitle: "تم تغيير الرقم السري بنجاح ", style: AlertStyle.success)
+                            _ = SweetAlert().showAlert("Success".localized(),subTitle: "PIN code changed successfully ".localized(), style: AlertStyle.success)
                         }
                         
                     } else {
                         // if returned string != install hash key, error !
                         OperationQueue.main.addOperation {
-                            _ = SweetAlert().showAlert("فشلت العملية",subTitle: "نأمل التحقق من رمز التأكيد ", style: AlertStyle.error)
+                            _ = SweetAlert().showAlert("Error".localized(), subTitle: "Please Check SMS Code".localized(), style: AlertStyle.error)
                         }
                     }
                 } else {
                     OperationQueue.main.addOperation {
                       // if statuscode != 200 error
-                        _ = SweetAlert().showAlert("فشلت العملية",subTitle: "نأمل التحقق من الوصول للانترنت ", style: AlertStyle.error)
+                        _ = SweetAlert().showAlert("Error".localized(),subTitle: "Check Internet Connectivity and try again ".localized(), style: AlertStyle.error)
                     }
                 }
             }else {
                 // if responce is nil, error !
                 OperationQueue.main.addOperation {
-                    _ = SweetAlert().showAlert("فشلت العملية",subTitle: "نأمل التحقق من الوصول للانترنت ", style: AlertStyle.error)
+                    _ = SweetAlert().showAlert("Error".localized(),subTitle: "Check Internet Connectivity and try again ".localized(), style: AlertStyle.error)
                 }
             }
             
@@ -218,6 +226,6 @@ class SettingViewController : UIViewController {
     
     
     
-    
+    //TODO : Add validator for PIN (4 numbers) and they must match
     
 }

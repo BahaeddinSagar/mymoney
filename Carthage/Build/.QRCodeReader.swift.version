@@ -1,19 +1,9 @@
 {
-  "commitish" : "7.4.0",
+  "commitish" : "7.4.3",
   "iOS" : [
     {
-      "hash" : "a7a47becde99a5da5d894b61b3e9fec87c69db8008e2c99ac02b6af73eb673d8",
+      "hash" : "8d3f6303d585422f36b1fec712bdb9ad85850c45334ddd952aca028679878463",
       "name" : "QRCodeReader"
     }
-  ],
-  "xcodeVersion" : "Xcode 8.2.1\nBuild version 8C1002",
-  "watchOS" : [
-
-  ],
-  "tvOS" : [
-
-  ],
-  "Mac" : [
-
   ]
 }

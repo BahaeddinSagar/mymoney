@@ -2,18 +2,8 @@
   "commitish" : "2.0",
   "iOS" : [
     {
-      "hash" : "ff6efa7035e8992a72b0c9008063fe992499e2fb6ccb6d55babc488820f3d068",
+      "hash" : "13449782d9d59744986200560ad5b0eb79cbaf320a59501d34bb631fbdcf96ed",
       "name" : "QRCode"
     }
-  ],
-  "xcodeVersion" : "Xcode 8.2.1\nBuild version 8C1002",
-  "watchOS" : [
-
-  ],
-  "tvOS" : [
-
-  ],
-  "Mac" : [
-
   ]
 }
